@@ -2,7 +2,7 @@
 This folder conatains a ready to go docker compose file. Just navigate to this folder and type `docker-compose up` !
 
 ```
-docker-compose up
+docker-compose up -d
 docker-compose exec php bash install.sh
 ```
 The script `insall.sh` will automatically do the setup process that consists in following steps:
