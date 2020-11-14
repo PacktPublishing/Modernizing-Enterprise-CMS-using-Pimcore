@@ -9,6 +9,7 @@ Following this tutorials you will discover basics.
 Each subfolder is a different test case. Enter the folder to get the info about the code. The number into the foldername match the capter number inside the book.
 
 ## Examples list
+7. **Creating documents in Pimcore:** A ready website for testing CMS document feature
 7. **Setting up Pimcore Development Environment:** A docker composer ready to go, with tips for windows user.
 
 
