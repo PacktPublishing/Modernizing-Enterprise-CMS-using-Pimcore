@@ -3,6 +3,7 @@ This folder conatains a ready to go docker compose file. Just navigate to this f
 
 ```
 docker-compose up
+# open a second shell
 docker-compose exec php bash restore.sh
 ```
 
