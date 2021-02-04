@@ -1,0 +1,14 @@
+--TEST--
+override
+--TEMPLATE--
+{% extends "layout.twig" %}
+{% block foo %}foo is{{ data|first ? '' : ' not' }} deferred{% endblock %}
+{% block bar deferred %}bar is{{ data|first ? '' : ' not' }} deferred{% endblock %}
+--TEMPLATE(layout.twig)--
+{% block foo deferred %}foo is deferred{% endblock %},
+{%- block bar %}bar is not deferred{% endblock %}
+{{ data.append(true) }}
+--DATA--
+return []
+--EXPECT--
+foo is not deferred,bar is deferred

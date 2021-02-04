@@ -1,0 +1,7 @@
+Git information
+===============
+
+URL: https://github.com/unicode-org/icu.git
+Revision: 5d81f6f9a0edc47892a1d2af7024f835b47deb82
+Author: Jeff Genovy
+Date: 2020-10-27T10:20:57-07:00

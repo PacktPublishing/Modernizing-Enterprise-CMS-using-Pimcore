@@ -19,6 +19,8 @@
 
   <!-- Custom styles for this template -->
   <link href="{{asset('bundles/app/css/clean-blog.min.css')}}" rel="stylesheet">
+  <link href="{{asset('bundles/app/css/custom.css')}}" rel="stylesheet">
+  
 
 </head>
 
@@ -32,20 +34,58 @@
         Menu
         <i class="fas fa-bars"></i>
       </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="/">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/about-us">About Us</a>
-          </li>
-          
-        </ul>
-      </div>
+     
+    
+      
+    {% set mainNavStartNode = document.getProperty('mainNavStartNode') %}
+    {% if mainNavStartNode is empty %}
+        {% set mainNavStartNode = pimcore_document(1) %}
+    {% endif %}
+
+    {% set mainNav = pimcore_build_nav(document, mainNavStartNode) %}
+    {% set renderer = pimcore_nav_renderer('menu') %}
+    
+
+   <!-- Collapse button -->
+            <button class="navbar-toggler" type="button"
+                data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="{{ "Toggle navigation"|trans }}">
+                <span class="navbar-toggler-icon"></span></button>
+
+            <!-- Collapsible content -->
+            <div class="navbar-collapse collapse" id="navbarSupportedContent">
+
+            <!-- Links -->
+            <ul class="navbar-nav mr-auto">
+            {% for page in mainNav %}
+                {% if page.isVisible() and renderer.accept(page) %}
+                    {% if page.hasPages %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ page.label|trans }}</a>
+                        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                            {% for child in page.pages %}
+                              <a class="dropdown-item" href="{{ child.href }}">{{ child.label|trans }}</a>                              
+                            {% endfor %}
+                        </div>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ page.href }}">{{ page.label|trans }}</a>
+                    </li>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+            </ul>
+            </div>
+           
     </div>
-  </nav>
+    </nav>
  
+ 
+
+
 
 {% block content %}
 
@@ -90,6 +130,8 @@
     </div>
   </footer>
 
+<script src="{{asset('bundles/app/vendor/jquery/jquery.min.js')}}" ></script>
+<script src="{{asset('bundles/app/vendor/bootstrap/js/bootstrap.min.js')}}" ></script>
 
 </body>
 

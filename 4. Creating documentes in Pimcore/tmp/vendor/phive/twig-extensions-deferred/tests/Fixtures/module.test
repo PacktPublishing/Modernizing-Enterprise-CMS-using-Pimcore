@@ -1,0 +1,9 @@
+--TEST--
+module
+--TEMPLATE--
+{% block foo deferred %}deferred content{% endblock %}
+--DATA--
+return ['body_extra' => "\ncustom module content"]
+--EXPECT--
+deferred content
+custom module content
