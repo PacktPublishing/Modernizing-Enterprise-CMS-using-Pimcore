@@ -8,6 +8,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Response;
 use Pimcore\Controller\Configuration\ResponseHeader;
+use Pimcore\Model\Asset;
 
 class CustomController extends FrontendController
 {
@@ -59,6 +60,21 @@ class CustomController extends FrontendController
         return $this->json(array('key' => 'value'));
     }
 
-
+    /**
+     * This example uses renderlet input for rendering a gallery
+     * 
+     * /custom_data/mypar/
+     * 
+     * @Template() 
+     */    
+    public function galleryAction(Request $request)
+    {
+        if ('asset' === $request->get('type')) {
+            $asset = Asset::getById($request->get('id'));
+            if ('folder' === $asset->getType()) {
+                $this->view->assets = $asset->getChildren();
+            }
+        }
+    }
 
 }
