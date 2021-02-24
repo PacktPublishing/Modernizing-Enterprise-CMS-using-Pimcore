@@ -30,22 +30,44 @@ class ContactForm extends AbstractTemplateAreabrick
 
     public function action(Info $info)
     {  
-        $sendEmail=true;
-        if(sendEmail)
+        // $document = $info->getDocument();
+        //$documentElement=$info->getDocumentElement("name")
+        $request=$info->getRequest();
+        $view=$info->getView();
+        //$info->getParam("name")
+        //$params=$info->getParams();
+
+        $sendEmail=$request->get("sendEmail");
+        if($sendEmail)
         {
-            $name="";
-            $email="";
-            $subject="";
-            $message="";
+            $name=$request->get("name");
+            $email=$request->get("email");
+            $subject=$request->get("subject");
+            $message=$request->get("message");
+            $recipient=$title = $this->getDocumentEditable($info->getDocument(), 'input', 'recipient')->getData();
 
             //send an email here
-            $message="The email was successfully sent."
-            $info->name=$name;
-            $info->email=$email;
-            $info->subject=$subject;
-            $info->message=$message;
+            $sent= $this->sendEmail($name,$email,$subject,$message, $recipient);
+            if($sent)
+            {
+                $alert="the message is sent!";
+            }
+            else
+            {
+                $alert="there was an error, try later";
+            }
+            $view->name=$name;
+            $view->email=$email;
+            $view->subject=$subject;
+            $view->message=$message;
+            $view->alert=$alert;
         }
         
+    }
+    public function sendEmail($name,$email,$subject,$message)
+    {
+            //IMPLEMENT SEND HERE
+            return true;        
     }
     public function getTemplateSuffix()
     {

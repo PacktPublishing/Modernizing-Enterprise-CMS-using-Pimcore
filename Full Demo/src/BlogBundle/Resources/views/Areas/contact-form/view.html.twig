@@ -1,10 +1,16 @@
 <div class="container">
  <div class="row">
 
+ {% if alert is defined %}
+ <div class="alert alert-primary col-md-12" role="alert">
+  {{ alert }}
+</div>
+ {% endif%}
+
         <!--Grid column-->
         <div class="col-md-12">
             <form id="contact-form" name="contact-form"  method="POST">
-
+                <input type="hidden" name="sendEmail" value="true"/>
                 <!--Grid row-->
                 <div class="row">
 
