@@ -1,0 +1,12 @@
+--TEST--
+order
+--TEMPLATE--
+1
+{%- block foo deferred %}2{% endblock -%}
+3
+{%- block bar deferred %}4{% endblock -%}
+5
+--DATA--
+return []
+--EXPECT--
+12345

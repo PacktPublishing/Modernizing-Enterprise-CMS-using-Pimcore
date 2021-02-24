@@ -1,0 +1,9 @@
+--TEST--
+context
+--TEMPLATE--
+{% block foo deferred %}{{ bar }}{% endblock %}
+{% set bar = 'bar' %}
+--DATA--
+return []
+--EXPECT--
+bar

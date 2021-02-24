@@ -1,0 +1,73 @@
+{
+    "name": "mjaschen/phpgeo",
+    "description": "Simple Yet Powerful Geo Library",
+    "keywords": [
+        "distance",
+        "area",
+        "coordinate",
+        "geo",
+        "gis",
+        "bounds",
+        "ellipsoid",
+        "calculation",
+        "polyline",
+        "polygon",
+        "geofence",
+        "simplify",
+        "length",
+        "vincenty",
+        "haversine",
+        "bearing",
+        "projection",
+        "gps",
+        "earth",
+        "track",
+        "point",
+        "perpendicular"
+    ],
+    "homepage": "https://phpgeo.marcusjaschen.de/",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marcus Jaschen",
+            "email": "mjaschen@gmail.com",
+            "homepage": "https://www.marcusjaschen.de/"
+        }
+    ],
+    "support" : {
+        "email" : "mjaschen@gmail.com"
+    },
+    "require": {
+        "php": ">=7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Location\\": "src/"
+        }
+    },
+    "require-dev": {
+        "jakub-onderka/php-parallel-lint": "^1.0",
+        "daux/daux.io": "^0.11.0"
+    },
+    "scripts": {
+        "ci:composer-validate": "composer validate --no-check-all --no-check-lock --strict",
+        "ci:lint": "./vendor/bin/parallel-lint src",
+        "ci:psalm": "./tools/psalm",
+        "ci:sniff": "./tools/phpcs src tests",
+        "ci:tests": "./tools/phpunit tests/",
+        "ci:static": [
+            "@ci:composer-validate",
+            "@ci:lint",
+            "@ci:psalm",
+            "@ci:sniff"
+        ],
+        "ci:dynamic": [
+            "@ci:tests"
+        ],
+        "ci": [
+            "@ci:static",
+            "@ci:dynamic"
+        ]
+    }
+}
