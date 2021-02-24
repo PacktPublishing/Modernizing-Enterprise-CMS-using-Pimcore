@@ -1,0 +1,1398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services https://symfony.com/schema/dic/services/services-1.0.xsd">
+  <parameters>
+    <parameter key="kernel.root_dir">/var/www/html/var/installer</parameter>
+    <parameter key="kernel.project_dir">/var/www/html</parameter>
+    <parameter key="kernel.environment">prod</parameter>
+    <parameter key="kernel.debug">true</parameter>
+    <parameter key="kernel.name">installer</parameter>
+    <parameter key="kernel.cache_dir">/var/www/html/var/installer/cache</parameter>
+    <parameter key="kernel.logs_dir">/var/www/html/var/logs</parameter>
+    <parameter key="kernel.bundles" type="collection">
+      <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
+      <parameter key="MonologBundle">Symfony\Bundle\MonologBundle\MonologBundle</parameter>
+      <parameter key="PimcoreInstallBundle">Pimcore\Bundle\InstallBundle\PimcoreInstallBundle</parameter>
+    </parameter>
+    <parameter key="kernel.bundles_metadata" type="collection">
+      <parameter key="FrameworkBundle" type="collection">
+        <parameter key="path">/var/www/html/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle</parameter>
+        <parameter key="namespace">Symfony\Bundle\FrameworkBundle</parameter>
+      </parameter>
+      <parameter key="MonologBundle" type="collection">
+        <parameter key="path">/var/www/html/vendor/symfony/monolog-bundle</parameter>
+        <parameter key="namespace">Symfony\Bundle\MonologBundle</parameter>
+      </parameter>
+      <parameter key="PimcoreInstallBundle" type="collection">
+        <parameter key="path">/var/www/html/vendor/pimcore/pimcore/bundles/InstallBundle</parameter>
+        <parameter key="namespace">Pimcore\Bundle\InstallBundle</parameter>
+      </parameter>
+    </parameter>
+    <parameter key="kernel.charset">UTF-8</parameter>
+    <parameter key="kernel.container_class">installerPimcore_Bundle_InstallBundle_InstallerKernelProdDebugContainer</parameter>
+    <parameter key="secret">installer-601fc19f0fa931.61084080</parameter>
+    <parameter key="event_dispatcher.event_aliases" type="collection">
+      <parameter key="Symfony\Component\Console\Event\ConsoleCommandEvent">console.command</parameter>
+      <parameter key="Symfony\Component\Console\Event\ConsoleErrorEvent">console.error</parameter>
+      <parameter key="Symfony\Component\Console\Event\ConsoleTerminateEvent">console.terminate</parameter>
+      <parameter key="Symfony\Component\Form\Event\PreSubmitEvent">form.pre_submit</parameter>
+      <parameter key="Symfony\Component\Form\Event\SubmitEvent">form.submit</parameter>
+      <parameter key="Symfony\Component\Form\Event\PostSubmitEvent">form.post_submit</parameter>
+      <parameter key="Symfony\Component\Form\Event\PreSetDataEvent">form.pre_set_data</parameter>
+      <parameter key="Symfony\Component\Form\Event\PostSetDataEvent">form.post_set_data</parameter>
+      <parameter key="Symfony\Component\HttpKernel\Event\ControllerArgumentsEvent">kernel.controller_arguments</parameter>
+      <parameter key="Symfony\Component\HttpKernel\Event\ControllerEvent">kernel.controller</parameter>
+      <parameter key="Symfony\Component\HttpKernel\Event\ResponseEvent">kernel.response</parameter>
+      <parameter key="Symfony\Component\HttpKernel\Event\FinishRequestEvent">kernel.finish_request</parameter>
+      <parameter key="Symfony\Component\HttpKernel\Event\RequestEvent">kernel.request</parameter>
+      <parameter key="Symfony\Component\HttpKernel\Event\ViewEvent">kernel.view</parameter>
+      <parameter key="Symfony\Component\HttpKernel\Event\ExceptionEvent">kernel.exception</parameter>
+      <parameter key="Symfony\Component\HttpKernel\Event\TerminateEvent">kernel.terminate</parameter>
+      <parameter key="Symfony\Component\Workflow\Event\GuardEvent">workflow.guard</parameter>
+      <parameter key="Symfony\Component\Workflow\Event\LeaveEvent">workflow.leave</parameter>
+      <parameter key="Symfony\Component\Workflow\Event\TransitionEvent">workflow.transition</parameter>
+      <parameter key="Symfony\Component\Workflow\Event\EnterEvent">workflow.enter</parameter>
+      <parameter key="Symfony\Component\Workflow\Event\EnteredEvent">workflow.entered</parameter>
+      <parameter key="Symfony\Component\Workflow\Event\CompletedEvent">workflow.completed</parameter>
+      <parameter key="Symfony\Component\Workflow\Event\AnnounceEvent">workflow.announce</parameter>
+    </parameter>
+    <parameter key="fragment.renderer.hinclude.global_template"></parameter>
+    <parameter key="fragment.path">/_fragment</parameter>
+    <parameter key="kernel.secret">installer-601fc19f0fa931.61084080</parameter>
+    <parameter key="kernel.http_method_override">true</parameter>
+    <parameter key="kernel.trusted_hosts" type="collection"/>
+    <parameter key="kernel.default_locale">en</parameter>
+    <parameter key="kernel.error_controller">error_controller</parameter>
+    <parameter key="templating.helper.code.file_link_format">null</parameter>
+    <parameter key="debug.file_link_format">null</parameter>
+    <parameter key="data_collector.templates" type="collection"/>
+    <parameter key="debug.error_handler.throw_at">-1</parameter>
+    <parameter key="debug.container.dump">/var/www/html/var/installer/cache/installerPimcore_Bundle_InstallBundle_InstallerKernelProdDebugContainer.xml</parameter>
+    <parameter key="router.request_context.host">localhost</parameter>
+    <parameter key="router.request_context.scheme">http</parameter>
+    <parameter key="router.request_context.base_url"></parameter>
+    <parameter key="router.resource">kernel::loadRoutes</parameter>
+    <parameter key="router.cache_class_prefix">installerPimcore_Bundle_InstallBundle_InstallerKernelProdDebugContainer</parameter>
+    <parameter key="request_listener.http_port">80</parameter>
+    <parameter key="request_listener.https_port">443</parameter>
+    <parameter key="monolog.use_microseconds">true</parameter>
+    <parameter key="monolog.swift_mailer.handlers" type="collection"/>
+    <parameter key="monolog.handlers_to_channels" type="collection">
+      <parameter key="monolog.handler.main" type="collection">
+        <parameter key="type">exclusive</parameter>
+        <parameter key="elements" type="collection">
+          <parameter>event</parameter>
+        </parameter>
+      </parameter>
+    </parameter>
+    <parameter key="console.command.ids" type="collection">
+      <parameter>Pimcore\Bundle\InstallBundle\Command\InstallCommand</parameter>
+    </parameter>
+  </parameters>
+  <services>
+    <service id="service_container" class="Symfony\Component\DependencyInjection\ContainerInterface" public="true" synthetic="true"/>
+    <service id="kernel" class="Pimcore\Bundle\InstallBundle\InstallerKernel" public="true" synthetic="true">
+      <tag name="routing.route_loader"/>
+    </service>
+    <service id=".legacy_controller_name_converter" class="Symfony\Bundle\FrameworkBundle\Controller\ControllerNameParser" public="false">
+      <tag name="monolog.logger" channel="request"/>
+      <argument type="service" id="kernel"/>
+      <argument>false</argument>
+    </service>
+    <service id="argument_metadata_factory" class="Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadataFactory" public="false"/>
+    <service id="response_listener" class="Symfony\Component\HttpKernel\EventListener\ResponseListener" public="false">
+      <tag name="kernel.event_subscriber"/>
+      <tag name="container.hot_path"/>
+      <argument>UTF-8</argument>
+    </service>
+    <service id="streamed_response_listener" class="Symfony\Component\HttpKernel\EventListener\StreamedResponseListener" public="false">
+      <tag name="kernel.event_subscriber"/>
+      <tag name="container.hot_path"/>
+    </service>
+    <service id="locale_listener" class="Symfony\Component\HttpKernel\EventListener\LocaleListener" public="false">
+      <tag name="kernel.event_subscriber"/>
+      <tag name="container.hot_path"/>
+      <tag name="container.hot_path"/>
+      <tag name="container.hot_path"/>
+      <argument type="service" id="request_stack"/>
+      <argument>en</argument>
+      <argument type="service" id="router.default" on-invalid="ignore"/>
+    </service>
+    <service id="validate_request_listener" class="Symfony\Component\HttpKernel\EventListener\ValidateRequestListener" public="false">
+      <tag name="kernel.event_subscriber"/>
+      <tag name="container.hot_path"/>
+    </service>
+    <service id=".legacy_resolve_controller_name_subscriber" class="Symfony\Bundle\FrameworkBundle\EventListener\ResolveControllerNameSubscriber" public="false">
+      <tag name="kernel.event_subscriber"/>
+      <tag name="container.hot_path"/>
+      <argument type="service" id=".legacy_controller_name_converter"/>
+      <argument>false</argument>
+    </service>
+    <service id="disallow_search_engine_index_response_listener" class="Symfony\Component\HttpKernel\EventListener\DisallowRobotsIndexingListener" public="false">
+      <tag name="kernel.event_subscriber"/>
+      <tag name="container.hot_path"/>
+    </service>
+    <service id="error_controller" class="Symfony\Component\HttpKernel\Controller\ErrorController" public="true">
+      <argument type="service" id="http_kernel"/>
+      <argument>error_controller</argument>
+      <argument type="service" id="error_handler.error_renderer.html"/>
+    </service>
+    <service id="exception_listener" class="Symfony\Component\HttpKernel\EventListener\ErrorListener" public="false">
+      <tag name="kernel.event_subscriber"/>
+      <tag name="monolog.logger" channel="request"/>
+      <tag name="container.hot_path"/>
+      <argument>error_controller</argument>
+      <argument type="service" id="monolog.logger.request" on-invalid="null"/>
+      <argument>true</argument>
+    </service>
+    <service id="parameter_bag" class="Symfony\Component\DependencyInjection\ParameterBag\ContainerBag" public="false">
+      <argument type="service" id="service_container"/>
+    </service>
+    <service id="http_kernel" class="Symfony\Component\HttpKernel\HttpKernel" public="true">
+      <tag name="container.hot_path"/>
+      <argument type="service" id="debug.event_dispatcher"/>
+      <argument type="service" id="debug.controller_resolver"/>
+      <argument type="service" id="request_stack"/>
+      <argument type="service" id="debug.argument_resolver"/>
+    </service>
+    <service id="request_stack" class="Symfony\Component\HttpFoundation\RequestStack" public="true"/>
+    <service id="url_helper" class="Symfony\Component\HttpFoundation\UrlHelper" public="false">
+      <argument type="service" id="request_stack"/>
+      <argument type="service" id="router.request_context" on-invalid="ignore"/>
+    </service>
+    <service id="cache_warmer" class="Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerAggregate" public="true">
+      <argument type="tagged_iterator" tag="kernel.cache_warmer"/>
+      <argument>true</argument>
+      <argument>/var/www/html/var/installer/cache/installerPimcore_Bundle_InstallBundle_InstallerKernelProdDebugContainerDeprecations.log</argument>
+    </service>
+    <service id="cache_clearer" class="Symfony\Component\HttpKernel\CacheClearer\ChainCacheClearer" public="true">
+      <argument type="tagged_iterator" tag="kernel.cache_clearer"/>
+    </service>
+    <service id="filesystem" class="Symfony\Component\Filesystem\Filesystem" public="true"/>
+    <service id="file_locator" class="Symfony\Component\HttpKernel\Config\FileLocator" public="false">
+      <argument type="service" id="kernel"/>
+      <argument>/var/www/html/var/installer/Resources</argument>
+      <argument type="collection">
+        <argument>/var/www/html/var/installer</argument>
+      </argument>
+      <argument>false</argument>
+    </service>
+    <service id="uri_signer" class="Symfony\Component\HttpKernel\UriSigner" public="false">
+      <argument>installer-601fc19f0fa931.61084080</argument>
+    </service>
+    <service id="config_cache_factory" class="Symfony\Component\Config\ResourceCheckerConfigCacheFactory" public="false">
+      <argument type="tagged_iterator" tag="config_cache.resource_checker"/>
+    </service>
+    <service id="dependency_injection.config.container_parameters_resource_checker" class="Symfony\Component\DependencyInjection\Config\ContainerParametersResourceChecker" public="false">
+      <tag name="config_cache.resource_checker" priority="-980"/>
+      <argument type="service" id="service_container"/>
+    </service>
+    <service id="config.resource.self_checking_resource_checker" class="Symfony\Component\Config\Resource\SelfCheckingResourceChecker" public="false">
+      <tag name="config_cache.resource_checker" priority="-990"/>
+    </service>
+    <service id="services_resetter" class="Symfony\Component\HttpKernel\DependencyInjection\ServicesResetter" public="true">
+      <argument type="iterator">
+        <argument key="cache.app" type="service" id="cache.app" on-invalid="ignore_uninitialized"/>
+        <argument key="cache.system" type="service" id="cache.system" on-invalid="ignore_uninitialized"/>
+        <argument key="cache.validator" type="service" id="cache.validator" on-invalid="ignore_uninitialized"/>
+        <argument key="cache.serializer" type="service" id="cache.serializer" on-invalid="ignore_uninitialized"/>
+        <argument key="cache.annotations" type="service" id="cache.annotations" on-invalid="ignore_uninitialized"/>
+        <argument key="cache.property_info" type="service" id="cache.property_info" on-invalid="ignore_uninitialized"/>
+        <argument key="debug.stopwatch" type="service" id="debug.stopwatch" on-invalid="ignore_uninitialized"/>
+        <argument key="debug.event_dispatcher" type="service" id="debug.event_dispatcher" on-invalid="ignore_uninitialized"/>
+        <argument key="monolog.handler.main" type="service" id="monolog.handler.main" on-invalid="ignore_uninitialized"/>
+      </argument>
+      <argument type="collection">
+        <argument key="cache.app" type="collection">
+          <argument>reset</argument>
+        </argument>
+        <argument key="cache.system" type="collection">
+          <argument>reset</argument>
+        </argument>
+        <argument key="cache.validator" type="collection">
+          <argument>reset</argument>
+        </argument>
+        <argument key="cache.serializer" type="collection">
+          <argument>reset</argument>
+        </argument>
+        <argument key="cache.annotations" type="collection">
+          <argument>reset</argument>
+        </argument>
+        <argument key="cache.property_info" type="collection">
+          <argument>reset</argument>
+        </argument>
+        <argument key="debug.stopwatch" type="collection">
+          <argument>reset</argument>
+        </argument>
+        <argument key="debug.event_dispatcher" type="collection">
+          <argument>reset</argument>
+        </argument>
+        <argument key="monolog.handler.main" type="collection">
+          <argument>reset</argument>
+        </argument>
+      </argument>
+    </service>
+    <service id="reverse_container" class="Symfony\Component\DependencyInjection\ReverseContainer" public="false">
+      <argument type="service" id="service_container"/>
+      <argument type="service" id=".service_locator.wnlveDj"/>
+    </service>
+    <service id="container.env_var_processor" class="Symfony\Component\DependencyInjection\EnvVarProcessor" public="false">
+      <tag name="container.env_var_processor"/>
+      <argument type="service" id="service_container"/>
+      <argument type="tagged_iterator" tag="container.env_var_loader"/>
+    </service>
+    <service id="fragment.handler" class="Symfony\Component\HttpKernel\DependencyInjection\LazyLoadingFragmentHandler" public="false">
+      <argument type="service" id=".service_locator._cmka45"/>
+      <argument type="service" id="request_stack"/>
+      <argument>true</argument>
+    </service>
+    <service id="fragment.renderer.inline" class="Symfony\Component\HttpKernel\Fragment\InlineFragmentRenderer" public="false">
+      <tag name="kernel.fragment_renderer" alias="inline"/>
+      <argument type="service" id="http_kernel"/>
+      <argument type="service" id="debug.event_dispatcher"/>
+      <call method="setFragmentPath">
+        <argument>/_fragment</argument>
+      </call>
+    </service>
+    <service id=".2_~NS1BukD" public="false">
+      <argument type="service" id="request_stack"/>
+      <factory class="Symfony\Component\ErrorHandler\ErrorRenderer\HtmlErrorRenderer" method="getAndCleanOutputBuffer"/>
+    </service>
+    <service id=".1_~NS1BukD" public="false">
+      <argument type="service" id="request_stack"/>
+      <argument>true</argument>
+      <factory class="Symfony\Component\ErrorHandler\ErrorRenderer\HtmlErrorRenderer" method="isDebug"/>
+    </service>
+    <service id="error_handler.error_renderer.html" class="Symfony\Component\ErrorHandler\ErrorRenderer\HtmlErrorRenderer">
+      <argument type="service" id=".1_~NS1BukD"/>
+      <argument>UTF-8</argument>
+      <argument type="service" id="debug.file_link_formatter" on-invalid="null"/>
+      <argument>/var/www/html</argument>
+      <argument type="service" id=".2_~NS1BukD"/>
+      <argument type="service" id="monolog.logger" on-invalid="null"/>
+    </service>
+    <service id="console.error_listener" class="Symfony\Component\Console\EventListener\ErrorListener" public="false">
+      <tag name="kernel.event_subscriber"/>
+      <tag name="monolog.logger" channel="console"/>
+      <argument type="service" id="monolog.logger.console" on-invalid="null"/>
+    </service>
+    <service id="console.suggest_missing_package_subscriber" class="Symfony\Bundle\FrameworkBundle\EventListener\SuggestMissingPackageSubscriber" public="false">
+      <tag name="kernel.event_subscriber"/>
+    </service>
+    <service id="console.command.about" class="Symfony\Bundle\FrameworkBundle\Command\AboutCommand" public="false">
+      <tag name="console.command" command="about"/>
+      <call method="setName">
+        <argument>about</argument>
+      </call>
+    </service>
+    <service id="console.command.assets_install" class="Symfony\Bundle\FrameworkBundle\Command\AssetsInstallCommand" public="false">
+      <tag name="console.command" command="assets:install"/>
+      <argument type="service" id="filesystem"/>
+      <argument>/var/www/html</argument>
+      <call method="setName">
+        <argument>assets:install</argument>
+      </call>
+    </service>
+    <service id="console.command.cache_clear" class="Symfony\Bundle\FrameworkBundle\Command\CacheClearCommand" public="false">
+      <tag name="console.command" command="cache:clear"/>
+      <argument type="service" id="cache_clearer"/>
+      <argument type="service" id="filesystem"/>
+      <call method="setName">
+        <argument>cache:clear</argument>
+      </call>
+    </service>
+    <service id="console.command.cache_pool_clear" class="Symfony\Bundle\FrameworkBundle\Command\CachePoolClearCommand" public="false">
+      <tag name="console.command" command="cache:pool:clear"/>
+      <argument type="service" id="cache.global_clearer"/>
+      <call method="setName">
+        <argument>cache:pool:clear</argument>
+      </call>
+    </service>
+    <service id="console.command.cache_pool_prune" class="Symfony\Bundle\FrameworkBundle\Command\CachePoolPruneCommand" public="false">
+      <tag name="console.command" command="cache:pool:prune"/>
+      <argument type="iterator"/>
+      <call method="setName">
+        <argument>cache:pool:prune</argument>
+      </call>
+    </service>
+    <service id="console.command.cache_pool_delete" class="Symfony\Bundle\FrameworkBundle\Command\CachePoolDeleteCommand" public="false">
+      <tag name="console.command" command="cache:pool:delete"/>
+      <argument type="service" id="cache.global_clearer"/>
+      <call method="setName">
+        <argument>cache:pool:delete</argument>
+      </call>
+    </service>
+    <service id="console.command.cache_pool_list" class="Symfony\Bundle\FrameworkBundle\Command\CachePoolListCommand" public="false">
+      <tag name="console.command" command="cache:pool:list"/>
+      <argument type="collection">
+        <argument>cache.app</argument>
+        <argument>cache.system</argument>
+        <argument>cache.validator</argument>
+        <argument>cache.serializer</argument>
+        <argument>cache.annotations</argument>
+        <argument>cache.property_info</argument>
+      </argument>
+      <call method="setName">
+        <argument>cache:pool:list</argument>
+      </call>
+    </service>
+    <service id="console.command.cache_warmup" class="Symfony\Bundle\FrameworkBundle\Command\CacheWarmupCommand" public="false">
+      <tag name="console.command" command="cache:warmup"/>
+      <argument type="service" id="cache_warmer"/>
+      <call method="setName">
+        <argument>cache:warmup</argument>
+      </call>
+    </service>
+    <service id="console.command.config_debug" class="Symfony\Bundle\FrameworkBundle\Command\ConfigDebugCommand" public="false">
+      <tag name="console.command" command="debug:config"/>
+      <call method="setName">
+        <argument>debug:config</argument>
+      </call>
+    </service>
+    <service id="console.command.config_dump_reference" class="Symfony\Bundle\FrameworkBundle\Command\ConfigDumpReferenceCommand" public="false">
+      <tag name="console.command" command="config:dump-reference"/>
+      <call method="setName">
+        <argument>config:dump-reference</argument>
+      </call>
+    </service>
+    <service id="console.command.container_debug" class="Symfony\Bundle\FrameworkBundle\Command\ContainerDebugCommand" public="false">
+      <tag name="console.command" command="debug:container"/>
+      <call method="setName">
+        <argument>debug:container</argument>
+      </call>
+    </service>
+    <service id="console.command.container_lint" class="Symfony\Bundle\FrameworkBundle\Command\ContainerLintCommand" public="false">
+      <tag name="console.command" command="lint:container"/>
+      <call method="setName">
+        <argument>lint:container</argument>
+      </call>
+    </service>
+    <service id="console.command.debug_autowiring" class="Symfony\Bundle\FrameworkBundle\Command\DebugAutowiringCommand" public="false">
+      <tag name="console.command" command="debug:autowiring"/>
+      <argument>null</argument>
+      <argument type="service" id="debug.file_link_formatter" on-invalid="null"/>
+      <call method="setName">
+        <argument>debug:autowiring</argument>
+      </call>
+    </service>
+    <service id="console.command.event_dispatcher_debug" class="Symfony\Bundle\FrameworkBundle\Command\EventDispatcherDebugCommand" public="false">
+      <tag name="console.command" command="debug:event-dispatcher"/>
+      <argument type="service" id="debug.event_dispatcher"/>
+      <call method="setName">
+        <argument>debug:event-dispatcher</argument>
+      </call>
+    </service>
+    <service id="console.command.router_debug" class="Symfony\Bundle\FrameworkBundle\Command\RouterDebugCommand" public="false">
+      <tag name="console.command" command="debug:router"/>
+      <argument type="service" id="router.default"/>
+      <argument type="service" id="debug.file_link_formatter" on-invalid="null"/>
+      <call method="setName">
+        <argument>debug:router</argument>
+      </call>
+    </service>
+    <service id="console.command.router_match" class="Symfony\Bundle\FrameworkBundle\Command\RouterMatchCommand" public="false">
+      <tag name="console.command" command="router:match"/>
+      <argument type="service" id="router.default"/>
+      <call method="setName">
+        <argument>router:match</argument>
+      </call>
+    </service>
+    <service id="console.command.xliff_lint" class="Symfony\Bundle\FrameworkBundle\Command\XliffLintCommand" public="false">
+      <tag name="console.command" command="lint:xliff"/>
+      <call method="setName">
+        <argument>lint:xliff</argument>
+      </call>
+    </service>
+    <service id="console.command.yaml_lint" class="Symfony\Bundle\FrameworkBundle\Command\YamlLintCommand" public="false">
+      <tag name="console.command" command="lint:yaml"/>
+      <call method="setName">
+        <argument>lint:yaml</argument>
+      </call>
+    </service>
+    <service id="console.command.secrets_set" class="Symfony\Bundle\FrameworkBundle\Command\SecretsSetCommand" public="false">
+      <tag name="console.command" command="secrets:set"/>
+      <argument type="service" id="secrets.vault"/>
+      <argument type="service" id="secrets.local_vault" on-invalid="ignore"/>
+      <call method="setName">
+        <argument>secrets:set</argument>
+      </call>
+    </service>
+    <service id="console.command.secrets_remove" class="Symfony\Bundle\FrameworkBundle\Command\SecretsRemoveCommand" public="false">
+      <tag name="console.command" command="secrets:remove"/>
+      <argument type="service" id="secrets.vault"/>
+      <argument type="service" id="secrets.local_vault" on-invalid="ignore"/>
+      <call method="setName">
+        <argument>secrets:remove</argument>
+      </call>
+    </service>
+    <service id="console.command.secrets_generate_key" class="Symfony\Bundle\FrameworkBundle\Command\SecretsGenerateKeysCommand" public="false">
+      <tag name="console.command" command="secrets:generate-keys"/>
+      <argument type="service" id="secrets.vault"/>
+      <argument type="service" id="secrets.local_vault" on-invalid="ignore"/>
+      <call method="setName">
+        <argument>secrets:generate-keys</argument>
+      </call>
+    </service>
+    <service id="console.command.secrets_list" class="Symfony\Bundle\FrameworkBundle\Command\SecretsListCommand" public="false">
+      <tag name="console.command" command="secrets:list"/>
+      <argument type="service" id="secrets.vault"/>
+      <argument type="service" id="secrets.local_vault" on-invalid="ignore"/>
+      <call method="setName">
+        <argument>secrets:list</argument>
+      </call>
+    </service>
+    <service id="console.command.secrets_decrypt_to_local" class="Symfony\Bundle\FrameworkBundle\Command\SecretsDecryptToLocalCommand" public="false">
+      <tag name="console.command" command="secrets:decrypt-to-local"/>
+      <argument type="service" id="secrets.vault"/>
+      <argument type="service" id="secrets.local_vault" on-invalid="ignore"/>
+      <call method="setName">
+        <argument>secrets:decrypt-to-local</argument>
+      </call>
+    </service>
+    <service id="console.command.secrets_encrypt_from_local" class="Symfony\Bundle\FrameworkBundle\Command\SecretsEncryptFromLocalCommand" public="false">
+      <tag name="console.command" command="secrets:encrypt-from-local"/>
+      <argument type="service" id="secrets.vault"/>
+      <argument type="service" id="secrets.local_vault" on-invalid="ignore"/>
+      <call method="setName">
+        <argument>secrets:encrypt-from-local</argument>
+      </call>
+    </service>
+    <service id="cache.app" class="Symfony\Component\Cache\Adapter\FilesystemAdapter" public="true">
+      <tag name="cache.pool"/>
+      <tag name="kernel.reset" method="reset"/>
+      <argument>JbVGXK+XIp</argument>
+      <argument>0</argument>
+      <argument>/var/www/html/var/installer/cache/pools</argument>
+      <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
+      <call method="setLogger">
+        <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
+      </call>
+    </service>
+    <service id="cache.app.simple" class="Symfony\Component\Cache\Psr16Cache" public="false">
+      <argument type="service" id="cache.app"/>
+      <deprecated>The "Psr\SimpleCache\CacheInterface" / "%service_id%" service is deprecated since Symfony 4.3. Use "Symfony\Contracts\Cache\CacheInterface" / "cache.app" instead.</deprecated>
+    </service>
+    <service id="cache.app.taggable" class="Symfony\Component\Cache\Adapter\TagAwareAdapter" public="false">
+      <argument type="service" id="cache.app"/>
+    </service>
+    <service id="cache.system" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="true">
+      <tag name="cache.pool"/>
+      <tag name="kernel.reset" method="reset"/>
+      <argument>t2ZRNxi9UC</argument>
+      <argument>0</argument>
+      <argument>%container.build_id%</argument>
+      <argument>/var/www/html/var/installer/cache/pools</argument>
+      <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
+      <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
+    </service>
+    <service id="cache.validator" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false">
+      <tag name="cache.pool"/>
+      <tag name="kernel.reset" method="reset"/>
+      <argument>W5vUmGLpkQ</argument>
+      <argument>0</argument>
+      <argument>%container.build_id%</argument>
+      <argument>/var/www/html/var/installer/cache/pools</argument>
+      <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
+      <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
+    </service>
+    <service id="cache.serializer" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false">
+      <tag name="cache.pool"/>
+      <tag name="kernel.reset" method="reset"/>
+      <argument>p+g6X+ZtnO</argument>
+      <argument>0</argument>
+      <argument>%container.build_id%</argument>
+      <argument>/var/www/html/var/installer/cache/pools</argument>
+      <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
+      <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
+    </service>
+    <service id="cache.annotations" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false">
+      <tag name="cache.pool"/>
+      <tag name="kernel.reset" method="reset"/>
+      <argument>pG0G9UpEJm</argument>
+      <argument>0</argument>
+      <argument>%container.build_id%</argument>
+      <argument>/var/www/html/var/installer/cache/pools</argument>
+      <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
+      <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
+    </service>
+    <service id="cache.property_info" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false">
+      <tag name="cache.pool"/>
+      <tag name="kernel.reset" method="reset"/>
+      <argument>GgWcoCxg6n</argument>
+      <argument>0</argument>
+      <argument>%container.build_id%</argument>
+      <argument>/var/www/html/var/installer/cache/pools</argument>
+      <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
+      <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
+    </service>
+    <service id="cache.adapter.system" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" abstract="true">
+      <tag name="cache.pool" clearer="cache.system_clearer" reset="reset"/>
+      <tag name="monolog.logger" channel="cache"/>
+      <argument></argument>
+      <argument>0</argument>
+      <argument>%container.build_id%</argument>
+      <argument>/var/www/html/var/installer/cache/pools</argument>
+      <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
+      <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
+    </service>
+    <service id="cache.adapter.apcu" class="Symfony\Component\Cache\Adapter\ApcuAdapter" public="false" abstract="true">
+      <tag name="cache.pool" clearer="cache.default_clearer" reset="reset"/>
+      <tag name="monolog.logger" channel="cache"/>
+      <argument></argument>
+      <argument>0</argument>
+      <argument>%container.build_id%</argument>
+      <call method="setLogger">
+        <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
+      </call>
+    </service>
+    <service id="cache.adapter.doctrine" class="Symfony\Component\Cache\Adapter\DoctrineAdapter" public="false" abstract="true">
+      <tag name="cache.pool" provider="cache.default_doctrine_provider" clearer="cache.default_clearer" reset="reset"/>
+      <tag name="monolog.logger" channel="cache"/>
+      <argument></argument>
+      <argument></argument>
+      <argument>0</argument>
+      <call method="setLogger">
+        <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
+      </call>
+    </service>
+    <service id="cache.adapter.filesystem" class="Symfony\Component\Cache\Adapter\FilesystemAdapter" public="false" abstract="true">
+      <tag name="cache.pool" clearer="cache.default_clearer" reset="reset"/>
+      <tag name="monolog.logger" channel="cache"/>
+      <argument></argument>
+      <argument>0</argument>
+      <argument>/var/www/html/var/installer/cache/pools</argument>
+      <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
+      <call method="setLogger">
+        <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
+      </call>
+    </service>
+    <service id="cache.adapter.psr6" class="Symfony\Component\Cache\Adapter\ProxyAdapter" public="false" abstract="true">
+      <tag name="cache.pool" provider="cache.default_psr6_provider" clearer="cache.default_clearer" reset="reset"/>
+      <argument></argument>
+      <argument></argument>
+      <argument>0</argument>
+    </service>
+    <service id="cache.adapter.redis" class="Symfony\Component\Cache\Adapter\RedisAdapter" public="false" abstract="true">
+      <tag name="cache.pool" provider="cache.default_redis_provider" clearer="cache.default_clearer" reset="reset"/>
+      <tag name="monolog.logger" channel="cache"/>
+      <argument></argument>
+      <argument></argument>
+      <argument>0</argument>
+      <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
+      <call method="setLogger">
+        <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
+      </call>
+    </service>
+    <service id="cache.adapter.memcached" class="Symfony\Component\Cache\Adapter\MemcachedAdapter" public="false" abstract="true">
+      <tag name="cache.pool" provider="cache.default_memcached_provider" clearer="cache.default_clearer" reset="reset"/>
+      <tag name="monolog.logger" channel="cache"/>
+      <argument></argument>
+      <argument></argument>
+      <argument>0</argument>
+      <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
+      <call method="setLogger">
+        <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
+      </call>
+    </service>
+    <service id="cache.adapter.pdo" class="Symfony\Component\Cache\Adapter\PdoAdapter" public="false" abstract="true">
+      <tag name="cache.pool" provider="cache.default_pdo_provider" clearer="cache.default_clearer" reset="reset"/>
+      <tag name="monolog.logger" channel="cache"/>
+      <argument></argument>
+      <argument></argument>
+      <argument>0</argument>
+      <argument type="collection"/>
+      <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
+      <call method="setLogger">
+        <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
+      </call>
+    </service>
+    <service id="cache.adapter.array" class="Symfony\Component\Cache\Adapter\ArrayAdapter" public="false" abstract="true">
+      <tag name="cache.pool" clearer="cache.default_clearer" reset="reset"/>
+      <tag name="monolog.logger" channel="cache"/>
+      <argument>0</argument>
+      <call method="setLogger">
+        <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
+      </call>
+    </service>
+    <service id="cache.default_marshaller" class="Symfony\Component\Cache\Marshaller\DefaultMarshaller" public="false">
+      <argument>null</argument>
+    </service>
+    <service id="cache.default_clearer" class="Symfony\Component\HttpKernel\CacheClearer\Psr6CacheClearer" public="false">
+      <tag name="cache.pool.clearer"/>
+      <argument type="collection">
+        <argument key="cache.app" type="service" id="cache.app" on-invalid="ignore_uninitialized"/>
+      </argument>
+    </service>
+    <service id="cache.system_clearer" class="Symfony\Component\HttpKernel\CacheClearer\Psr6CacheClearer" public="true">
+      <tag name="cache.pool.clearer"/>
+      <tag name="kernel.cache_clearer"/>
+      <argument type="collection">
+        <argument key="cache.system" type="service" id="cache.system" on-invalid="ignore_uninitialized"/>
+        <argument key="cache.validator" type="service" id="cache.validator" on-invalid="ignore_uninitialized"/>
+        <argument key="cache.serializer" type="service" id="cache.serializer" on-invalid="ignore_uninitialized"/>
+        <argument key="cache.annotations" type="service" id="cache.annotations" on-invalid="ignore_uninitialized"/>
+        <argument key="cache.property_info" type="service" id="cache.property_info" on-invalid="ignore_uninitialized"/>
+      </argument>
+    </service>
+    <service id="cache.global_clearer" class="Symfony\Component\HttpKernel\CacheClearer\Psr6CacheClearer" public="true">
+      <tag name="cache.pool.clearer"/>
+      <argument type="collection">
+        <argument key="cache.app" type="service" id="cache.app" on-invalid="ignore_uninitialized"/>
+        <argument key="cache.system" type="service" id="cache.system" on-invalid="ignore_uninitialized"/>
+        <argument key="cache.validator" type="service" id="cache.validator" on-invalid="ignore_uninitialized"/>
+        <argument key="cache.serializer" type="service" id="cache.serializer" on-invalid="ignore_uninitialized"/>
+        <argument key="cache.annotations" type="service" id="cache.annotations" on-invalid="ignore_uninitialized"/>
+        <argument key="cache.property_info" type="service" id="cache.property_info" on-invalid="ignore_uninitialized"/>
+      </argument>
+    </service>
+    <service id=".cache_connection.GD_MSZC" class="Symfony\Component\Cache\Adapter\AbstractAdapter" public="false">
+      <argument>redis://localhost</argument>
+      <argument type="collection">
+        <argument key="lazy">true</argument>
+      </argument>
+      <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createConnection"/>
+    </service>
+    <service id=".cache_connection.JKE6keX" class="Symfony\Component\Cache\Adapter\AbstractAdapter" public="false">
+      <argument>memcached://localhost</argument>
+      <argument type="collection">
+        <argument key="lazy">true</argument>
+      </argument>
+      <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createConnection"/>
+    </service>
+    <service id="cache.property_access" class="Symfony\Component\Cache\Adapter\ArrayAdapter" public="false">
+      <argument>0</argument>
+      <argument>false</argument>
+    </service>
+    <service id="debug.debug_handlers_listener" class="Symfony\Component\HttpKernel\EventListener\DebugHandlersListener" public="false">
+      <tag name="kernel.event_subscriber"/>
+      <tag name="monolog.logger" channel="php"/>
+      <tag name="container.hot_path"/>
+      <argument>null</argument>
+      <argument type="service" id="monolog.logger.php" on-invalid="null"/>
+      <argument>null</argument>
+      <argument>-1</argument>
+      <argument>true</argument>
+      <argument type="service" id="debug.file_link_formatter"/>
+      <argument>true</argument>
+    </service>
+    <service id="debug.file_link_formatter" class="Symfony\Component\HttpKernel\Debug\FileLinkFormatter" public="false">
+      <argument>null</argument>
+    </service>
+    <service id="debug.stopwatch" class="Symfony\Component\Stopwatch\Stopwatch">
+      <tag name="kernel.reset" method="reset"/>
+      <argument>true</argument>
+    </service>
+    <service id="debug.event_dispatcher" class="Symfony\Component\HttpKernel\Debug\TraceableEventDispatcher" public="false">
+      <tag name="container.hot_path"/>
+      <tag name="monolog.logger" channel="event"/>
+      <tag name="kernel.reset" method="reset"/>
+      <argument type="service" id="debug.event_dispatcher.inner"/>
+      <argument type="service" id="debug.stopwatch"/>
+      <argument type="service" id="monolog.logger.event" on-invalid="null"/>
+      <argument type="service" id="request_stack" on-invalid="null"/>
+      <call method="addListener">
+        <argument>kernel.response</argument>
+        <argument type="collection">
+          <argument type="service" id="response_listener"/>
+          <argument>onKernelResponse</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>kernel.response</argument>
+        <argument type="collection">
+          <argument type="service" id="streamed_response_listener"/>
+          <argument>onKernelResponse</argument>
+        </argument>
+        <argument>-1024</argument>
+      </call>
+      <call method="addListener">
+        <argument>kernel.request</argument>
+        <argument type="collection">
+          <argument type="service" id="locale_listener"/>
+          <argument>setDefaultLocale</argument>
+        </argument>
+        <argument>100</argument>
+      </call>
+      <call method="addListener">
+        <argument>kernel.request</argument>
+        <argument type="collection">
+          <argument type="service" id="locale_listener"/>
+          <argument>onKernelRequest</argument>
+        </argument>
+        <argument>16</argument>
+      </call>
+      <call method="addListener">
+        <argument>kernel.finish_request</argument>
+        <argument type="collection">
+          <argument type="service" id="locale_listener"/>
+          <argument>onKernelFinishRequest</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>kernel.request</argument>
+        <argument type="collection">
+          <argument type="service" id="validate_request_listener"/>
+          <argument>onKernelRequest</argument>
+        </argument>
+        <argument>256</argument>
+      </call>
+      <call method="addListener">
+        <argument>kernel.request</argument>
+        <argument type="collection">
+          <argument type="service" id=".legacy_resolve_controller_name_subscriber"/>
+          <argument>resolveControllerName</argument>
+        </argument>
+        <argument>24</argument>
+      </call>
+      <call method="addListener">
+        <argument>kernel.response</argument>
+        <argument type="collection">
+          <argument type="service" id="disallow_search_engine_index_response_listener"/>
+          <argument>onResponse</argument>
+        </argument>
+        <argument>-255</argument>
+      </call>
+      <call method="addListener">
+        <argument>kernel.controller_arguments</argument>
+        <argument type="collection">
+          <argument type="service" id="exception_listener"/>
+          <argument>onControllerArguments</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>kernel.exception</argument>
+        <argument type="collection">
+          <argument type="service" id="exception_listener"/>
+          <argument>logKernelException</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>kernel.exception</argument>
+        <argument type="collection">
+          <argument type="service" id="exception_listener"/>
+          <argument>onKernelException</argument>
+        </argument>
+        <argument>-128</argument>
+      </call>
+      <call method="addListener">
+        <argument>console.error</argument>
+        <argument type="collection">
+          <argument type="service" id="console.error_listener"/>
+          <argument>onConsoleError</argument>
+        </argument>
+        <argument>-128</argument>
+      </call>
+      <call method="addListener">
+        <argument>console.terminate</argument>
+        <argument type="collection">
+          <argument type="service" id="console.error_listener"/>
+          <argument>onConsoleTerminate</argument>
+        </argument>
+        <argument>-128</argument>
+      </call>
+      <call method="addListener">
+        <argument>console.error</argument>
+        <argument type="collection">
+          <argument type="service" id="console.suggest_missing_package_subscriber"/>
+          <argument>onConsoleError</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>kernel.request</argument>
+        <argument type="collection">
+          <argument type="service" id="debug.debug_handlers_listener"/>
+          <argument>configure</argument>
+        </argument>
+        <argument>2048</argument>
+      </call>
+      <call method="addListener">
+        <argument>console.command</argument>
+        <argument type="collection">
+          <argument type="service" id="debug.debug_handlers_listener"/>
+          <argument>configure</argument>
+        </argument>
+        <argument>2048</argument>
+      </call>
+      <call method="addListener">
+        <argument>kernel.request</argument>
+        <argument type="collection">
+          <argument type="service" id="router_listener"/>
+          <argument>onKernelRequest</argument>
+        </argument>
+        <argument>32</argument>
+      </call>
+      <call method="addListener">
+        <argument>kernel.finish_request</argument>
+        <argument type="collection">
+          <argument type="service" id="router_listener"/>
+          <argument>onKernelFinishRequest</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>kernel.exception</argument>
+        <argument type="collection">
+          <argument type="service" id="router_listener"/>
+          <argument>onKernelException</argument>
+        </argument>
+        <argument>-64</argument>
+      </call>
+    </service>
+    <service id="debug.controller_resolver" class="Symfony\Component\HttpKernel\Controller\TraceableControllerResolver" public="false">
+      <tag name="monolog.logger" channel="request"/>
+      <argument type="service" id="debug.controller_resolver.inner"/>
+      <argument type="service" id="debug.stopwatch"/>
+    </service>
+    <service id="debug.argument_resolver" class="Symfony\Component\HttpKernel\Controller\TraceableArgumentResolver" public="false">
+      <argument type="service" id="debug.argument_resolver.inner"/>
+      <argument type="service" id="debug.stopwatch"/>
+    </service>
+    <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor" public="false">
+      <argument type="service" id="request_stack"/>
+    </service>
+    <service id=".1_LegacyRouteLoaderContainer~usGlw0u" class="Symfony\Bundle\FrameworkBundle\Routing\LegacyRouteLoaderContainer" public="false">
+      <argument type="service" id="service_container"/>
+      <argument type="service" id=".service_locator.k12hG.E"/>
+    </service>
+    <service id="routing.resolver" class="Symfony\Component\Config\Loader\LoaderResolver" public="false">
+      <call method="addLoader">
+        <argument type="service" id="routing.loader.xml"/>
+      </call>
+      <call method="addLoader">
+        <argument type="service" id="routing.loader.yml"/>
+      </call>
+      <call method="addLoader">
+        <argument type="service" id="routing.loader.php"/>
+      </call>
+      <call method="addLoader">
+        <argument type="service" id="routing.loader.glob"/>
+      </call>
+      <call method="addLoader">
+        <argument type="service" id="routing.loader.directory"/>
+      </call>
+      <call method="addLoader">
+        <argument type="service" id="routing.loader.container"/>
+      </call>
+      <call method="addLoader">
+        <argument type="service" id="routing.loader.annotation"/>
+      </call>
+      <call method="addLoader">
+        <argument type="service" id="routing.loader.annotation.directory"/>
+      </call>
+      <call method="addLoader">
+        <argument type="service" id="routing.loader.annotation.file"/>
+      </call>
+    </service>
+    <service id="routing.loader.xml" class="Symfony\Component\Routing\Loader\XmlFileLoader" public="false">
+      <tag name="routing.loader"/>
+      <argument type="service" id="file_locator"/>
+    </service>
+    <service id="routing.loader.yml" class="Symfony\Component\Routing\Loader\YamlFileLoader" public="false">
+      <tag name="routing.loader"/>
+      <argument type="service" id="file_locator"/>
+    </service>
+    <service id="routing.loader.php" class="Symfony\Component\Routing\Loader\PhpFileLoader" public="false">
+      <tag name="routing.loader"/>
+      <argument type="service" id="file_locator"/>
+    </service>
+    <service id="routing.loader.glob" class="Symfony\Component\Routing\Loader\GlobFileLoader" public="false">
+      <tag name="routing.loader"/>
+      <argument type="service" id="file_locator"/>
+    </service>
+    <service id="routing.loader.directory" class="Symfony\Component\Routing\Loader\DirectoryLoader" public="false">
+      <tag name="routing.loader"/>
+      <argument type="service" id="file_locator"/>
+    </service>
+    <service id="routing.loader.service" class="Symfony\Component\Routing\Loader\DependencyInjection\ServiceRouterLoader" public="false">
+      <argument type="service" id="service_container"/>
+      <deprecated>The "%service_id%" service is deprecated since Symfony 4.4, use "routing.loader.container" instead.</deprecated>
+    </service>
+    <service id="routing.loader.container" class="Symfony\Component\Routing\Loader\ContainerLoader" public="false">
+      <tag name="routing.loader"/>
+      <argument type="service" id=".1_LegacyRouteLoaderContainer~usGlw0u"/>
+    </service>
+    <service id="routing.loader" class="Symfony\Bundle\FrameworkBundle\Routing\DelegatingLoader" public="true">
+      <argument type="service" id="routing.resolver"/>
+      <argument type="collection"/>
+      <argument type="service" id=".legacy_controller_name_converter"/>
+    </service>
+    <service id="router.default" class="Symfony\Bundle\FrameworkBundle\Routing\Router" public="false">
+      <tag name="monolog.logger" channel="router"/>
+      <tag name="container.service_subscriber" id="routing.loader"/>
+      <argument type="service" id=".service_locator.1sxoqOx.router.default"/>
+      <argument>kernel::loadRoutes</argument>
+      <argument type="collection">
+        <argument key="cache_dir">/var/www/html/var/installer/cache</argument>
+        <argument key="debug">true</argument>
+        <argument key="generator_class">Symfony\Component\Routing\Generator\CompiledUrlGenerator</argument>
+        <argument key="generator_dumper_class">Symfony\Component\Routing\Generator\Dumper\CompiledUrlGeneratorDumper</argument>
+        <argument key="matcher_class">Symfony\Bundle\FrameworkBundle\Routing\RedirectableCompiledUrlMatcher</argument>
+        <argument key="matcher_dumper_class">Symfony\Component\Routing\Matcher\Dumper\CompiledUrlMatcherDumper</argument>
+        <argument key="strict_requirements">true</argument>
+        <argument key="resource_type">service</argument>
+      </argument>
+      <argument type="service" id="router.request_context" on-invalid="ignore"/>
+      <argument type="service" id="parameter_bag" on-invalid="ignore"/>
+      <argument type="service" id="monolog.logger.router" on-invalid="ignore"/>
+      <argument>en</argument>
+      <call method="setConfigCacheFactory">
+        <argument type="service" id="config_cache_factory"/>
+      </call>
+    </service>
+    <service id="router.request_context" class="Symfony\Component\Routing\RequestContext" public="false">
+      <argument></argument>
+      <argument>GET</argument>
+      <argument>localhost</argument>
+      <argument>http</argument>
+      <argument>80</argument>
+      <argument>443</argument>
+    </service>
+    <service id="router.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\RouterCacheWarmer" public="false">
+      <tag name="container.service_subscriber" id="router"/>
+      <tag name="kernel.cache_warmer"/>
+      <argument type="service" id=".service_locator.m90YCjy.router.cache_warmer"/>
+    </service>
+    <service id="router_listener" class="Symfony\Component\HttpKernel\EventListener\RouterListener" public="false">
+      <tag name="kernel.event_subscriber"/>
+      <tag name="monolog.logger" channel="request"/>
+      <tag name="container.hot_path"/>
+      <tag name="container.hot_path"/>
+      <argument type="service" id="router.default"/>
+      <argument type="service" id="request_stack"/>
+      <argument type="service" id="router.request_context" on-invalid="ignore"/>
+      <argument type="service" id="monolog.logger.request" on-invalid="ignore"/>
+      <argument>/var/www/html</argument>
+      <argument>true</argument>
+    </service>
+    <service id="Symfony\Bundle\FrameworkBundle\Controller\RedirectController" class="Symfony\Bundle\FrameworkBundle\Controller\RedirectController" public="true">
+      <argument type="service" id="router.default"/>
+      <argument>80</argument>
+      <argument>443</argument>
+    </service>
+    <service id="Symfony\Bundle\FrameworkBundle\Controller\TemplateController" class="Symfony\Bundle\FrameworkBundle\Controller\TemplateController" public="true">
+      <argument>null</argument>
+      <argument>null</argument>
+    </service>
+    <service id="routing.loader.annotation" class="Symfony\Bundle\FrameworkBundle\Routing\AnnotatedRouteControllerLoader" public="false">
+      <tag name="routing.loader" priority="-10"/>
+      <argument type="service" id="annotations.cached_reader"/>
+    </service>
+    <service id="routing.loader.annotation.directory" class="Symfony\Component\Routing\Loader\AnnotationDirectoryLoader" public="false">
+      <tag name="routing.loader" priority="-10"/>
+      <argument type="service" id="file_locator"/>
+      <argument type="service" id="routing.loader.annotation"/>
+    </service>
+    <service id="routing.loader.annotation.file" class="Symfony\Component\Routing\Loader\AnnotationFileLoader" public="false">
+      <tag name="routing.loader" priority="-10"/>
+      <argument type="service" id="file_locator"/>
+      <argument type="service" id="routing.loader.annotation"/>
+    </service>
+    <service id=".2_PhpArrayAdapter~9Zx4cQC" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" public="false">
+      <argument>/var/www/html/var/installer/cache/annotations.php</argument>
+      <argument type="service" id="cache.annotations"/>
+      <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
+    </service>
+    <service id=".1_ArrayCache~9Zx4cQC" class="Doctrine\Common\Cache\ArrayCache" public="false"/>
+    <service id="annotations.reader" class="Doctrine\Common\Annotations\AnnotationReader" public="false">
+      <call method="addGlobalIgnoredName">
+        <argument>required</argument>
+        <argument type="service" id="annotations.dummy_registry"/>
+      </call>
+    </service>
+    <service id="annotations.dummy_registry" class="Doctrine\Common\Annotations\AnnotationRegistry" public="false">
+      <call method="registerUniqueLoader">
+        <argument>class_exists</argument>
+      </call>
+    </service>
+    <service id="annotations.cached_reader" class="Doctrine\Common\Annotations\CachedReader" public="false">
+      <tag name="annotations.cached_reader"/>
+      <argument type="service" id="annotations.reader"/>
+      <argument type="service" id=".1_ArrayCache~9Zx4cQC"/>
+      <argument>true</argument>
+      <property name="cacheProviderBackup" type="service" id="annotations.cache"/>
+    </service>
+    <service id="annotations.filesystem_cache" class="Doctrine\Common\Cache\FilesystemCache" public="false">
+      <argument></argument>
+    </service>
+    <service id="annotations.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\AnnotationsCacheWarmer" public="false">
+      <tag name="kernel.cache_warmer"/>
+      <argument type="service" id="annotations.reader"/>
+      <argument>/var/www/html/var/installer/cache/annotations.php</argument>
+      <argument>#^Symfony\\(?:Component\\HttpKernel\\|Bundle\\FrameworkBundle\\Controller\\(?!.*Controller$))#</argument>
+      <argument>true</argument>
+    </service>
+    <service id="annotations.cache" class="Symfony\Component\Cache\DoctrineProvider" public="false">
+      <argument type="service" id=".2_PhpArrayAdapter~9Zx4cQC"/>
+    </service>
+    <service id="property_accessor" class="Symfony\Component\PropertyAccess\PropertyAccessor" public="false">
+      <argument>false</argument>
+      <argument>false</argument>
+      <argument type="service" id="cache.property_access" on-invalid="ignore"/>
+      <argument>true</argument>
+    </service>
+    <service id="secrets.vault" class="Symfony\Bundle\FrameworkBundle\Secrets\SodiumVault">
+      <tag name="container.env_var_loader"/>
+      <argument>/var/www/html/config/secrets/prod</argument>
+      <argument>%env(base64:default::SYMFONY_DECRYPTION_SECRET)%</argument>
+    </service>
+    <service id="secrets.local_vault" class="Symfony\Bundle\FrameworkBundle\Secrets\DotenvVault">
+      <argument>/var/www/html/.env.prod.local</argument>
+    </service>
+    <service id="mime_types" class="Symfony\Component\Mime\MimeTypes" public="false">
+      <call method="setDefault">
+        <argument type="service" id="mime_types"/>
+      </call>
+    </service>
+    <service id="monolog.logger" class="Symfony\Bridge\Monolog\Logger" public="false">
+      <argument>app</argument>
+      <call method="useMicrosecondTimestamps">
+        <argument>true</argument>
+      </call>
+      <call method="pushHandler">
+        <argument type="service" id="monolog.handler.main"/>
+      </call>
+    </service>
+    <service id="monolog.logger_prototype" class="Symfony\Bridge\Monolog\Logger" abstract="true">
+      <argument></argument>
+    </service>
+    <service id="monolog.activation_strategy.not_found" class="Symfony\Bridge\Monolog\Handler\FingersCrossed\NotFoundActivationStrategy" abstract="true"/>
+    <service id="monolog.handler.fingers_crossed.error_level_activation_strategy" class="Monolog\Handler\FingersCrossed\ErrorLevelActivationStrategy" abstract="true"/>
+    <service id="monolog.formatter.chrome_php" class="Monolog\Formatter\ChromePHPFormatter" public="false"/>
+    <service id="monolog.formatter.gelf_message" class="Monolog\Formatter\GelfMessageFormatter" public="false"/>
+    <service id="monolog.formatter.html" class="Monolog\Formatter\HtmlFormatter" public="false"/>
+    <service id="monolog.formatter.json" class="Monolog\Formatter\JsonFormatter" public="false"/>
+    <service id="monolog.formatter.line" class="Monolog\Formatter\LineFormatter" public="false"/>
+    <service id="monolog.formatter.loggly" class="Monolog\Formatter\LogglyFormatter" public="false"/>
+    <service id="monolog.formatter.normalizer" class="Monolog\Formatter\NormalizerFormatter" public="false"/>
+    <service id="monolog.formatter.scalar" class="Monolog\Formatter\ScalarFormatter" public="false"/>
+    <service id="monolog.formatter.wildfire" class="Monolog\Formatter\WildfireFormatter" public="false"/>
+    <service id="monolog.formatter.logstash" class="Monolog\Formatter\LogstashFormatter" public="false">
+      <argument>app</argument>
+    </service>
+    <service id="monolog.processor.psr_log_message" class="Monolog\Processor\PsrLogMessageProcessor" public="false"/>
+    <service id="monolog.handler.main" class="Monolog\Handler\StreamHandler">
+      <tag name="kernel.reset" method="reset"/>
+      <argument>/var/www/html/var/logs/prod.log</argument>
+      <argument>100</argument>
+      <argument>true</argument>
+      <argument>null</argument>
+      <argument>false</argument>
+      <call method="pushProcessor">
+        <argument type="service" id="monolog.processor.psr_log_message"/>
+      </call>
+    </service>
+    <service id="Pimcore\Bundle\InstallBundle\Command\InstallCommand" class="Pimcore\Bundle\InstallBundle\Command\InstallCommand" public="true" autowire="true" autoconfigure="true">
+      <tag name="console.command"/>
+      <argument type="service" id="Pimcore\Bundle\InstallBundle\Installer"/>
+      <argument type="service" id="debug.event_dispatcher"/>
+    </service>
+    <service id="Pimcore\Composer\PackageInfo" class="Pimcore\Composer\PackageInfo" public="false" autowire="true" autoconfigure="true"/>
+    <service id="Pimcore\Bundle\InstallBundle\Installer" class="Pimcore\Bundle\InstallBundle\Installer" public="false" autowire="true" autoconfigure="true">
+      <argument type="service" id="monolog.logger"/>
+      <argument type="service" id="debug.event_dispatcher"/>
+    </service>
+    <service id=".instanceof.Symfony\Component\Console\Command\Command.0.Pimcore\Bundle\InstallBundle\Command\InstallCommand" class="Pimcore\Bundle\InstallBundle\Command\InstallCommand" public="true" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.Pimcore\Bundle\InstallBundle\Command\InstallCommand" class="Pimcore\Bundle\InstallBundle\Command\InstallCommand" public="true" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".service_locator.CmORmuK" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="base64" type="service" id="container.env_var_processor"/>
+        <argument key="bool" type="service" id="container.env_var_processor"/>
+        <argument key="const" type="service" id="container.env_var_processor"/>
+        <argument key="csv" type="service" id="container.env_var_processor"/>
+        <argument key="default" type="service" id="container.env_var_processor"/>
+        <argument key="file" type="service" id="container.env_var_processor"/>
+        <argument key="float" type="service" id="container.env_var_processor"/>
+        <argument key="int" type="service" id="container.env_var_processor"/>
+        <argument key="json" type="service" id="container.env_var_processor"/>
+        <argument key="key" type="service" id="container.env_var_processor"/>
+        <argument key="query_string" type="service" id="container.env_var_processor"/>
+        <argument key="require" type="service" id="container.env_var_processor"/>
+        <argument key="resolve" type="service" id="container.env_var_processor"/>
+        <argument key="string" type="service" id="container.env_var_processor"/>
+        <argument key="trim" type="service" id="container.env_var_processor"/>
+        <argument key="url" type="service" id="container.env_var_processor"/>
+      </argument>
+    </service>
+    <service id=".service_locator.I3K77mT" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection"/>
+    </service>
+    <service id=".service_locator._cmka45" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="inline" type="service" id="fragment.renderer.inline"/>
+      </argument>
+    </service>
+    <service id="debug.argument_resolver.request_attribute" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\TraceableValueResolver">
+      <tag name="controller.argument_value_resolver" priority="100"/>
+      <argument type="service" id="debug.argument_resolver.request_attribute.inner"/>
+      <argument type="service" id="debug.stopwatch"/>
+    </service>
+    <service id="debug.argument_resolver.request" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\TraceableValueResolver">
+      <tag name="controller.argument_value_resolver" priority="50"/>
+      <argument type="service" id="debug.argument_resolver.request.inner"/>
+      <argument type="service" id="debug.stopwatch"/>
+    </service>
+    <service id="debug.argument_resolver.session" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\TraceableValueResolver">
+      <tag name="controller.argument_value_resolver" priority="50"/>
+      <argument type="service" id="debug.argument_resolver.session.inner"/>
+      <argument type="service" id="debug.stopwatch"/>
+    </service>
+    <service id="debug.argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\TraceableValueResolver">
+      <tag name="controller.argument_value_resolver" priority="-50"/>
+      <argument type="service" id="debug.argument_resolver.service.inner"/>
+      <argument type="service" id="debug.stopwatch"/>
+    </service>
+    <service id="debug.argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\TraceableValueResolver">
+      <tag name="controller.argument_value_resolver" priority="-100"/>
+      <argument type="service" id="debug.argument_resolver.default.inner"/>
+      <argument type="service" id="debug.stopwatch"/>
+    </service>
+    <service id="debug.argument_resolver.variadic" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\TraceableValueResolver">
+      <tag name="controller.argument_value_resolver" priority="-150"/>
+      <argument type="service" id="debug.argument_resolver.variadic.inner"/>
+      <argument type="service" id="debug.stopwatch"/>
+    </service>
+    <service id="debug.argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\TraceableValueResolver">
+      <tag name="controller.argument_value_resolver" priority="-200"/>
+      <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
+      <argument type="service" id="debug.stopwatch"/>
+    </service>
+    <service id="monolog.logger.request" class="Symfony\Bridge\Monolog\Logger">
+      <argument>request</argument>
+      <call method="pushHandler">
+        <argument type="service" id="monolog.handler.main"/>
+      </call>
+    </service>
+    <service id="monolog.logger.console" class="Symfony\Bridge\Monolog\Logger">
+      <argument>console</argument>
+      <call method="pushHandler">
+        <argument type="service" id="monolog.handler.main"/>
+      </call>
+    </service>
+    <service id="monolog.logger.cache" class="Symfony\Bridge\Monolog\Logger">
+      <argument>cache</argument>
+      <call method="pushHandler">
+        <argument type="service" id="monolog.handler.main"/>
+      </call>
+    </service>
+    <service id="monolog.logger.php" class="Symfony\Bridge\Monolog\Logger">
+      <argument>php</argument>
+      <call method="pushHandler">
+        <argument type="service" id="monolog.handler.main"/>
+      </call>
+    </service>
+    <service id="monolog.logger.event" class="Symfony\Bridge\Monolog\Logger">
+      <argument>event</argument>
+      <call method="pushHandler">
+        <argument type="service" id="monolog.handler.null_internal"/>
+      </call>
+    </service>
+    <service id="monolog.logger.router" class="Symfony\Bridge\Monolog\Logger">
+      <argument>router</argument>
+      <call method="pushHandler">
+        <argument type="service" id="monolog.handler.main"/>
+      </call>
+    </service>
+    <service id="monolog.logger.pimcore" class="Symfony\Bridge\Monolog\Logger" public="true">
+      <argument>pimcore</argument>
+      <call method="pushHandler">
+        <argument type="service" id="monolog.handler.main"/>
+      </call>
+    </service>
+    <service id="monolog.handler.null_internal" class="Monolog\Handler\NullHandler"/>
+    <service id=".service_locator.1sxoqOx" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="routing.loader" type="service" id="routing.loader"/>
+      </argument>
+    </service>
+    <service id=".service_locator.1sxoqOx.router.default" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="router.default"/>
+      <argument>router.default</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.1sxoqOx" method="withContext"/>
+    </service>
+    <service id=".service_locator.m90YCjy" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="router" type="service" id="router.default"/>
+      </argument>
+    </service>
+    <service id=".service_locator.m90YCjy.router.cache_warmer" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="router.cache_warmer"/>
+      <argument>router.cache_warmer</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.m90YCjy" method="withContext"/>
+    </service>
+    <service id=".service_locator.wnlveDj" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="reverse_container" type="service" id="reverse_container" on-invalid="ignore_uninitialized"/>
+      </argument>
+    </service>
+    <service id=".service_locator.k12hG.E" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="kernel" type="service" id="kernel"/>
+      </argument>
+    </service>
+    <service id="debug.event_dispatcher.inner" class="Symfony\Component\EventDispatcher\EventDispatcher" public="false"/>
+    <service id="debug.controller_resolver.inner" class="Symfony\Bundle\FrameworkBundle\Controller\ControllerResolver" public="false">
+      <argument type="service" id="service_container"/>
+      <argument type="service" id="monolog.logger.request" on-invalid="ignore"/>
+      <argument type="service" id=".legacy_controller_name_converter"/>
+    </service>
+    <service id="debug.argument_resolver.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver" public="false">
+      <argument type="service" id="argument_metadata_factory"/>
+      <argument type="iterator">
+        <argument type="service" id="debug.argument_resolver.request_attribute"/>
+        <argument type="service" id="debug.argument_resolver.request"/>
+        <argument type="service" id="debug.argument_resolver.session"/>
+        <argument type="service" id="debug.argument_resolver.service"/>
+        <argument type="service" id="debug.argument_resolver.default"/>
+        <argument type="service" id="debug.argument_resolver.variadic"/>
+        <argument type="service" id="debug.argument_resolver.not_tagged_controller"/>
+      </argument>
+    </service>
+    <service id="debug.argument_resolver.request_attribute.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\RequestAttributeValueResolver" public="false"/>
+    <service id="debug.argument_resolver.request.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\RequestValueResolver" public="false"/>
+    <service id="debug.argument_resolver.session.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\SessionValueResolver" public="false"/>
+    <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
+      <argument type="service" id=".service_locator.I3K77mT"/>
+    </service>
+    <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
+    <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
+    <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
+      <argument type="service" id=".service_locator.I3K77mT"/>
+    </service>
+    <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
+      <argument type="service" id=".service_locator.8JP6Glv"/>
+      <argument type="collection">
+        <argument key="about">console.command.about</argument>
+        <argument key="assets:install">console.command.assets_install</argument>
+        <argument key="cache:clear">console.command.cache_clear</argument>
+        <argument key="cache:pool:clear">console.command.cache_pool_clear</argument>
+        <argument key="cache:pool:prune">console.command.cache_pool_prune</argument>
+        <argument key="cache:pool:delete">console.command.cache_pool_delete</argument>
+        <argument key="cache:pool:list">console.command.cache_pool_list</argument>
+        <argument key="cache:warmup">console.command.cache_warmup</argument>
+        <argument key="debug:config">console.command.config_debug</argument>
+        <argument key="config:dump-reference">console.command.config_dump_reference</argument>
+        <argument key="debug:container">console.command.container_debug</argument>
+        <argument key="lint:container">console.command.container_lint</argument>
+        <argument key="debug:autowiring">console.command.debug_autowiring</argument>
+        <argument key="debug:event-dispatcher">console.command.event_dispatcher_debug</argument>
+        <argument key="debug:router">console.command.router_debug</argument>
+        <argument key="router:match">console.command.router_match</argument>
+        <argument key="lint:xliff">console.command.xliff_lint</argument>
+        <argument key="lint:yaml">console.command.yaml_lint</argument>
+        <argument key="secrets:set">console.command.secrets_set</argument>
+        <argument key="secrets:remove">console.command.secrets_remove</argument>
+        <argument key="secrets:generate-keys">console.command.secrets_generate_key</argument>
+        <argument key="secrets:list">console.command.secrets_list</argument>
+        <argument key="secrets:decrypt-to-local">console.command.secrets_decrypt_to_local</argument>
+        <argument key="secrets:encrypt-from-local">console.command.secrets_encrypt_from_local</argument>
+      </argument>
+    </service>
+    <service id=".service_locator.8JP6Glv" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="console.command.about" type="service" id="console.command.about"/>
+        <argument key="console.command.assets_install" type="service" id="console.command.assets_install"/>
+        <argument key="console.command.cache_clear" type="service" id="console.command.cache_clear"/>
+        <argument key="console.command.cache_pool_clear" type="service" id="console.command.cache_pool_clear"/>
+        <argument key="console.command.cache_pool_delete" type="service" id="console.command.cache_pool_delete"/>
+        <argument key="console.command.cache_pool_list" type="service" id="console.command.cache_pool_list"/>
+        <argument key="console.command.cache_pool_prune" type="service" id="console.command.cache_pool_prune"/>
+        <argument key="console.command.cache_warmup" type="service" id="console.command.cache_warmup"/>
+        <argument key="console.command.config_debug" type="service" id="console.command.config_debug"/>
+        <argument key="console.command.config_dump_reference" type="service" id="console.command.config_dump_reference"/>
+        <argument key="console.command.container_debug" type="service" id="console.command.container_debug"/>
+        <argument key="console.command.container_lint" type="service" id="console.command.container_lint"/>
+        <argument key="console.command.debug_autowiring" type="service" id="console.command.debug_autowiring"/>
+        <argument key="console.command.event_dispatcher_debug" type="service" id="console.command.event_dispatcher_debug"/>
+        <argument key="console.command.router_debug" type="service" id="console.command.router_debug"/>
+        <argument key="console.command.router_match" type="service" id="console.command.router_match"/>
+        <argument key="console.command.secrets_decrypt_to_local" type="service" id="console.command.secrets_decrypt_to_local"/>
+        <argument key="console.command.secrets_encrypt_from_local" type="service" id="console.command.secrets_encrypt_from_local"/>
+        <argument key="console.command.secrets_generate_key" type="service" id="console.command.secrets_generate_key"/>
+        <argument key="console.command.secrets_list" type="service" id="console.command.secrets_list"/>
+        <argument key="console.command.secrets_remove" type="service" id="console.command.secrets_remove"/>
+        <argument key="console.command.secrets_set" type="service" id="console.command.secrets_set"/>
+        <argument key="console.command.xliff_lint" type="service" id="console.command.xliff_lint"/>
+        <argument key="console.command.yaml_lint" type="service" id="console.command.yaml_lint"/>
+      </argument>
+    </service>
+    <service id="Psr\Container\ContainerInterface" alias="service_container" public="false"/>
+    <service id="Symfony\Component\DependencyInjection\ContainerInterface" alias="service_container" public="false"/>
+    <service id="controller_name_converter" alias=".legacy_controller_name_converter" public="false">
+      <deprecated>The "%alias_id%" service is deprecated since Symfony 4.3.</deprecated>
+    </service>
+    <service id="resolve_controller_name_subscriber" alias=".legacy_resolve_controller_name_subscriber" public="false">
+      <deprecated>The "%alias_id%" service is deprecated since Symfony 4.3.</deprecated>
+    </service>
+    <service id="Symfony\Component\DependencyInjection\ParameterBag\ContainerBagInterface" alias="parameter_bag" public="false"/>
+    <service id="Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface" alias="parameter_bag" public="false"/>
+    <service id="Symfony\Component\EventDispatcher\EventDispatcherInterface" alias="debug.event_dispatcher" public="false"/>
+    <service id="Symfony\Contracts\EventDispatcher\EventDispatcherInterface" alias="debug.event_dispatcher" public="false"/>
+    <service id="Symfony\Component\HttpKernel\HttpKernelInterface" alias="http_kernel" public="false"/>
+    <service id="Symfony\Component\HttpFoundation\RequestStack" alias="request_stack" public="false"/>
+    <service id="Symfony\Component\HttpFoundation\UrlHelper" alias="url_helper" public="false"/>
+    <service id="Symfony\Component\HttpKernel\KernelInterface" alias="kernel" public="false"/>
+    <service id="Symfony\Component\Filesystem\Filesystem" alias="filesystem" public="false"/>
+    <service id="Symfony\Component\HttpKernel\Config\FileLocator" alias="file_locator" public="false"/>
+    <service id="Symfony\Component\DependencyInjection\ReverseContainer" alias="reverse_container" public="false"/>
+    <service id="error_renderer.html" alias="error_handler.error_renderer.html"/>
+    <service id="error_renderer" alias="error_handler.error_renderer.html"/>
+    <service id="Psr\Container\ContainerInterface $parameterBag" alias="parameter_bag"/>
+    <service id="cache.app_clearer" alias="cache.default_clearer" public="true"/>
+    <service id="Psr\Cache\CacheItemPoolInterface" alias="cache.app" public="false"/>
+    <service id="Psr\SimpleCache\CacheInterface" alias="cache.app.simple" public="false"/>
+    <service id="Symfony\Component\Cache\Adapter\AdapterInterface" alias="cache.app" public="false"/>
+    <service id="Symfony\Contracts\Cache\CacheInterface" alias="cache.app" public="false"/>
+    <service id="Symfony\Contracts\Cache\TagAwareCacheInterface" alias="cache.app.taggable" public="false"/>
+    <service id="cache.default_redis_provider" alias=".cache_connection.GD_MSZC" public="false"/>
+    <service id="cache.default_memcached_provider" alias=".cache_connection.JKE6keX" public="false"/>
+    <service id="cache.default_pdo_provider" alias="database_connection" public="false"/>
+    <service id="Symfony\Component\HttpKernel\Debug\FileLinkFormatter" alias="debug.file_link_formatter" public="false"/>
+    <service id="Symfony\Component\Stopwatch\Stopwatch" alias="debug.stopwatch" public="false"/>
+    <service id="router" alias="router.default" public="true"/>
+    <service id="Symfony\Component\Routing\RouterInterface" alias="router.default" public="false"/>
+    <service id="Symfony\Component\Routing\Generator\UrlGeneratorInterface" alias="router.default" public="false"/>
+    <service id="Symfony\Component\Routing\Matcher\UrlMatcherInterface" alias="router.default" public="false"/>
+    <service id="Symfony\Component\Routing\RequestContextAwareInterface" alias="router.default" public="false"/>
+    <service id="Symfony\Component\Routing\RequestContext" alias="router.request_context" public="false"/>
+    <service id="annotation_reader" alias="annotations.cached_reader"/>
+    <service id="Doctrine\Common\Annotations\Reader" alias="annotations.cached_reader" public="false"/>
+    <service id="Symfony\Component\PropertyAccess\PropertyAccessorInterface" alias="property_accessor" public="false"/>
+    <service id="Symfony\Component\Mime\MimeTypesInterface" alias="mime_types" public="false"/>
+    <service id="Symfony\Component\Mime\MimeTypeGuesserInterface" alias="mime_types" public="false"/>
+    <service id="logger" alias="monolog.logger"/>
+    <service id="Psr\Log\LoggerInterface" alias="monolog.logger" public="false"/>
+    <service id="container.env_var_processors_locator" alias=".service_locator.CmORmuK" public="true"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.I3K77mT"/>
+    <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
+    <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>
+    <service id="Psr\Log\LoggerInterface $cacheLogger" alias="monolog.logger.cache"/>
+    <service id="Psr\Log\LoggerInterface $phpLogger" alias="monolog.logger.php"/>
+    <service id="Psr\Log\LoggerInterface $eventLogger" alias="monolog.logger.event"/>
+    <service id="Psr\Log\LoggerInterface $routerLogger" alias="monolog.logger.router"/>
+    <service id="Psr\Log\LoggerInterface $pimcoreLogger" alias="monolog.logger.pimcore"/>
+    <service id="event_dispatcher" alias="debug.event_dispatcher" public="true"/>
+    <service id="controller_resolver" alias="debug.controller_resolver" public="false"/>
+    <service id="argument_resolver" alias="debug.argument_resolver" public="false"/>
+    <service id="argument_resolver.request_attribute" alias="debug.argument_resolver.request_attribute" public="false"/>
+    <service id="argument_resolver.request" alias="debug.argument_resolver.request" public="false"/>
+    <service id="argument_resolver.session" alias="debug.argument_resolver.session" public="false"/>
+    <service id="argument_resolver.service" alias="debug.argument_resolver.service" public="false"/>
+    <service id="argument_resolver.default" alias="debug.argument_resolver.default" public="false"/>
+    <service id="argument_resolver.variadic" alias="debug.argument_resolver.variadic" public="false"/>
+    <service id="argument_resolver.not_tagged_controller" alias="debug.argument_resolver.not_tagged_controller" public="false"/>
+  </services>
+</container>

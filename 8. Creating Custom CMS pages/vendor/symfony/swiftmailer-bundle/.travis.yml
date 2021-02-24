@@ -1,0 +1,33 @@
+language: php
+
+sudo: false
+
+cache:
+  directories:
+    - $HOME/.composer/cache/files
+    - $HOME/.symfony-phpunit
+
+env:
+  global:
+    - SYMFONY_PHPUNIT_DIR=$HOME/.symfony-phpunit
+
+matrix:
+  fast_finish: true
+  include:
+    - php: 7.1
+      env: COMPOSER_FLAGS="--prefer-lowest" SYMFONY_DEPRECATIONS_HELPER=weak
+    - php: 7.2
+    - php: 7.3
+    - php: 7.4
+      env: DEPENDENCIES=dev
+
+before_install:
+    - phpenv config-rm xdebug.ini
+    - composer global require --no-progress --no-scripts --no-plugins symfony/flex dev-master
+    - if [ "$DEPENDENCIES" = "dev" ]; then composer config minimum-stability dev; fi;
+
+install:
+    - travis_retry composer update $COMPOSER_FLAGS
+    - ./vendor/bin/simple-phpunit install
+
+script: ./vendor/bin/simple-phpunit
