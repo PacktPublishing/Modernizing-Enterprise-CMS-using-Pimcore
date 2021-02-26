@@ -1,0 +1,19 @@
+
+{% if editmode %}
+
+{{pimcore_select('style', {
+            "store" : [
+                ['h1', 'H1'],
+                ['h2', 'H2'],
+                ['h3', 'H3']
+            ],
+            "defaultValue" : "h1"
+})}}
+
+{{pimcore_input('text')}}
+        
+{% else %}
+
+<{{pimcore_select('style')}}>{{pimcore_input('text')}}<{{pimcore_select('style')}}>
+
+{% endif %}

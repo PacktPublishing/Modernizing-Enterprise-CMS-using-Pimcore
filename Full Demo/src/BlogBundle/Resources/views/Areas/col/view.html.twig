@@ -1,0 +1,20 @@
+
+	
+	
+    {% set areaBlock = pimcore_areablock("cell-content", {"manual":"true",  }) %}
+    {% do areaBlock.start() %}
+
+        {% for i in pimcore_iterate_block(areaBlock) %}
+            {% do areaBlock.blockConstruct() %}
+            
+
+                        {% do areaBlock.blockStart() %}dsfs
+                        {% do areaBlock.content() %}
+                        {% do areaBlock.blockEnd() %}
+                
+                
+            {% do areaBlock.blockDestruct() %}
+        {% endfor %}
+
+
+    {% do areaBlock.end() %}

@@ -36,9 +36,11 @@ class ContactForm extends AbstractTemplateAreabrick
         $view=$info->getView();
         //$info->getParam("name")
         //$params=$info->getParams();
+        //$view->id= $info->getId();
+        $view->id= $info->getEditable()->getName();
 
         $sendEmail=$request->get("sendEmail");
-        if($sendEmail)
+        if($sendEmail==$view->id)
         {
             $name=$request->get("name");
             $email=$request->get("email");
@@ -61,6 +63,7 @@ class ContactForm extends AbstractTemplateAreabrick
             $view->subject=$subject;
             $view->message=$message;
             $view->alert=$alert;
+            
         }
         
     }

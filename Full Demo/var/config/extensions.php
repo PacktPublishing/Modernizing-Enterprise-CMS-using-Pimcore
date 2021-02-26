@@ -2,6 +2,7 @@
 
 return [
     "bundle" => [
-        "BlogBundle\\BlogBundle" => TRUE
+        "BlogBundle\\BlogBundle" => TRUE,
+        "ToolboxBundle\\ToolboxBundle" => TRUE
     ]
 ];

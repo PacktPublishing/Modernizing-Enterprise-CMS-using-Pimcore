@@ -1,0 +1,42 @@
+{% macro printif(text, print) %}
+    {% if v %}
+        {{text |raw }}
+    {% endif %}
+{% endmacro %}
+
+{% macro includeif(file, print) %}
+    {% if print %}
+         {% include file  %} 
+    {% endif %}
+{% endmacro %}
+
+
+{# _self.includeif("BlogBundle:Macros:editcss.html.twig", true) #}
+
+
+
+
+ 
+ 
+
+{% set areaBlock = pimcore_areablock("col-list", {"manual":"true", "allowed":["col"] ,"class":"row-item"}) %}
+{% do areaBlock.start() %}
+   {{ _self.printif('<div class="table-wrap"><table class="row-table"> <tr>',editmode) }} 
+    {% for i in pimcore_iterate_block(areaBlock) %}
+        {% do areaBlock.blockConstruct() %}
+                 {{ _self.printif('<td>',editmode) }} 
+                 
+                  
+                        {% do areaBlock.blockStart() %}
+          
+                        {% do areaBlock.content() %}
+            
+                        {% do areaBlock.blockEnd() %}
+           
+                 {{ _self.printif('</td>',editmode) }}  
+            
+        {% do areaBlock.blockDestruct() %}
+    {% endfor %}
+ {{ _self.printif('</tr></table></div>', editmode) }}
+
+{% do areaBlock.end() %}

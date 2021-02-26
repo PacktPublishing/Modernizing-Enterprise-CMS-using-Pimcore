@@ -22,6 +22,13 @@ Each subfolder is a different test case. Enter the folder to get the info about 
 3. you cannot commit the database, but you can share a SQL zipped files with the dump
 
 
+## TODOS fulldemo
+- [ ] class install
+- [ ] link user to class
+- [ ] create data object folders
+- [ ] custom header image (template editable or setting?)
+
+
 ## Credits
 Maarten van den Heuvel</a> on <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span> 
 

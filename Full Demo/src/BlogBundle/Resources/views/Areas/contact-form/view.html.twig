@@ -5,12 +5,14 @@
  <div class="alert alert-primary col-md-12" role="alert">
   {{ alert }}
 </div>
- {% endif%}
+ {% endif %}
+
+ 
 
         <!--Grid column-->
         <div class="col-md-12">
             <form id="contact-form" name="contact-form"  method="POST">
-                <input type="hidden" name="sendEmail" value="true"/>
+                <input type="hidden" name="sendEmail" value="{{id}}"/>
                 <!--Grid row-->
                 <div class="row">
 

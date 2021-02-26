@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1915ec87d743404e8a1ab5574e46d493",
+    "content-hash": "4e9035ea64cca06444f0d0b5903d1085",
     "packages": [
         {
             "name": "amnuts/opcache-gui",
@@ -457,6 +457,65 @@
             },
             "abandoned": "psr/container",
             "time": "2017-02-14T19:40:03+00:00"
+        },
+        {
+            "name": "dachcom-digital/toolbox",
+            "version": "v3.2.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dachcom-digital/pimcore-toolbox.git",
+                "reference": "3a91ddf1aa03b654bf452a84d8522e54a46a3b7a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dachcom-digital/pimcore-toolbox/zipball/3a91ddf1aa03b654bf452a84d8522e54a46a3b7a",
+                "reference": "3a91ddf1aa03b654bf452a84d8522e54a46a3b7a",
+                "shasum": ""
+            },
+            "require": {
+                "pimcore/pimcore": "^6.0"
+            },
+            "conflict": {
+                "symfony/monolog-bundle": "3.6.0"
+            },
+            "require-dev": {
+                "codeception/codeception": "~2.4.0",
+                "phpstan/phpstan": "^0.12",
+                "phpstan/phpstan-symfony": "^0.12",
+                "symplify/easy-coding-standard": "^5.4"
+            },
+            "type": "pimcore-bundle",
+            "extra": {
+                "pimcore": {
+                    "bundles": [
+                        "ToolboxBundle\\ToolboxBundle"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ToolboxBundle\\": "src/ToolboxBundle"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "DACHCOM.DIGITAL Stefan Hagspiel",
+                    "email": "shagspiel@dachcom.ch",
+                    "homepage": "http://www.dachcom.com/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Pimcore Project Kickstarter.",
+            "homepage": "https://github.com/dachcom-digital/pimcore-toolbox",
+            "keywords": [
+                "Toolbox",
+                "pimcore"
+            ],
+            "time": "2021-02-01T07:59:52+00:00"
         },
         {
             "name": "dasprid/enum",
@@ -10300,5 +10359,5 @@
         "php": ">=7.2"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "1.1.0"
 }
