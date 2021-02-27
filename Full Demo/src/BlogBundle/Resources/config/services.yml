@@ -22,3 +22,10 @@ services:
 #            - "@service_id"
 #            - "plain_value"
 #            - "%parameter%"
+
+    BlogBundle\Setup\BlogInstaller:
+        public: true
+        autowire: true
+        calls:
+            - [setLogger, ['@Pimcore\Log\ApplicationLogger']]
+
