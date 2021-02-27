@@ -87,7 +87,7 @@ class BlogInstaller  extends AbstractInstaller
 
     public function canBeInstalled()
     {
-        return true; // this can be customized
+        return false; // this can be customized
     }
 
 
