@@ -2,11 +2,9 @@
 
 {% extends 'BlogBundle:Layout:layout.html.twig' %}
 
-
 {% block content %}
 
  {% include 'BlogBundle:Layout:header.html.twig' %}
-
 
     {{ pimcore_areablock("content", {'allowed':['container']})}}
 
