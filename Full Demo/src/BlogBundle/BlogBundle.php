@@ -12,4 +12,9 @@ class BlogBundle extends AbstractPimcoreBundle
             '/bundles/blog/js/pimcore/startup.js'
         ];
     }
+
+    public function getInstaller()
+    {        
+        return $this->container->get(Setup\BlogInstaller::class);      
+    }
 }

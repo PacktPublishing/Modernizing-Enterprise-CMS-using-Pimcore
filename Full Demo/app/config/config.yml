@@ -2,7 +2,27 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
-    - { resource: 'local/' }
+     # - { resource: 'local/' } removed... it users environments now!
+
+doctrine:
+    dbal:
+        connections:
+            default:              
+                host: '%PIMCORE_HOST%'
+                port: '%PIMCORE_PORT%'
+                dbname: '%PIMCORE_DB%'
+                user: '%PIMCORE_USERNAME%'
+                password: '%PIMCORE_PASSWORD%'
+
+parameters:
+    pimcore_test.db.dsn: '%env(PIMCORE_TEST_DB_DSN)%'
+    env(PIMCORE_TEST_DB_DSN): ~
+    PIMCORE_ENVIRONMENT: '%env(PIMCORE_ENVIRONMENT)%'
+    PIMCORE_HOST:  '%env(PIMCORE_HOST)%'
+    PIMCORE_DB:  '%env(PIMCORE_DB)%'
+    PIMCORE_USERNAME:  '%env(PIMCORE_USERNAME)%'
+    PIMCORE_PASSWORD:  '%env(PIMCORE_PASSWORD)%'
+    PIMCORE_PORT: '%env(PIMCORE_PORT)%'
 
 pimcore:
 

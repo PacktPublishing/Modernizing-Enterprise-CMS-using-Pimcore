@@ -27,6 +27,13 @@ services:
     #container_name: pimcore-php
     volumes:
       - .:/var/www/html:cached
+    environment: 
+    - PIMCORE_ENVIRONMENT=dev
+    - PIMCORE_HOST=db
+    - PIMCORE_DB=pimcore
+    - PIMCORE_USERNAME=pimcore
+    - PIMCORE_PASSWORD=pimcore
+    - PIMCORE_PORT=3306
     ports:
      - 80:80
      - 443:443
@@ -45,3 +52,4 @@ services:
 
 volumes:
   pimcore-database:
+
