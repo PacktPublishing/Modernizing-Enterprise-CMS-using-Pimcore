@@ -1,0 +1,15 @@
+
+
+{% extends 'BlogBundle:Layout:layout.html.twig' %}
+
+{% block content %}
+
+ {% include 'BlogBundle:Layout:header.html.twig' %}
+
+   {# {{page}}
+   {{article}} #}
+
+   <h1>{{article.getTitle()}}</h1>
+  <p> {{article.getBody() | raw}} </p>
+
+{% endblock %}

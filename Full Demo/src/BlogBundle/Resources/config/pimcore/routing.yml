@@ -1,3 +1,7 @@
 blog_homepage:
     path:     /blog
     defaults: { _controller: BlogBundle:Default:index }
+
+blog_article:
+    path:      /blog/article/{page}
+    defaults:  { _controller: BlogBundle:Blog:article }
