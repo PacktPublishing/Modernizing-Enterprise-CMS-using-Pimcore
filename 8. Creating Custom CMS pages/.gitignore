@@ -36,8 +36,8 @@
 /var/config/tag-manager.php
 /var/config/reports.php
 
-
-/web/var/
+#Commented for allow restore full
+#/web/var/
 /web/sitemap*.xml
 
 # PHP-CS-Fixer

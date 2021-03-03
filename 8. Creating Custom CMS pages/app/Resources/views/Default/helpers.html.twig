@@ -11,7 +11,7 @@ url: {{ myDoc}}
 
 
 <h2> Fetching Asset </h2>
-{% set myDoc = pimcore_asset(2) %}
+{% set myDoc = pimcore_asset(3) %}
 url: {{ myDoc}} <br>
 filename: {{ myDoc.getFilename}}
 <img src="{{ myDoc}}"  height="30"/>
@@ -121,7 +121,7 @@ My content PIMCore loves CMS
 {{ pimcore_website_config('mykey') }}
 
 <h2> Thumbnail </h2>
-{% set asset = pimcore_asset(2) %}
+{% set asset = pimcore_asset(3) %}
 {{ asset.getThumbnail('MyThubnails').getHtml() | raw }}
 <br>
 {{ asset.getThumbnail({

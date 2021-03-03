@@ -24,7 +24,7 @@ return [
         "preserveMetaData" => FALSE,
         "rasterizeSVG" => FALSE,
         "downloadable" => FALSE,
-        "modificationDate" => 1612707488,
+        "modificationDate" => 1614798089,
         "creationDate" => 1612707204,
         "forcePictureTag" => FALSE,
         "id" => "MyThubnails"
@@ -52,7 +52,7 @@ return [
         "preserveMetaData" => FALSE,
         "rasterizeSVG" => FALSE,
         "downloadable" => FALSE,
-        "modificationDate" => 1612713022,
+        "modificationDate" => 1614798093,
         "creationDate" => 1612713004,
         "forcePictureTag" => FALSE,
         "id" => "MiniIcons"
