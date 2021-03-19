@@ -1,3 +1,0 @@
-[07-Feb-2021 14:34:29 Europe/Berlin] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in /var/www/html/vendor/symfony/symfony/src/Symfony/Component/Debug/Exception/OutOfMemoryException.php on line 1
-[07-Feb-2021 14:34:29 Europe/Berlin] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) in Unknown on line 0
-[07-Feb-2021 14:25:33 UTC] PHP Fatal error:  Cannot declare class AppBundle\Templating\Helper\TimestampHelper, because the name is already in use in /var/www/html/src/AppBundle/Templating/Helper/Timestamp.php on line 0
