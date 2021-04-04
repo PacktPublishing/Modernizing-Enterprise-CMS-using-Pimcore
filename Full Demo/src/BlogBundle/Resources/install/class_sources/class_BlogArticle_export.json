@@ -1,7 +1,7 @@
 {
     "id": "BlogArticle",
     "description": "",
-    "modificationDate": 1617568348,
+    "modificationDate": 1617570015,
     "parentClass": "",
     "implementsInterfaces": "",
     "listingParentClass": "",
@@ -107,6 +107,41 @@
                                 "permissions": null,
                                 "datatype": "data",
                                 "relationType": false,
+                                "invisible": false,
+                                "visibleGridView": false,
+                                "visibleSearch": false
+                            },
+                            {
+                                "fieldtype": "manyToOneRelation",
+                                "width": "",
+                                "assetUploadPath": "",
+                                "relationType": true,
+                                "queryColumnType": {
+                                    "id": "int(11)",
+                                    "type": "enum('document','asset','object')"
+                                },
+                                "phpdocType": "\\Pimcore\\Model\\Document\\Page | \\Pimcore\\Model\\Document\\Snippet | \\Pimcore\\Model\\Document | \\Pimcore\\Model\\Asset | \\Pimcore\\Model\\DataObject\\AbstractObject",
+                                "objectsAllowed": true,
+                                "assetsAllowed": false,
+                                "assetTypes": [],
+                                "documentsAllowed": false,
+                                "documentTypes": [],
+                                "classes": [
+                                    {
+                                        "classes": "BlogCategory"
+                                    }
+                                ],
+                                "pathFormatterClass": "",
+                                "name": "Category",
+                                "title": "Category",
+                                "tooltip": "",
+                                "mandatory": false,
+                                "noteditable": false,
+                                "index": false,
+                                "locked": false,
+                                "style": "",
+                                "permissions": null,
+                                "datatype": "data",
                                 "invisible": false,
                                 "visibleGridView": false,
                                 "visibleSearch": false
