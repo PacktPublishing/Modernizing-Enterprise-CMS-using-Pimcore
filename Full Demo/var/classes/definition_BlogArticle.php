@@ -9,7 +9,9 @@ Fields Summary:
 - Title [input]
 - Content [wysiwyg]
 - Category [manyToOneRelation]
+- CreationDateTime [datetime]
 - Slug [urlSlug]
+- Author [manyToOneRelation]
 - Image [image]
 */ 
 
@@ -19,7 +21,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'name' => 'BlogArticle',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1617570015,
+   'modificationDate' => 1617615343,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -178,13 +180,37 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'mandatory' => false,
                  'noteditable' => false,
                  'index' => false,
-                 'locked' => NULL,
+                 'locked' => false,
                  'style' => '',
                  'permissions' => NULL,
                  'datatype' => 'data',
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => false,
+              )),
+              3 => 
+              Pimcore\Model\DataObject\ClassDefinition\Data\Datetime::__set_state(array(
+                 'fieldtype' => 'datetime',
+                 'queryColumnType' => 'bigint(20)',
+                 'columnType' => 'bigint(20)',
+                 'phpdocType' => '\\Carbon\\Carbon',
+                 'defaultValue' => NULL,
+                 'useCurrentDate' => false,
+                 'name' => 'CreationDateTime',
+                 'title' => 'CreationDateTime',
+                 'tooltip' => '',
+                 'mandatory' => false,
+                 'noteditable' => false,
+                 'index' => false,
+                 'locked' => NULL,
+                 'style' => '',
+                 'permissions' => NULL,
+                 'datatype' => 'data',
+                 'relationType' => false,
+                 'invisible' => false,
+                 'visibleGridView' => false,
+                 'visibleSearch' => false,
+                 'defaultValueGenerator' => '',
               )),
             ),
              'locked' => false,
@@ -257,6 +283,45 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'permissions' => NULL,
              'childs' => 
             array (
+              0 => 
+              Pimcore\Model\DataObject\ClassDefinition\Data\ManyToOneRelation::__set_state(array(
+                 'fieldtype' => 'manyToOneRelation',
+                 'width' => '',
+                 'assetUploadPath' => '',
+                 'relationType' => true,
+                 'queryColumnType' => 
+                array (
+                  'id' => 'int(11)',
+                  'type' => 'enum(\'document\',\'asset\',\'object\')',
+                ),
+                 'phpdocType' => '\\Pimcore\\Model\\Document\\Page | \\Pimcore\\Model\\Document\\Snippet | \\Pimcore\\Model\\Document | \\Pimcore\\Model\\Asset | \\Pimcore\\Model\\DataObject\\AbstractObject',
+                 'objectsAllowed' => false,
+                 'assetsAllowed' => false,
+                 'assetTypes' => 
+                array (
+                ),
+                 'documentsAllowed' => false,
+                 'documentTypes' => 
+                array (
+                ),
+                 'classes' => 
+                array (
+                ),
+                 'pathFormatterClass' => '',
+                 'name' => 'Author',
+                 'title' => 'Author',
+                 'tooltip' => '',
+                 'mandatory' => false,
+                 'noteditable' => false,
+                 'index' => false,
+                 'locked' => NULL,
+                 'style' => '',
+                 'permissions' => NULL,
+                 'datatype' => 'data',
+                 'invisible' => false,
+                 'visibleGridView' => false,
+                 'visibleSearch' => false,
+              )),
             ),
              'locked' => false,
              'icon' => '',
