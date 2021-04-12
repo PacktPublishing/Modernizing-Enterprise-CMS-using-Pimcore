@@ -12,6 +12,7 @@ use \Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Intl\Exception\NotImplementedException;
 
 use Pimcore\Model\DataObject\Data\UrlSlug;
+use Pimcore\Model\Asset;
 
 class BlogController extends FrontendController
 {
@@ -20,21 +21,10 @@ class BlogController extends FrontendController
      *
      * @Template() 
      */   
-    // get list of categories
+    // get list of categories: /blog
     public function blogAction(Request $request) {
         // get all categories
-        $categories = new DataObject\BlogCategory\Listing();
-        foreach ($categories as $category) {
-            $articles = new DataObject\BlogArticle\Listing();
-            $articles->setCondition('Category__id = ' . $category->getId());       
-            $category->ACount = $articles->getTotalCount();
-            if( !empty( $category->getSlug()[0]->getSlug()) ) {
-                $category->link = $category->getSlug()[0]->getSlug();
-            }
-        
-        }
-        $this->view->categories = $categories;
-
+        $this->view->categories = $this->getAllCategories();
     }
 
 
@@ -43,7 +33,7 @@ class BlogController extends FrontendController
      * 
      * @Template() 
      */   
-    // get detail of article
+    // get detail of article: /blog/article/id|slug
     public function articleAction(Request $request,$page) {
         // by id
         if (intval($page)) {
@@ -79,17 +69,15 @@ class BlogController extends FrontendController
      * 
      * @Template() 
      */   
-    // get list article by category
+    // get list article by category: /blog/category/id|slug
     public function categoryAction(Request $request, $page) {
         
         if (intval($page)) {
             $category = DataObject\BlogCategory::getById($page);
-        }
-        else {
+        } else {
             $slug = UrlSlug::resolveSlug("/$page");
             
             if ($slug instanceof UrlSlug) {
-
                 $id = $slug->getObjectId();
                 if (intval($id) && $id > 0) {
                     $category = DataObject\BlogCategory::getById($id);
@@ -107,6 +95,8 @@ class BlogController extends FrontendController
         
         $articles = new DataObject\BlogArticle\Listing();
         $articles->setCondition('Category__id = ' . $category->getId()); 
+        
+        $this->view->category = $category;
         $this->view->articles = $articles;
 
         // get all categories for widget
@@ -114,25 +104,80 @@ class BlogController extends FrontendController
 
     }
 
+
+    /**
+     * The annotation will automatically resolve the view to MyController/myAnnotatedAction.html.twig
+     * 
+     * @Template() 
+     */   
+    // get author page info: /blog/author/id|slug
+    public function authorAction(Request $request, $page) {
+        
+        if (intval($page)) {
+            $author = DataObject\BlogAuthor::getById($page);
+        }
+        else {
+            $slug = UrlSlug::resolveSlug("/$page");
+            
+            if ($slug instanceof UrlSlug) {
+
+                $id = $slug->getObjectId();
+                if (intval($id) && $id > 0) {
+                    $author = DataObject\BlogAuthor::getById($id);
+                }
+            }
+               
+        }
+      
+        if (!($author instanceof DataObject\BlogAuthor && ($author->isPublished() || $this->verifyPreviewRequest($request, $author)))) {
+            // if elemento not found, redirect to blog
+            //return $this->redirect('/blog');
+            // or throw new exception 404
+            throw new NotFoundHttpException('author not found.');
+        }
+        
+        $articles = new DataObject\BlogArticle\Listing();
+        $articles->setCondition('Author__id = ' . $author->getId()); 
+        $this->view->articles = $articles;
+
+        // set thumbnails
+        $photoId = $author->getPhoto()->getId();
+        $img = Asset::getById($photoId)->getThumbnail("Author")->getHtml(["class" => ""]);
+        $author->photo = $img;
+        
+        $this->view->author = $author;
+
+    }
      
     /**
      * The annotation will automatically resolve the view to MyController/myAnnotatedAction.html.twig
      * 
      * @Template() 
      */   
+
     public function defaultAction(Request $request) {
        
     }
 
+
+
+    /**
+     * get a complete list of categories for blog
+     */
     public  function getAllCategories() {
-        // get all categories for widget
-        $categories = new DataObject\BlogCategory\Listing();
-        
-        foreach ($categories as $category) {
-            if( !empty( $category->getSlug()[0]->getSlug()) ) {
-                $category->link = $category->getSlug()[0]->getSlug();
-            }
-        }
+
+         // get all categories
+         $categories = new DataObject\BlogCategory\Listing();
+
+         foreach ($categories as $category) {
+             $articles = new DataObject\BlogArticle\Listing();
+             $articles->setCondition('Category__id = ' . $category->getId());       
+             $category->ArticleCount = $articles->getTotalCount();
+             if( !empty( $category->getSlug()[0]->getSlug()) ) {
+                 $category->link = $category->getSlug()[0]->getSlug();
+             }
+         
+         }
 
         return $categories;
 

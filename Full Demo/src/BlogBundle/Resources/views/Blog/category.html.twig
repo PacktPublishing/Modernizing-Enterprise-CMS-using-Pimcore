@@ -7,24 +7,28 @@
 
     <!-- Page Content -->
   <div class="container">
-
     <div class="row">
 
       <!-- Post Content Column -->
       <div class="col-lg-8">
+      <h3 class="pb-4 mb-4 font-italic border-bottom">Article for {{category.getTitle()}}</h3>
        <div class="card-deck">
          {% for article in articles %}
+          {% set content = article.getContent() | length > 200 ? article.getContent() | slice(0, 200) ~ '...' : article.getContent() %} 
              <div class="col-md-12">
                 <div class="card"  style="margin:10px;">
+                  <a href="blog/article{{article.getSlug()[0].getSlug()}}">
                     <img class="card-img-top" src="{{article.getImage()}}" alt="Card image cap">
+                  </a>
                     <div class="card-body">
+                      <a href="/blog/article{{article.getSlug()[0].getSlug()}}">
                         <h5 class="card-title">{{article.getTitle()}}</h5>
-                        <small class="text-muted">by aaaaa</small>
-                        <p class="card-text">{{ article.getContent() |length > 50 ? article.getContent()|slice(0, 50) ~ '...' : article.getContent()  }}</p>
+                      </a>
+                        <small class="text-muted">by <a href="/blog/author{{article.getAuthor().getSlug()[0].getSlug()}}">{{article.getAuthor().getFirstName()}}</a></small>
+                        <p class="card-text">{{ content | raw  }}</p>
                     </div>
                     <div class="card-footer">
-                        <small class="text-muted">Posted on January 1, 2019 at 12:00 PM ({{article.getCreationDateTime()}})<</small>
-
+                        <small class="text-muted">Posted on ...</small>
                     </div>
                 </div>
             </div>
@@ -34,44 +38,7 @@
 
         <!-- Sidebar Widgets Column -->
       <div class="col-md-4">
-
-        {# <!-- Search Widget -->
-        <div class="card my-4">
-          <h5 class="card-header">Search</h5>
-          <div class="card-body">
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="Search for...">
-              <span class="input-group-append">
-                <button class="btn btn-secondary" type="button">Go!</button>
-              </span>
-            </div>
-          </div>
-        </div> #}
-
-        <!-- Categories Widget -->
-        <div class="card my-4">
-          <h5 class="card-header">Categories</h5>
-          <div class="card-body">
-            <div class="row">
-              <div class="col-lg-12">
-                <ul class="list-unstyled mb-0">
-                  {% for cat in categories %}
-                    <li><a href="/blog{{cat.link}}" >{{cat.getTitle()}}</a>
-                  {% endfor %}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Side Widget -->
-        <div class="card my-4">
-          <h5 class="card-header">Side Widget</h5>
-          <div class="card-body">
-            You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
-          </div>
-        </div>
-
+        {% include 'BlogBundle:Widget:widget.html.twig' %}
       </div>
     </div>
     <!-- /.row -->

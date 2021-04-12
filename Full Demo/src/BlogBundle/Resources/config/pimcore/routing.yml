@@ -30,3 +30,15 @@ blog_article_category_by_slug:
     requirements:
       page: '[\w-]+'
 
+blog_author_by_id:
+    path:      /blog/author/{page}
+    defaults:  { _controller: BlogBundle:Blog:author}
+    requirements:
+      page: '\d+'
+
+blog_author_by_slug:
+    path:      /blog/author/{page}
+    defaults:  { _controller: BlogBundle:Blog:author}
+    requirements:
+      page: '[\w-]+'
+

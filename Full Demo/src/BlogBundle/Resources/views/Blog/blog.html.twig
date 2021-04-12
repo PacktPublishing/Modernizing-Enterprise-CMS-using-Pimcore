@@ -13,15 +13,16 @@
       <div class="col-lg-12">
        <div class="card-deck">
          {% for cat in categories %}
+         {% set content = cat.getContent() | length > 100 ? cat.getContent()|slice(0, 100) ~ '...' : cat.getContent()  %}
              <div class="col-md-4">
                 <div class="card"  style="margin:10px;">
                     <img class="card-img-top" src="{{cat.getImage()}}" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title"><a href="/blog{{cat.link}}">{{cat.getTitle()}}</a></h5>
-                        <p class="card-text">{{ cat.getContent() |length > 50 ? cat.getContent()|slice(0, 50) ~ '...' : cat.getContent()  }}</p>
+                        <p class="card-text">{{ content | raw }}</p>
                     </div>
                     <div class="card-footer">
-                        <small class="text-muted">Article: {{cat.ACount}}</small>
+                        <small class="text-muted">Article: {{cat.ArticleCount}}</small>
                     </div>
                 </div>
             </div>

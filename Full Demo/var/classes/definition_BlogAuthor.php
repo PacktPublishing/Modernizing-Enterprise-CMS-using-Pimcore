@@ -6,21 +6,22 @@
 
 
 Fields Summary: 
-- Title [input]
-- Content [wysiwyg]
-- Category [manyToOneRelation]
+- FirstName [input]
+- LastName [input]
+- User [user]
 - Slug [urlSlug]
-- Author [manyToOneRelation]
-- Image [image]
+- Bio [textarea]
+- Location [geopoint]
+- Photo [image]
 */ 
 
 
 return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
-   'id' => 'BlogArticle',
-   'name' => 'BlogArticle',
+   'id' => 'BlogAuthor',
+   'name' => 'BlogAuthor',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1618167445,
+   'modificationDate' => 1618167476,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -59,10 +60,10 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
          'fieldtype' => 'tabpanel',
          'border' => false,
          'tabPosition' => NULL,
-         'name' => 'Article',
+         'name' => 'General',
          'type' => NULL,
          'region' => NULL,
-         'title' => 'Article',
+         'title' => 'General',
          'width' => NULL,
          'height' => NULL,
          'collapsible' => false,
@@ -78,10 +79,10 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'labelWidth' => 100,
              'layout' => NULL,
              'border' => false,
-             'name' => 'Data',
+             'name' => 'Author',
              'type' => NULL,
              'region' => NULL,
-             'title' => 'Data',
+             'title' => 'Author',
              'width' => NULL,
              'height' => NULL,
              'collapsible' => false,
@@ -103,8 +104,8 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'regex' => '',
                  'unique' => false,
                  'showCharCount' => false,
-                 'name' => 'Title',
-                 'title' => 'Title',
+                 'name' => 'FirstName',
+                 'title' => 'FirstName',
                  'tooltip' => '',
                  'mandatory' => false,
                  'noteditable' => false,
@@ -120,17 +121,19 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'defaultValueGenerator' => '',
               )),
               1 => 
-              Pimcore\Model\DataObject\ClassDefinition\Data\Wysiwyg::__set_state(array(
-                 'fieldtype' => 'wysiwyg',
-                 'width' => '',
-                 'height' => '',
-                 'queryColumnType' => 'longtext',
-                 'columnType' => 'longtext',
+              Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
+                 'fieldtype' => 'input',
+                 'width' => NULL,
+                 'defaultValue' => NULL,
+                 'queryColumnType' => 'varchar',
+                 'columnType' => 'varchar',
+                 'columnLength' => 190,
                  'phpdocType' => 'string',
-                 'toolbarConfig' => '',
-                 'excludeFromSearchIndex' => false,
-                 'name' => 'Content',
-                 'title' => 'Content',
+                 'regex' => '',
+                 'unique' => false,
+                 'showCharCount' => false,
+                 'name' => 'LastName',
+                 'title' => 'LastName',
                  'tooltip' => '',
                  'mandatory' => false,
                  'noteditable' => false,
@@ -143,38 +146,41 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => false,
+                 'defaultValueGenerator' => '',
               )),
               2 => 
-              Pimcore\Model\DataObject\ClassDefinition\Data\ManyToOneRelation::__set_state(array(
-                 'fieldtype' => 'manyToOneRelation',
-                 'width' => '',
-                 'assetUploadPath' => '',
-                 'relationType' => true,
-                 'queryColumnType' => 
-                array (
-                  'id' => 'int(11)',
-                  'type' => 'enum(\'document\',\'asset\',\'object\')',
-                ),
-                 'phpdocType' => '\\Pimcore\\Model\\Document\\Page | \\Pimcore\\Model\\Document\\Snippet | \\Pimcore\\Model\\Document | \\Pimcore\\Model\\Asset | \\Pimcore\\Model\\DataObject\\AbstractObject',
-                 'objectsAllowed' => true,
-                 'assetsAllowed' => false,
-                 'assetTypes' => 
-                array (
-                ),
-                 'documentsAllowed' => false,
-                 'documentTypes' => 
-                array (
-                ),
-                 'classes' => 
+              Pimcore\Model\DataObject\ClassDefinition\Data\User::__set_state(array(
+                 'fieldtype' => 'user',
+                 'unique' => false,
+                 'options' => 
                 array (
                   0 => 
                   array (
-                    'classes' => 'BlogCategory',
+                    'value' => 4,
+                    'key' => 'Bob',
+                  ),
+                  1 => 
+                  array (
+                    'value' => 2,
+                    'key' => 'pimcore',
+                  ),
+                  2 => 
+                  array (
+                    'value' => 5,
+                    'key' => 'Tom',
                   ),
                 ),
-                 'pathFormatterClass' => '',
-                 'name' => 'Category',
-                 'title' => 'Category',
+                 'width' => '',
+                 'defaultValue' => NULL,
+                 'optionsProviderClass' => NULL,
+                 'optionsProviderData' => NULL,
+                 'queryColumnType' => 'varchar',
+                 'columnType' => 'varchar',
+                 'columnLength' => 190,
+                 'phpdocType' => 'string',
+                 'dynamicOptions' => false,
+                 'name' => 'User',
+                 'title' => 'User',
                  'tooltip' => '',
                  'mandatory' => false,
                  'noteditable' => false,
@@ -183,34 +189,13 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'style' => '',
                  'permissions' => NULL,
                  'datatype' => 'data',
+                 'relationType' => false,
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => false,
+                 'defaultValueGenerator' => '',
               )),
-            ),
-             'locked' => false,
-             'icon' => '',
-          )),
-          1 => 
-          Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
-             'fieldtype' => 'panel',
-             'labelWidth' => 100,
-             'layout' => NULL,
-             'border' => false,
-             'name' => 'Slug',
-             'type' => NULL,
-             'region' => NULL,
-             'title' => 'Slug',
-             'width' => NULL,
-             'height' => NULL,
-             'collapsible' => false,
-             'collapsed' => false,
-             'bodyStyle' => '',
-             'datatype' => 'layout',
-             'permissions' => NULL,
-             'childs' => 
-            array (
-              0 => 
+              3 => 
               Pimcore\Model\DataObject\ClassDefinition\Data\UrlSlug::__set_state(array(
                  'fieldtype' => 'urlSlug',
                  'width' => NULL,
@@ -235,68 +220,28 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'visibleGridView' => false,
                  'visibleSearch' => false,
               )),
-            ),
-             'locked' => false,
-             'icon' => '',
-          )),
-          2 => 
-          Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
-             'fieldtype' => 'panel',
-             'labelWidth' => 100,
-             'layout' => NULL,
-             'border' => false,
-             'name' => 'Author',
-             'type' => NULL,
-             'region' => NULL,
-             'title' => 'Author',
-             'width' => NULL,
-             'height' => NULL,
-             'collapsible' => false,
-             'collapsed' => false,
-             'bodyStyle' => '',
-             'datatype' => 'layout',
-             'permissions' => NULL,
-             'childs' => 
-            array (
-              0 => 
-              Pimcore\Model\DataObject\ClassDefinition\Data\ManyToOneRelation::__set_state(array(
-                 'fieldtype' => 'manyToOneRelation',
+              4 => 
+              Pimcore\Model\DataObject\ClassDefinition\Data\Textarea::__set_state(array(
+                 'fieldtype' => 'textarea',
                  'width' => '',
-                 'assetUploadPath' => '',
-                 'relationType' => true,
-                 'queryColumnType' => 
-                array (
-                  'id' => 'int(11)',
-                  'type' => 'enum(\'document\',\'asset\',\'object\')',
-                ),
-                 'phpdocType' => '\\Pimcore\\Model\\Document\\Page | \\Pimcore\\Model\\Document\\Snippet | \\Pimcore\\Model\\Document | \\Pimcore\\Model\\Asset | \\Pimcore\\Model\\DataObject\\AbstractObject',
-                 'objectsAllowed' => true,
-                 'assetsAllowed' => false,
-                 'assetTypes' => 
-                array (
-                ),
-                 'documentsAllowed' => false,
-                 'documentTypes' => 
-                array (
-                ),
-                 'classes' => 
-                array (
-                  0 => 
-                  array (
-                    'classes' => 'BlogAuthor',
-                  ),
-                ),
-                 'pathFormatterClass' => '',
-                 'name' => 'Author',
-                 'title' => 'Author',
+                 'height' => '',
+                 'maxLength' => NULL,
+                 'showCharCount' => false,
+                 'excludeFromSearchIndex' => false,
+                 'queryColumnType' => 'longtext',
+                 'columnType' => 'longtext',
+                 'phpdocType' => 'string',
+                 'name' => 'Bio',
+                 'title' => 'Bio',
                  'tooltip' => '',
                  'mandatory' => false,
                  'noteditable' => false,
                  'index' => false,
-                 'locked' => false,
+                 'locked' => NULL,
                  'style' => '',
                  'permissions' => NULL,
                  'datatype' => 'data',
+                 'relationType' => false,
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => false,
@@ -305,16 +250,16 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'locked' => false,
              'icon' => '',
           )),
-          3 => 
+          1 => 
           Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
              'fieldtype' => 'panel',
              'labelWidth' => 100,
              'layout' => NULL,
              'border' => false,
-             'name' => 'Image',
+             'name' => 'Additional Info',
              'type' => NULL,
              'region' => NULL,
-             'title' => 'Image',
+             'title' => 'Additional Info',
              'width' => NULL,
              'height' => NULL,
              'collapsible' => false,
@@ -325,6 +270,41 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'childs' => 
             array (
               0 => 
+              Pimcore\Model\DataObject\ClassDefinition\Data\Geopoint::__set_state(array(
+                 'fieldtype' => 'geopoint',
+                 'queryColumnType' => 
+                array (
+                  'longitude' => 'double',
+                  'latitude' => 'double',
+                ),
+                 'columnType' => 
+                array (
+                  'longitude' => 'double',
+                  'latitude' => 'double',
+                ),
+                 'phpdocType' => '\\Pimcore\\Model\\DataObject\\Data\\Geopoint',
+                 'lat' => 0.0,
+                 'lng' => 0.0,
+                 'zoom' => 1,
+                 'width' => NULL,
+                 'height' => NULL,
+                 'mapType' => 'roadmap',
+                 'name' => 'Location',
+                 'title' => 'Location',
+                 'tooltip' => '',
+                 'mandatory' => false,
+                 'noteditable' => false,
+                 'index' => false,
+                 'locked' => false,
+                 'style' => '',
+                 'permissions' => NULL,
+                 'datatype' => 'data',
+                 'relationType' => false,
+                 'invisible' => false,
+                 'visibleGridView' => false,
+                 'visibleSearch' => false,
+              )),
+              1 => 
               Pimcore\Model\DataObject\ClassDefinition\Data\Image::__set_state(array(
                  'fieldtype' => 'image',
                  'width' => '',
@@ -333,8 +313,8 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'queryColumnType' => 'int(11)',
                  'columnType' => 'int(11)',
                  'phpdocType' => '\\Pimcore\\Model\\Asset\\Image',
-                 'name' => 'Image',
-                 'title' => 'Image',
+                 'name' => 'Photo',
+                 'title' => 'Photo',
                  'tooltip' => '',
                  'mandatory' => false,
                  'noteditable' => false,
