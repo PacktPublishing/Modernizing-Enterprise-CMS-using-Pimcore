@@ -40,7 +40,7 @@
                         <p class="card-text">{{ content | raw }}</p>
                       </div>
                       <div class="card-footer">
-                          <small class="text-muted">Posted on January 1, 2019 at 12:00 PM</small>
+                          <small class="text-muted">Posted on {{article.getModificationDate() | date("F jS \\a\\t g:ia") }}</small>
                       </div>
                   </div>
               </div>
