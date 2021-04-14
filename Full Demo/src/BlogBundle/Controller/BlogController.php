@@ -29,17 +29,15 @@ class BlogController extends FrontendController
 
 
     /**
-     * The annotation will automatically resolve the view to MyController/myAnnotatedAction.html.twig
-     * 
+     *  get detail of article: /blog/article/id|slug
      * @Template() 
      */   
-    // get detail of article: /blog/article/id|slug
     public function articleAction(Request $request,$page) {
         // by id
         if (intval($page)) {
             $article = DataObject\BlogArticle::getById($page);
         }
-        else {
+        else { // by slug
             $slug = UrlSlug::resolveSlug("/$page");
 
             if ($slug instanceof UrlSlug) {
@@ -65,11 +63,9 @@ class BlogController extends FrontendController
     }
 
      /**
-     * The annotation will automatically resolve the view to MyController/myAnnotatedAction.html.twig
-     * 
+     * get list article by category: /blog/category/id|slug
      * @Template() 
      */   
-    // get list article by category: /blog/category/id|slug
     public function categoryAction(Request $request, $page) {
         
         if (intval($page)) {
@@ -106,11 +102,9 @@ class BlogController extends FrontendController
 
 
     /**
-     * The annotation will automatically resolve the view to MyController/myAnnotatedAction.html.twig
-     * 
+     * get author page info: /blog/author/id|slug
      * @Template() 
      */   
-    // get author page info: /blog/author/id|slug
     public function authorAction(Request $request, $page) {
         
         if (intval($page)) {
@@ -142,7 +136,7 @@ class BlogController extends FrontendController
 
         // set thumbnails
         $photoId = $author->getPhoto()->getId();
-        $img = Asset::getById($photoId)->getThumbnail("Author")->getHtml(["class" => ""]);
+        $img = Asset::getById($photoId)->getThumbnail(["width" => 220])->getHtml(["class" => ""]);
         $author->photo = $img;
         
         $this->view->author = $author;
@@ -150,7 +144,6 @@ class BlogController extends FrontendController
     }
      
     /**
-     * The annotation will automatically resolve the view to MyController/myAnnotatedAction.html.twig
      * 
      * @Template() 
      */   

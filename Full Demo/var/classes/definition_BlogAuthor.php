@@ -11,7 +11,6 @@ Fields Summary:
 - User [user]
 - Slug [urlSlug]
 - Bio [textarea]
-- Location [geopoint]
 - Photo [image]
 */ 
 
@@ -21,7 +20,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'name' => 'BlogAuthor',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1618167476,
+   'modificationDate' => 1618431999,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -237,64 +236,6 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'mandatory' => false,
                  'noteditable' => false,
                  'index' => false,
-                 'locked' => NULL,
-                 'style' => '',
-                 'permissions' => NULL,
-                 'datatype' => 'data',
-                 'relationType' => false,
-                 'invisible' => false,
-                 'visibleGridView' => false,
-                 'visibleSearch' => false,
-              )),
-            ),
-             'locked' => false,
-             'icon' => '',
-          )),
-          1 => 
-          Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
-             'fieldtype' => 'panel',
-             'labelWidth' => 100,
-             'layout' => NULL,
-             'border' => false,
-             'name' => 'Additional Info',
-             'type' => NULL,
-             'region' => NULL,
-             'title' => 'Additional Info',
-             'width' => NULL,
-             'height' => NULL,
-             'collapsible' => false,
-             'collapsed' => false,
-             'bodyStyle' => '',
-             'datatype' => 'layout',
-             'permissions' => NULL,
-             'childs' => 
-            array (
-              0 => 
-              Pimcore\Model\DataObject\ClassDefinition\Data\Geopoint::__set_state(array(
-                 'fieldtype' => 'geopoint',
-                 'queryColumnType' => 
-                array (
-                  'longitude' => 'double',
-                  'latitude' => 'double',
-                ),
-                 'columnType' => 
-                array (
-                  'longitude' => 'double',
-                  'latitude' => 'double',
-                ),
-                 'phpdocType' => '\\Pimcore\\Model\\DataObject\\Data\\Geopoint',
-                 'lat' => 0.0,
-                 'lng' => 0.0,
-                 'zoom' => 1,
-                 'width' => NULL,
-                 'height' => NULL,
-                 'mapType' => 'roadmap',
-                 'name' => 'Location',
-                 'title' => 'Location',
-                 'tooltip' => '',
-                 'mandatory' => false,
-                 'noteditable' => false,
-                 'index' => false,
                  'locked' => false,
                  'style' => '',
                  'permissions' => NULL,
@@ -304,7 +245,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'visibleGridView' => false,
                  'visibleSearch' => false,
               )),
-              1 => 
+              5 => 
               Pimcore\Model\DataObject\ClassDefinition\Data\Image::__set_state(array(
                  'fieldtype' => 'image',
                  'width' => '',

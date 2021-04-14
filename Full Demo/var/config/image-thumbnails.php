@@ -52,33 +52,5 @@ return [
         "creationDate" => 1614164220,
         "forcePictureTag" => FALSE,
         "id" => "SlideShow"
-    ],
-    "Author" => [
-        "items" => [
-            [
-                "method" => "resize",
-                "arguments" => [
-                    "width" => 200,
-                    "height" => 200
-                ]
-            ]
-        ],
-        "medias" => [
-
-        ],
-        "name" => "Author",
-        "description" => "",
-        "group" => "",
-        "format" => "PNG",
-        "quality" => 85,
-        "highResolution" => 0.0,
-        "preserveColor" => FALSE,
-        "preserveMetaData" => FALSE,
-        "rasterizeSVG" => FALSE,
-        "downloadable" => FALSE,
-        "modificationDate" => 1618261070,
-        "creationDate" => 1618259571,
-        "forcePictureTag" => FALSE,
-        "id" => "Author"
     ]
 ];
