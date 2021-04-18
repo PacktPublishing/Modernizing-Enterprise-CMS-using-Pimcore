@@ -49,7 +49,7 @@ class BlogController extends FrontendController
                
         }
       
-        if (!($article instanceof DataObject\BlogArticle && ($article->isPublished() || $this->verifyPreviewRequest($request, $article)))) {
+        if ( !( $article instanceof DataObject\BlogArticle || $article->isPublished() ) ) {
             // if elemento not found, redirect to blog
             return $this->redirect('/blog');
             // or throw new exception 404
@@ -82,7 +82,7 @@ class BlogController extends FrontendController
                
         }
       
-        if (!($category instanceof DataObject\BlogCategory && ($category->isPublished() || $this->verifyPreviewRequest($request, $category)))) {
+        if ( !( $category instanceof DataObject\BlogCategory || $category->isPublished() ) ) {
             // if elemento not found, redirect to blog
             //return $this->redirect('/blog');
             // or throw new exception 404
@@ -123,7 +123,7 @@ class BlogController extends FrontendController
                
         }
       
-        if (!($author instanceof DataObject\BlogAuthor && ($author->isPublished() || $this->verifyPreviewRequest($request, $author)))) {
+        if ( !( $author instanceof DataObject\BlogAuthor || $author->isPublished() ) ) {
             // if elemento not found, redirect to blog
             //return $this->redirect('/blog');
             // or throw new exception 404
