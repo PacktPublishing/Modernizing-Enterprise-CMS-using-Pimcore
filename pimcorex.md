@@ -10,3 +10,17 @@ my-project/web => my-project/public
 
 environment:
      - APACHE_DOCUMENT_ROOT=/var/www/html/public
+
+
+replace composer.json
+remove compose.lock
+rm -rf vendor/
+
+ensure env file
+
+move src/AppBundle
+replace Kernel.php
+
+move Resource/config => config
+
+ composer update -W
