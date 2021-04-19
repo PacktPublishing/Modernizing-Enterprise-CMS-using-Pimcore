@@ -1,0 +1,10 @@
+
+# other files will have LF
+* text=lf
+
+# .java .csv .jar .sql will have CRLF
+*.yml eol=lf 
+*.json eol=lf
+*.php eol=lf 
+*.sh eol=lf 
+*.sql eol=lf
