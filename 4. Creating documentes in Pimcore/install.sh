@@ -1,5 +1,6 @@
 #!/bin/bash
-COMPOSER_MEMORY_LIMIT=-1 composer create-project pimcore/skeleton tmp
+COMPOSER_MEMORY_LIMIT=-1 composer create-project pimcore/skeleton:10.0.x-dev tmp
+rm tmp/docker-compose.yml
 mv tmp/.[!.]* .
 mv tmp/* .
 rmdir tmp
