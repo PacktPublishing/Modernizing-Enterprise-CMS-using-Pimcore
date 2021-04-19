@@ -1,0 +1,14 @@
+The gallery
+
+{% if assets %}
+
+		{% for asset in assets %}
+			{% if asset is instanceof('\\Pimcore\\Model\\Asset\\Image') %}	
+                <div style="border: 1px solid red; width:200px; padding 10px; margin:10px;">			
+                    {{ asset.getThumbnail('MiniIcons').getHTML()|raw}}				
+                </div>
+			{% endif %}
+		{% endfor %}
+
+{% endif %}
+

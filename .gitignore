@@ -1,5 +1,3 @@
-*.*:Zone.Identifier
-*/var/cache/
 # remove the following ignores for your project
 /app/constants.php
 

@@ -1,0 +1,14 @@
+_pimcore:
+    resource: "@PimcoreCoreBundle/Resources/config/routing.yml"
+
+custom_header:
+    path:      /custom/header
+    defaults:  { _controller: AppBundle:Custom:header }
+
+custom_path:
+    path:      /custom/path
+    defaults:  { _controller: AppBundle:Custom:differentPath }
+
+custom_json:
+    path:      /custom/json
+    defaults:  { _controller: AppBundle:Custom:json }
