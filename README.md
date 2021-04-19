@@ -20,3 +20,18 @@ Each subfolder is a different test case. Enter the folder to get the info about 
 1. each project must be self contained and docker based
 2. each project must be activable just by hitting `docker-compose up`
 3. you cannot commit the database, but you can share a SQL zipped files with the dump
+
+
+## TODOS fulldemo
+- [ ] class install
+- [ ] link user to class
+- [ ] create data object folders
+- [ ] custom header image (template editable or setting?)
+
+
+## Credits
+Maarten van den Heuvel</a> on <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span> 
+
+<span>Photo by <a href="https://unsplash.com/@alyson_jane?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Alyson McPhee</a> on <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+
+<span>Photo by <a href="https://unsplash.com/@ellaolsson?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Ella Olsson</a> on <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>

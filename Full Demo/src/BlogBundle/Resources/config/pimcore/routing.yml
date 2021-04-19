@@ -1,0 +1,44 @@
+blog_homepage:
+    path:     /blog
+    defaults: { _controller: BlogBundle:Blog:blog }
+
+
+blog_article_by_id:
+    path:      /blog/article/{page}
+    defaults:  { _controller: BlogBundle:Blog:article }
+    requirements: 
+      path: '.*?'
+      page: '\d+' 
+
+blog_article_by_slug:
+    path:      /blog/article/{page}
+    defaults:  { _controller: BlogBundle:Blog:article }
+    requirements: 
+      path: '.*?'
+      page: '[\w-]+'
+
+
+blog_article_category_by_id:
+    path:      /blog/{page}
+    defaults:  { _controller: BlogBundle:Blog:category}
+    requirements:
+      page: '\d+'
+
+blog_article_category_by_slug:
+    path:      /blog/{page}
+    defaults:  { _controller: BlogBundle:Blog:category}
+    requirements:
+      page: '[\w-]+'
+
+blog_author_by_id:
+    path:      /blog/author/{page}
+    defaults:  { _controller: BlogBundle:Blog:author}
+    requirements:
+      page: '\d+'
+
+blog_author_by_slug:
+    path:      /blog/author/{page}
+    defaults:  { _controller: BlogBundle:Blog:author}
+    requirements:
+      page: '[\w-]+'
+
