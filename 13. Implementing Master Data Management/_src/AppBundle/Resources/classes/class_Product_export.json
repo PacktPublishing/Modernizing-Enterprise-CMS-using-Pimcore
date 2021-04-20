@@ -1,0 +1,2061 @@
+{
+    "id": "PRD",
+    "description": "",
+    "modificationDate": 1615399623,
+    "parentClass": "",
+    "implementsInterfaces": "",
+    "listingParentClass": "",
+    "useTraits": "",
+    "listingUseTraits": "",
+    "allowInherit": true,
+    "allowVariants": true,
+    "showVariants": true,
+    "layoutDefinitions": {
+        "fieldtype": "panel",
+        "labelWidth": 100,
+        "layout": null,
+        "border": false,
+        "name": "pimcore_root",
+        "type": null,
+        "region": null,
+        "title": null,
+        "width": null,
+        "height": null,
+        "collapsible": false,
+        "collapsed": false,
+        "bodyStyle": null,
+        "datatype": "layout",
+        "permissions": null,
+        "childs": [
+            {
+                "fieldtype": "tabpanel",
+                "border": false,
+                "tabPosition": null,
+                "name": "Product Data",
+                "type": null,
+                "region": null,
+                "title": "Product Data",
+                "width": null,
+                "height": null,
+                "collapsible": false,
+                "collapsed": false,
+                "bodyStyle": "",
+                "datatype": "layout",
+                "permissions": null,
+                "childs": [
+                    {
+                        "fieldtype": "panel",
+                        "labelWidth": 100,
+                        "layout": null,
+                        "border": false,
+                        "name": "Product Information",
+                        "type": null,
+                        "region": null,
+                        "title": "Product Information",
+                        "width": null,
+                        "height": null,
+                        "collapsible": false,
+                        "collapsed": false,
+                        "bodyStyle": "",
+                        "datatype": "layout",
+                        "permissions": null,
+                        "childs": [
+                            {
+                                "fieldtype": "input",
+                                "width": null,
+                                "defaultValue": null,
+                                "queryColumnType": "varchar",
+                                "columnType": "varchar",
+                                "columnLength": 190,
+                                "phpdocType": "string",
+                                "regex": "",
+                                "unique": true,
+                                "showCharCount": false,
+                                "name": "sku",
+                                "title": "SKU",
+                                "tooltip": "",
+                                "mandatory": true,
+                                "noteditable": false,
+                                "index": false,
+                                "locked": false,
+                                "style": "",
+                                "permissions": null,
+                                "datatype": "data",
+                                "relationType": false,
+                                "invisible": false,
+                                "visibleGridView": false,
+                                "visibleSearch": false,
+                                "defaultValueGenerator": ""
+                            },
+                            {
+                                "fieldtype": "quantityValue",
+                                "width": null,
+                                "unitWidth": null,
+                                "defaultValue": null,
+                                "defaultUnit": "1",
+                                "validUnits": [
+                                    "1"
+                                ],
+                                "decimalPrecision": null,
+                                "autoConvert": false,
+                                "queryColumnType": {
+                                    "value": "double",
+                                    "unit": "bigint(20)"
+                                },
+                                "columnType": {
+                                    "value": "double",
+                                    "unit": "bigint(20)"
+                                },
+                                "phpdocType": "\\Pimcore\\Model\\DataObject\\Data\\QuantityValue",
+                                "name": "price",
+                                "title": "Price",
+                                "tooltip": "",
+                                "mandatory": false,
+                                "noteditable": false,
+                                "index": false,
+                                "locked": false,
+                                "style": "",
+                                "permissions": null,
+                                "datatype": "data",
+                                "relationType": false,
+                                "invisible": false,
+                                "visibleGridView": false,
+                                "visibleSearch": false,
+                                "defaultValueGenerator": ""
+                            },
+                            {
+                                "fieldtype": "numeric",
+                                "width": "",
+                                "defaultValue": null,
+                                "queryColumnType": "double",
+                                "columnType": "double",
+                                "phpdocType": "float",
+                                "integer": false,
+                                "unsigned": false,
+                                "minValue": null,
+                                "maxValue": null,
+                                "unique": false,
+                                "decimalSize": null,
+                                "decimalPrecision": null,
+                                "name": "bundlePrice",
+                                "title": "Bundle Price",
+                                "tooltip": "",
+                                "mandatory": false,
+                                "noteditable": true,
+                                "index": false,
+                                "locked": false,
+                                "style": "",
+                                "permissions": null,
+                                "datatype": "data",
+                                "relationType": false,
+                                "invisible": false,
+                                "visibleGridView": false,
+                                "visibleSearch": false,
+                                "defaultValueGenerator": ""
+                            },
+                            {
+                                "fieldtype": "localizedfields",
+                                "phpdocType": "\\Pimcore\\Model\\DataObject\\Localizedfield",
+                                "childs": [
+                                    {
+                                        "fieldtype": "input",
+                                        "width": null,
+                                        "defaultValue": null,
+                                        "queryColumnType": "varchar",
+                                        "columnType": "varchar",
+                                        "columnLength": 190,
+                                        "phpdocType": "string",
+                                        "regex": "",
+                                        "unique": false,
+                                        "showCharCount": false,
+                                        "name": "name",
+                                        "title": "Product Name",
+                                        "tooltip": "",
+                                        "mandatory": false,
+                                        "noteditable": false,
+                                        "index": false,
+                                        "locked": false,
+                                        "style": "",
+                                        "permissions": null,
+                                        "datatype": "data",
+                                        "relationType": false,
+                                        "invisible": false,
+                                        "visibleGridView": false,
+                                        "visibleSearch": false,
+                                        "defaultValueGenerator": ""
+                                    },
+                                    {
+                                        "fieldtype": "textarea",
+                                        "width": 500,
+                                        "height": 100,
+                                        "maxLength": null,
+                                        "showCharCount": false,
+                                        "excludeFromSearchIndex": false,
+                                        "queryColumnType": "longtext",
+                                        "columnType": "longtext",
+                                        "phpdocType": "string",
+                                        "name": "short_description",
+                                        "title": "Short Description",
+                                        "tooltip": "",
+                                        "mandatory": false,
+                                        "noteditable": false,
+                                        "index": false,
+                                        "locked": false,
+                                        "style": "",
+                                        "permissions": null,
+                                        "datatype": "data",
+                                        "relationType": false,
+                                        "invisible": false,
+                                        "visibleGridView": false,
+                                        "visibleSearch": false
+                                    },
+                                    {
+                                        "fieldtype": "wysiwyg",
+                                        "width": "",
+                                        "height": "",
+                                        "queryColumnType": "longtext",
+                                        "columnType": "longtext",
+                                        "phpdocType": "string",
+                                        "toolbarConfig": "",
+                                        "excludeFromSearchIndex": false,
+                                        "name": "description",
+                                        "title": "Description",
+                                        "tooltip": "",
+                                        "mandatory": false,
+                                        "noteditable": false,
+                                        "index": false,
+                                        "locked": false,
+                                        "style": "",
+                                        "permissions": null,
+                                        "datatype": "data",
+                                        "relationType": false,
+                                        "invisible": false,
+                                        "visibleGridView": false,
+                                        "visibleSearch": false
+                                    }
+                                ],
+                                "name": "localizedfields",
+                                "region": null,
+                                "layout": null,
+                                "title": "Name and Description",
+                                "width": "",
+                                "height": "",
+                                "maxTabs": null,
+                                "labelWidth": null,
+                                "border": false,
+                                "provideSplitView": false,
+                                "tabPosition": null,
+                                "hideLabelsWhenTabsReached": null,
+                                "fieldDefinitionsCache": null,
+                                "tooltip": "",
+                                "mandatory": false,
+                                "noteditable": false,
+                                "index": null,
+                                "locked": false,
+                                "style": "",
+                                "permissions": null,
+                                "datatype": "data",
+                                "relationType": false,
+                                "invisible": false,
+                                "visibleGridView": true,
+                                "visibleSearch": true
+                            },
+                            {
+                                "fieldtype": "manyToManyObjectRelation",
+                                "width": "",
+                                "height": "",
+                                "maxItems": "",
+                                "queryColumnType": "text",
+                                "phpdocType": "array",
+                                "relationType": true,
+                                "visibleFields": "id,sku,name",
+                                "allowToCreateNewObject": false,
+                                "optimizedAdminLoading": false,
+                                "visibleFieldDefinitions": [],
+                                "classes": [
+                                    {
+                                        "classes": "Product"
+                                    }
+                                ],
+                                "pathFormatterClass": "",
+                                "name": "bundle_products",
+                                "title": "Bundle Products",
+                                "tooltip": "",
+                                "mandatory": false,
+                                "noteditable": false,
+                                "index": false,
+                                "locked": false,
+                                "style": "",
+                                "permissions": null,
+                                "datatype": "data",
+                                "invisible": false,
+                                "visibleGridView": false,
+                                "visibleSearch": false
+                            }
+                        ],
+                        "locked": false,
+                        "icon": ""
+                    },
+                    {
+                        "fieldtype": "panel",
+                        "labelWidth": 100,
+                        "layout": null,
+                        "border": false,
+                        "name": "Categorization",
+                        "type": null,
+                        "region": null,
+                        "title": "Categorization",
+                        "width": null,
+                        "height": null,
+                        "collapsible": false,
+                        "collapsed": false,
+                        "bodyStyle": "",
+                        "datatype": "layout",
+                        "permissions": null,
+                        "childs": [
+                            {
+                                "fieldtype": "select",
+                                "options": [
+                                    {
+                                        "key": "Nike",
+                                        "value": "1"
+                                    },
+                                    {
+                                        "key": "Ralph Lauren",
+                                        "value": "2"
+                                    },
+                                    {
+                                        "key": "Hugo Boss",
+                                        "value": "3"
+                                    },
+                                    {
+                                        "key": "Tommy Hilfiger",
+                                        "value": "4"
+                                    },
+                                    {
+                                        "key": "Levi Strauss & Co.",
+                                        "value": "5"
+                                    },
+                                    {
+                                        "key": "Burberry",
+                                        "value": "6"
+                                    },
+                                    {
+                                        "key": "Gucci",
+                                        "value": "7"
+                                    },
+                                    {
+                                        "key": "Adidas",
+                                        "value": "8"
+                                    },
+                                    {
+                                        "key": "Lacoste",
+                                        "value": "9"
+                                    },
+                                    {
+                                        "key": "Versace",
+                                        "value": "10"
+                                    },
+                                    {
+                                        "key": "The North Face",
+                                        "value": "11"
+                                    },
+                                    {
+                                        "key": "Louis Vuitton",
+                                        "value": "12"
+                                    },
+                                    {
+                                        "key": "Rolex",
+                                        "value": "13"
+                                    },
+                                    {
+                                        "key": "Calvin Klein",
+                                        "value": "14"
+                                    },
+                                    {
+                                        "key": "Diesel",
+                                        "value": "15"
+                                    },
+                                    {
+                                        "key": "Prada",
+                                        "value": "16"
+                                    },
+                                    {
+                                        "key": "Armani Exchange",
+                                        "value": "17"
+                                    },
+                                    {
+                                        "key": "Tom Ford",
+                                        "value": "18"
+                                    },
+                                    {
+                                        "key": "Zara",
+                                        "value": "19"
+                                    },
+                                    {
+                                        "key": "Givenchy",
+                                        "value": "20"
+                                    },
+                                    {
+                                        "key": "Armani",
+                                        "value": "21"
+                                    },
+                                    {
+                                        "key": "Emporio Armani",
+                                        "value": "22"
+                                    },
+                                    {
+                                        "key": "The Timberland Company",
+                                        "value": "23"
+                                    },
+                                    {
+                                        "key": "Champion",
+                                        "value": "24"
+                                    },
+                                    {
+                                        "key": "Under Armour",
+                                        "value": "25"
+                                    },
+                                    {
+                                        "key": "Vans",
+                                        "value": "26"
+                                    },
+                                    {
+                                        "key": "H&M",
+                                        "value": "27"
+                                    },
+                                    {
+                                        "key": "Guess",
+                                        "value": "28"
+                                    },
+                                    {
+                                        "key": "Hollister Co.",
+                                        "value": "29"
+                                    },
+                                    {
+                                        "key": "Herm\u00e8s",
+                                        "value": "30"
+                                    },
+                                    {
+                                        "key": "Abercrombie & Fitch",
+                                        "value": "31"
+                                    },
+                                    {
+                                        "key": "J. Crew",
+                                        "value": "32"
+                                    },
+                                    {
+                                        "key": "Dolce & Gabbana",
+                                        "value": "33"
+                                    },
+                                    {
+                                        "key": "Christian Dior",
+                                        "value": "34"
+                                    },
+                                    {
+                                        "key": "Supreme",
+                                        "value": "35"
+                                    },
+                                    {
+                                        "key": "American Eagle Outfitters",
+                                        "value": "36"
+                                    },
+                                    {
+                                        "key": "Michael Kors",
+                                        "value": "37"
+                                    },
+                                    {
+                                        "key": "Banana Republic",
+                                        "value": "38"
+                                    },
+                                    {
+                                        "key": "Balenciaga",
+                                        "value": "39"
+                                    },
+                                    {
+                                        "key": "Fendi",
+                                        "value": "40"
+                                    },
+                                    {
+                                        "key": "Fred Perry",
+                                        "value": "41"
+                                    },
+                                    {
+                                        "key": "Stone Island",
+                                        "value": "42"
+                                    },
+                                    {
+                                        "key": "Converse",
+                                        "value": "43"
+                                    },
+                                    {
+                                        "key": "Nautica",
+                                        "value": "44"
+                                    },
+                                    {
+                                        "key": "Off-White",
+                                        "value": "45"
+                                    },
+                                    {
+                                        "key": "Uniqlo",
+                                        "value": "46"
+                                    },
+                                    {
+                                        "key": "Patagonia",
+                                        "value": " Inc."
+                                    },
+                                    {
+                                        "key": "A Bathing Ape",
+                                        "value": "48"
+                                    },
+                                    {
+                                        "key": "Gap Inc.",
+                                        "value": "49"
+                                    },
+                                    {
+                                        "key": "Cartier",
+                                        "value": "50"
+                                    },
+                                    {
+                                        "key": "Fila",
+                                        "value": "51"
+                                    },
+                                    {
+                                        "key": "Puma",
+                                        "value": "52"
+                                    },
+                                    {
+                                        "key": "Wrangler",
+                                        "value": "53"
+                                    },
+                                    {
+                                        "key": "Oakley",
+                                        "value": " Inc."
+                                    },
+                                    {
+                                        "key": "Vineyard Vines",
+                                        "value": "55"
+                                    },
+                                    {
+                                        "key": "Lee",
+                                        "value": "56"
+                                    },
+                                    {
+                                        "key": "New Balance",
+                                        "value": "57"
+                                    },
+                                    {
+                                        "key": "Marc Jacobs",
+                                        "value": "58"
+                                    },
+                                    {
+                                        "key": "Salvatore Ferragamo",
+                                        "value": "59"
+                                    },
+                                    {
+                                        "key": "DKNY",
+                                        "value": "60"
+                                    },
+                                    {
+                                        "key": "Bulgari",
+                                        "value": "61"
+                                    },
+                                    {
+                                        "key": "Reebok",
+                                        "value": "62"
+                                    },
+                                    {
+                                        "key": "Topman",
+                                        "value": "63"
+                                    },
+                                    {
+                                        "key": "Kenneth Cole",
+                                        "value": "64"
+                                    },
+                                    {
+                                        "key": "Yves Saint Laurent",
+                                        "value": "65"
+                                    },
+                                    {
+                                        "key": "Pull & Bear",
+                                        "value": "66"
+                                    },
+                                    {
+                                        "key": "Palace",
+                                        "value": "67"
+                                    },
+                                    {
+                                        "key": "Columbia",
+                                        "value": "68"
+                                    },
+                                    {
+                                        "key": "Carrhart",
+                                        "value": "69"
+                                    },
+                                    {
+                                        "key": "Kappa",
+                                        "value": "70"
+                                    },
+                                    {
+                                        "key": "A\u00e9ropostale",
+                                        "value": "71"
+                                    },
+                                    {
+                                        "key": "Quicksilver",
+                                        "value": "72"
+                                    },
+                                    {
+                                        "key": "Moncler",
+                                        "value": "73"
+                                    },
+                                    {
+                                        "key": "French Connection",
+                                        "value": "74"
+                                    },
+                                    {
+                                        "key": "Ted Baker",
+                                        "value": "75"
+                                    },
+                                    {
+                                        "key": "Express",
+                                        "value": " Inc."
+                                    },
+                                    {
+                                        "key": "Tiffany & Co.",
+                                        "value": "77"
+                                    },
+                                    {
+                                        "key": "Massimo Dutti",
+                                        "value": "78"
+                                    },
+                                    {
+                                        "key": "Gant",
+                                        "value": "79"
+                                    },
+                                    {
+                                        "key": "Ellesse",
+                                        "value": "80"
+                                    },
+                                    {
+                                        "key": "Paul Smith",
+                                        "value": "81"
+                                    },
+                                    {
+                                        "key": "Billabong",
+                                        "value": "82"
+                                    },
+                                    {
+                                        "key": "Kenzo",
+                                        "value": "83"
+                                    },
+                                    {
+                                        "key": "Helly Hansen",
+                                        "value": "84"
+                                    },
+                                    {
+                                        "key": "Clarks",
+                                        "value": "85"
+                                    },
+                                    {
+                                        "key": "Diamond Supply Co.",
+                                        "value": "86"
+                                    },
+                                    {
+                                        "key": "Valentino",
+                                        "value": "87"
+                                    },
+                                    {
+                                        "key": "G-Star Raw",
+                                        "value": "88"
+                                    },
+                                    {
+                                        "key": "Ermenegildo Zegna",
+                                        "value": "89"
+                                    },
+                                    {
+                                        "key": "Scotch & Soda",
+                                        "value": "90"
+                                    },
+                                    {
+                                        "key": "Forever 21",
+                                        "value": "91"
+                                    },
+                                    {
+                                        "key": "Hackett London",
+                                        "value": "92"
+                                    },
+                                    {
+                                        "key": "Louis Phillipe",
+                                        "value": "93"
+                                    },
+                                    {
+                                        "key": "Marc O'Polo",
+                                        "value": "94"
+                                    },
+                                    {
+                                        "key": "Everlast",
+                                        "value": "95"
+                                    },
+                                    {
+                                        "key": "Bombay Shades",
+                                        "value": "96"
+                                    },
+                                    {
+                                        "key": "Schott NYC",
+                                        "value": "97"
+                                    },
+                                    {
+                                        "key": "Sail Racing",
+                                        "value": "98"
+                                    },
+                                    {
+                                        "key": "C&A",
+                                        "value": "99"
+                                    },
+                                    {
+                                        "key": "Umbro",
+                                        "value": "100"
+                                    }
+                                ],
+                                "width": "",
+                                "defaultValue": "",
+                                "optionsProviderClass": "",
+                                "optionsProviderData": "",
+                                "queryColumnType": "varchar",
+                                "columnType": "varchar",
+                                "columnLength": 190,
+                                "phpdocType": "string",
+                                "dynamicOptions": false,
+                                "name": "brand",
+                                "title": "Brand",
+                                "tooltip": "",
+                                "mandatory": false,
+                                "noteditable": false,
+                                "index": false,
+                                "locked": false,
+                                "style": "",
+                                "permissions": null,
+                                "datatype": "data",
+                                "relationType": false,
+                                "invisible": false,
+                                "visibleGridView": false,
+                                "visibleSearch": false,
+                                "defaultValueGenerator": ""
+                            },
+                            {
+                                "fieldtype": "country",
+                                "restrictTo": "",
+                                "options": [
+                                    {
+                                        "key": "Afghanistan",
+                                        "value": "AF"
+                                    },
+                                    {
+                                        "key": "Albania",
+                                        "value": "AL"
+                                    },
+                                    {
+                                        "key": "Algeria",
+                                        "value": "DZ"
+                                    },
+                                    {
+                                        "key": "American Samoa",
+                                        "value": "AS"
+                                    },
+                                    {
+                                        "key": "Andorra",
+                                        "value": "AD"
+                                    },
+                                    {
+                                        "key": "Angola",
+                                        "value": "AO"
+                                    },
+                                    {
+                                        "key": "Anguilla",
+                                        "value": "AI"
+                                    },
+                                    {
+                                        "key": "Antarctica",
+                                        "value": "AQ"
+                                    },
+                                    {
+                                        "key": "Antigua & Barbuda",
+                                        "value": "AG"
+                                    },
+                                    {
+                                        "key": "Argentina",
+                                        "value": "AR"
+                                    },
+                                    {
+                                        "key": "Armenia",
+                                        "value": "AM"
+                                    },
+                                    {
+                                        "key": "Aruba",
+                                        "value": "AW"
+                                    },
+                                    {
+                                        "key": "Ascension Island",
+                                        "value": "AC"
+                                    },
+                                    {
+                                        "key": "Australia",
+                                        "value": "AU"
+                                    },
+                                    {
+                                        "key": "Austria",
+                                        "value": "AT"
+                                    },
+                                    {
+                                        "key": "Azerbaijan",
+                                        "value": "AZ"
+                                    },
+                                    {
+                                        "key": "Bahamas",
+                                        "value": "BS"
+                                    },
+                                    {
+                                        "key": "Bahrain",
+                                        "value": "BH"
+                                    },
+                                    {
+                                        "key": "Bangladesh",
+                                        "value": "BD"
+                                    },
+                                    {
+                                        "key": "Barbados",
+                                        "value": "BB"
+                                    },
+                                    {
+                                        "key": "Belarus",
+                                        "value": "BY"
+                                    },
+                                    {
+                                        "key": "Belgium",
+                                        "value": "BE"
+                                    },
+                                    {
+                                        "key": "Belize",
+                                        "value": "BZ"
+                                    },
+                                    {
+                                        "key": "Benin",
+                                        "value": "BJ"
+                                    },
+                                    {
+                                        "key": "Bermuda",
+                                        "value": "BM"
+                                    },
+                                    {
+                                        "key": "Bhutan",
+                                        "value": "BT"
+                                    },
+                                    {
+                                        "key": "Bolivia",
+                                        "value": "BO"
+                                    },
+                                    {
+                                        "key": "Bosnia & Herzegovina",
+                                        "value": "BA"
+                                    },
+                                    {
+                                        "key": "Botswana",
+                                        "value": "BW"
+                                    },
+                                    {
+                                        "key": "Brazil",
+                                        "value": "BR"
+                                    },
+                                    {
+                                        "key": "British Indian Ocean Territory",
+                                        "value": "IO"
+                                    },
+                                    {
+                                        "key": "British Virgin Islands",
+                                        "value": "VG"
+                                    },
+                                    {
+                                        "key": "Brunei",
+                                        "value": "BN"
+                                    },
+                                    {
+                                        "key": "Bulgaria",
+                                        "value": "BG"
+                                    },
+                                    {
+                                        "key": "Burkina Faso",
+                                        "value": "BF"
+                                    },
+                                    {
+                                        "key": "Burundi",
+                                        "value": "BI"
+                                    },
+                                    {
+                                        "key": "Cambodia",
+                                        "value": "KH"
+                                    },
+                                    {
+                                        "key": "Cameroon",
+                                        "value": "CM"
+                                    },
+                                    {
+                                        "key": "Canada",
+                                        "value": "CA"
+                                    },
+                                    {
+                                        "key": "Canary Islands",
+                                        "value": "IC"
+                                    },
+                                    {
+                                        "key": "Cape Verde",
+                                        "value": "CV"
+                                    },
+                                    {
+                                        "key": "Caribbean Netherlands",
+                                        "value": "BQ"
+                                    },
+                                    {
+                                        "key": "Cayman Islands",
+                                        "value": "KY"
+                                    },
+                                    {
+                                        "key": "Central African Republic",
+                                        "value": "CF"
+                                    },
+                                    {
+                                        "key": "Ceuta & Melilla",
+                                        "value": "EA"
+                                    },
+                                    {
+                                        "key": "Chad",
+                                        "value": "TD"
+                                    },
+                                    {
+                                        "key": "Chile",
+                                        "value": "CL"
+                                    },
+                                    {
+                                        "key": "China",
+                                        "value": "CN"
+                                    },
+                                    {
+                                        "key": "Christmas Island",
+                                        "value": "CX"
+                                    },
+                                    {
+                                        "key": "Cocos (Keeling) Islands",
+                                        "value": "CC"
+                                    },
+                                    {
+                                        "key": "Colombia",
+                                        "value": "CO"
+                                    },
+                                    {
+                                        "key": "Comoros",
+                                        "value": "KM"
+                                    },
+                                    {
+                                        "key": "Congo - Brazzaville",
+                                        "value": "CG"
+                                    },
+                                    {
+                                        "key": "Congo - Kinshasa",
+                                        "value": "CD"
+                                    },
+                                    {
+                                        "key": "Cook Islands",
+                                        "value": "CK"
+                                    },
+                                    {
+                                        "key": "Costa Rica",
+                                        "value": "CR"
+                                    },
+                                    {
+                                        "key": "Croatia",
+                                        "value": "HR"
+                                    },
+                                    {
+                                        "key": "Cuba",
+                                        "value": "CU"
+                                    },
+                                    {
+                                        "key": "Cura\u00e7ao",
+                                        "value": "CW"
+                                    },
+                                    {
+                                        "key": "Cyprus",
+                                        "value": "CY"
+                                    },
+                                    {
+                                        "key": "Czechia",
+                                        "value": "CZ"
+                                    },
+                                    {
+                                        "key": "C\u00f4te d\u2019Ivoire",
+                                        "value": "CI"
+                                    },
+                                    {
+                                        "key": "Denmark",
+                                        "value": "DK"
+                                    },
+                                    {
+                                        "key": "Diego Garcia",
+                                        "value": "DG"
+                                    },
+                                    {
+                                        "key": "Djibouti",
+                                        "value": "DJ"
+                                    },
+                                    {
+                                        "key": "Dominica",
+                                        "value": "DM"
+                                    },
+                                    {
+                                        "key": "Dominican Republic",
+                                        "value": "DO"
+                                    },
+                                    {
+                                        "key": "Ecuador",
+                                        "value": "EC"
+                                    },
+                                    {
+                                        "key": "Egypt",
+                                        "value": "EG"
+                                    },
+                                    {
+                                        "key": "El Salvador",
+                                        "value": "SV"
+                                    },
+                                    {
+                                        "key": "Equatorial Guinea",
+                                        "value": "GQ"
+                                    },
+                                    {
+                                        "key": "Eritrea",
+                                        "value": "ER"
+                                    },
+                                    {
+                                        "key": "Estonia",
+                                        "value": "EE"
+                                    },
+                                    {
+                                        "key": "Eswatini",
+                                        "value": "SZ"
+                                    },
+                                    {
+                                        "key": "Ethiopia",
+                                        "value": "ET"
+                                    },
+                                    {
+                                        "key": "Falkland Islands",
+                                        "value": "FK"
+                                    },
+                                    {
+                                        "key": "Faroe Islands",
+                                        "value": "FO"
+                                    },
+                                    {
+                                        "key": "Fiji",
+                                        "value": "FJ"
+                                    },
+                                    {
+                                        "key": "Finland",
+                                        "value": "FI"
+                                    },
+                                    {
+                                        "key": "France",
+                                        "value": "FR"
+                                    },
+                                    {
+                                        "key": "French Guiana",
+                                        "value": "GF"
+                                    },
+                                    {
+                                        "key": "French Polynesia",
+                                        "value": "PF"
+                                    },
+                                    {
+                                        "key": "French Southern Territories",
+                                        "value": "TF"
+                                    },
+                                    {
+                                        "key": "Gabon",
+                                        "value": "GA"
+                                    },
+                                    {
+                                        "key": "Gambia",
+                                        "value": "GM"
+                                    },
+                                    {
+                                        "key": "Georgia",
+                                        "value": "GE"
+                                    },
+                                    {
+                                        "key": "Germany",
+                                        "value": "DE"
+                                    },
+                                    {
+                                        "key": "Ghana",
+                                        "value": "GH"
+                                    },
+                                    {
+                                        "key": "Gibraltar",
+                                        "value": "GI"
+                                    },
+                                    {
+                                        "key": "Greece",
+                                        "value": "GR"
+                                    },
+                                    {
+                                        "key": "Greenland",
+                                        "value": "GL"
+                                    },
+                                    {
+                                        "key": "Grenada",
+                                        "value": "GD"
+                                    },
+                                    {
+                                        "key": "Guadeloupe",
+                                        "value": "GP"
+                                    },
+                                    {
+                                        "key": "Guam",
+                                        "value": "GU"
+                                    },
+                                    {
+                                        "key": "Guatemala",
+                                        "value": "GT"
+                                    },
+                                    {
+                                        "key": "Guernsey",
+                                        "value": "GG"
+                                    },
+                                    {
+                                        "key": "Guinea",
+                                        "value": "GN"
+                                    },
+                                    {
+                                        "key": "Guinea-Bissau",
+                                        "value": "GW"
+                                    },
+                                    {
+                                        "key": "Guyana",
+                                        "value": "GY"
+                                    },
+                                    {
+                                        "key": "Haiti",
+                                        "value": "HT"
+                                    },
+                                    {
+                                        "key": "Honduras",
+                                        "value": "HN"
+                                    },
+                                    {
+                                        "key": "Hong Kong SAR China",
+                                        "value": "HK"
+                                    },
+                                    {
+                                        "key": "Hungary",
+                                        "value": "HU"
+                                    },
+                                    {
+                                        "key": "Iceland",
+                                        "value": "IS"
+                                    },
+                                    {
+                                        "key": "India",
+                                        "value": "IN"
+                                    },
+                                    {
+                                        "key": "Indonesia",
+                                        "value": "ID"
+                                    },
+                                    {
+                                        "key": "Iran",
+                                        "value": "IR"
+                                    },
+                                    {
+                                        "key": "Iraq",
+                                        "value": "IQ"
+                                    },
+                                    {
+                                        "key": "Ireland",
+                                        "value": "IE"
+                                    },
+                                    {
+                                        "key": "Isle of Man",
+                                        "value": "IM"
+                                    },
+                                    {
+                                        "key": "Israel",
+                                        "value": "IL"
+                                    },
+                                    {
+                                        "key": "Italy",
+                                        "value": "IT"
+                                    },
+                                    {
+                                        "key": "Jamaica",
+                                        "value": "JM"
+                                    },
+                                    {
+                                        "key": "Japan",
+                                        "value": "JP"
+                                    },
+                                    {
+                                        "key": "Jersey",
+                                        "value": "JE"
+                                    },
+                                    {
+                                        "key": "Jordan",
+                                        "value": "JO"
+                                    },
+                                    {
+                                        "key": "Kazakhstan",
+                                        "value": "KZ"
+                                    },
+                                    {
+                                        "key": "Kenya",
+                                        "value": "KE"
+                                    },
+                                    {
+                                        "key": "Kiribati",
+                                        "value": "KI"
+                                    },
+                                    {
+                                        "key": "Kosovo",
+                                        "value": "XK"
+                                    },
+                                    {
+                                        "key": "Kuwait",
+                                        "value": "KW"
+                                    },
+                                    {
+                                        "key": "Kyrgyzstan",
+                                        "value": "KG"
+                                    },
+                                    {
+                                        "key": "Laos",
+                                        "value": "LA"
+                                    },
+                                    {
+                                        "key": "Latvia",
+                                        "value": "LV"
+                                    },
+                                    {
+                                        "key": "Lebanon",
+                                        "value": "LB"
+                                    },
+                                    {
+                                        "key": "Lesotho",
+                                        "value": "LS"
+                                    },
+                                    {
+                                        "key": "Liberia",
+                                        "value": "LR"
+                                    },
+                                    {
+                                        "key": "Libya",
+                                        "value": "LY"
+                                    },
+                                    {
+                                        "key": "Liechtenstein",
+                                        "value": "LI"
+                                    },
+                                    {
+                                        "key": "Lithuania",
+                                        "value": "LT"
+                                    },
+                                    {
+                                        "key": "Luxembourg",
+                                        "value": "LU"
+                                    },
+                                    {
+                                        "key": "Macao SAR China",
+                                        "value": "MO"
+                                    },
+                                    {
+                                        "key": "Madagascar",
+                                        "value": "MG"
+                                    },
+                                    {
+                                        "key": "Malawi",
+                                        "value": "MW"
+                                    },
+                                    {
+                                        "key": "Malaysia",
+                                        "value": "MY"
+                                    },
+                                    {
+                                        "key": "Maldives",
+                                        "value": "MV"
+                                    },
+                                    {
+                                        "key": "Mali",
+                                        "value": "ML"
+                                    },
+                                    {
+                                        "key": "Malta",
+                                        "value": "MT"
+                                    },
+                                    {
+                                        "key": "Marshall Islands",
+                                        "value": "MH"
+                                    },
+                                    {
+                                        "key": "Martinique",
+                                        "value": "MQ"
+                                    },
+                                    {
+                                        "key": "Mauritania",
+                                        "value": "MR"
+                                    },
+                                    {
+                                        "key": "Mauritius",
+                                        "value": "MU"
+                                    },
+                                    {
+                                        "key": "Mayotte",
+                                        "value": "YT"
+                                    },
+                                    {
+                                        "key": "Mexico",
+                                        "value": "MX"
+                                    },
+                                    {
+                                        "key": "Micronesia",
+                                        "value": "FM"
+                                    },
+                                    {
+                                        "key": "Moldova",
+                                        "value": "MD"
+                                    },
+                                    {
+                                        "key": "Monaco",
+                                        "value": "MC"
+                                    },
+                                    {
+                                        "key": "Mongolia",
+                                        "value": "MN"
+                                    },
+                                    {
+                                        "key": "Montenegro",
+                                        "value": "ME"
+                                    },
+                                    {
+                                        "key": "Montserrat",
+                                        "value": "MS"
+                                    },
+                                    {
+                                        "key": "Morocco",
+                                        "value": "MA"
+                                    },
+                                    {
+                                        "key": "Mozambique",
+                                        "value": "MZ"
+                                    },
+                                    {
+                                        "key": "Myanmar (Burma)",
+                                        "value": "MM"
+                                    },
+                                    {
+                                        "key": "Namibia",
+                                        "value": "NA"
+                                    },
+                                    {
+                                        "key": "Nauru",
+                                        "value": "NR"
+                                    },
+                                    {
+                                        "key": "Nepal",
+                                        "value": "NP"
+                                    },
+                                    {
+                                        "key": "Netherlands",
+                                        "value": "NL"
+                                    },
+                                    {
+                                        "key": "New Caledonia",
+                                        "value": "NC"
+                                    },
+                                    {
+                                        "key": "New Zealand",
+                                        "value": "NZ"
+                                    },
+                                    {
+                                        "key": "Nicaragua",
+                                        "value": "NI"
+                                    },
+                                    {
+                                        "key": "Niger",
+                                        "value": "NE"
+                                    },
+                                    {
+                                        "key": "Nigeria",
+                                        "value": "NG"
+                                    },
+                                    {
+                                        "key": "Niue",
+                                        "value": "NU"
+                                    },
+                                    {
+                                        "key": "Norfolk Island",
+                                        "value": "NF"
+                                    },
+                                    {
+                                        "key": "North Korea",
+                                        "value": "KP"
+                                    },
+                                    {
+                                        "key": "North Macedonia",
+                                        "value": "MK"
+                                    },
+                                    {
+                                        "key": "Northern Mariana Islands",
+                                        "value": "MP"
+                                    },
+                                    {
+                                        "key": "Norway",
+                                        "value": "NO"
+                                    },
+                                    {
+                                        "key": "Oman",
+                                        "value": "OM"
+                                    },
+                                    {
+                                        "key": "Pakistan",
+                                        "value": "PK"
+                                    },
+                                    {
+                                        "key": "Palau",
+                                        "value": "PW"
+                                    },
+                                    {
+                                        "key": "Palestinian Territories",
+                                        "value": "PS"
+                                    },
+                                    {
+                                        "key": "Panama",
+                                        "value": "PA"
+                                    },
+                                    {
+                                        "key": "Papua New Guinea",
+                                        "value": "PG"
+                                    },
+                                    {
+                                        "key": "Paraguay",
+                                        "value": "PY"
+                                    },
+                                    {
+                                        "key": "Peru",
+                                        "value": "PE"
+                                    },
+                                    {
+                                        "key": "Philippines",
+                                        "value": "PH"
+                                    },
+                                    {
+                                        "key": "Pitcairn Islands",
+                                        "value": "PN"
+                                    },
+                                    {
+                                        "key": "Poland",
+                                        "value": "PL"
+                                    },
+                                    {
+                                        "key": "Portugal",
+                                        "value": "PT"
+                                    },
+                                    {
+                                        "key": "Pseudo-Accents",
+                                        "value": "XA"
+                                    },
+                                    {
+                                        "key": "Pseudo-Bidi",
+                                        "value": "XB"
+                                    },
+                                    {
+                                        "key": "Puerto Rico",
+                                        "value": "PR"
+                                    },
+                                    {
+                                        "key": "Qatar",
+                                        "value": "QA"
+                                    },
+                                    {
+                                        "key": "Romania",
+                                        "value": "RO"
+                                    },
+                                    {
+                                        "key": "Russia",
+                                        "value": "RU"
+                                    },
+                                    {
+                                        "key": "Rwanda",
+                                        "value": "RW"
+                                    },
+                                    {
+                                        "key": "R\u00e9union",
+                                        "value": "RE"
+                                    },
+                                    {
+                                        "key": "Samoa",
+                                        "value": "WS"
+                                    },
+                                    {
+                                        "key": "San Marino",
+                                        "value": "SM"
+                                    },
+                                    {
+                                        "key": "Saudi Arabia",
+                                        "value": "SA"
+                                    },
+                                    {
+                                        "key": "Senegal",
+                                        "value": "SN"
+                                    },
+                                    {
+                                        "key": "Serbia",
+                                        "value": "RS"
+                                    },
+                                    {
+                                        "key": "Seychelles",
+                                        "value": "SC"
+                                    },
+                                    {
+                                        "key": "Sierra Leone",
+                                        "value": "SL"
+                                    },
+                                    {
+                                        "key": "Singapore",
+                                        "value": "SG"
+                                    },
+                                    {
+                                        "key": "Sint Maarten",
+                                        "value": "SX"
+                                    },
+                                    {
+                                        "key": "Slovakia",
+                                        "value": "SK"
+                                    },
+                                    {
+                                        "key": "Slovenia",
+                                        "value": "SI"
+                                    },
+                                    {
+                                        "key": "Solomon Islands",
+                                        "value": "SB"
+                                    },
+                                    {
+                                        "key": "Somalia",
+                                        "value": "SO"
+                                    },
+                                    {
+                                        "key": "South Africa",
+                                        "value": "ZA"
+                                    },
+                                    {
+                                        "key": "South Georgia & South Sandwich Islands",
+                                        "value": "GS"
+                                    },
+                                    {
+                                        "key": "South Korea",
+                                        "value": "KR"
+                                    },
+                                    {
+                                        "key": "South Sudan",
+                                        "value": "SS"
+                                    },
+                                    {
+                                        "key": "Spain",
+                                        "value": "ES"
+                                    },
+                                    {
+                                        "key": "Sri Lanka",
+                                        "value": "LK"
+                                    },
+                                    {
+                                        "key": "St. Barth\u00e9lemy",
+                                        "value": "BL"
+                                    },
+                                    {
+                                        "key": "St. Helena",
+                                        "value": "SH"
+                                    },
+                                    {
+                                        "key": "St. Kitts & Nevis",
+                                        "value": "KN"
+                                    },
+                                    {
+                                        "key": "St. Lucia",
+                                        "value": "LC"
+                                    },
+                                    {
+                                        "key": "St. Martin",
+                                        "value": "MF"
+                                    },
+                                    {
+                                        "key": "St. Pierre & Miquelon",
+                                        "value": "PM"
+                                    },
+                                    {
+                                        "key": "St. Vincent & Grenadines",
+                                        "value": "VC"
+                                    },
+                                    {
+                                        "key": "Sudan",
+                                        "value": "SD"
+                                    },
+                                    {
+                                        "key": "Suriname",
+                                        "value": "SR"
+                                    },
+                                    {
+                                        "key": "Svalbard & Jan Mayen",
+                                        "value": "SJ"
+                                    },
+                                    {
+                                        "key": "Sweden",
+                                        "value": "SE"
+                                    },
+                                    {
+                                        "key": "Switzerland",
+                                        "value": "CH"
+                                    },
+                                    {
+                                        "key": "Syria",
+                                        "value": "SY"
+                                    },
+                                    {
+                                        "key": "S\u00e3o Tom\u00e9 & Pr\u00edncipe",
+                                        "value": "ST"
+                                    },
+                                    {
+                                        "key": "Taiwan",
+                                        "value": "TW"
+                                    },
+                                    {
+                                        "key": "Tajikistan",
+                                        "value": "TJ"
+                                    },
+                                    {
+                                        "key": "Tanzania",
+                                        "value": "TZ"
+                                    },
+                                    {
+                                        "key": "Thailand",
+                                        "value": "TH"
+                                    },
+                                    {
+                                        "key": "Timor-Leste",
+                                        "value": "TL"
+                                    },
+                                    {
+                                        "key": "Togo",
+                                        "value": "TG"
+                                    },
+                                    {
+                                        "key": "Tokelau",
+                                        "value": "TK"
+                                    },
+                                    {
+                                        "key": "Tonga",
+                                        "value": "TO"
+                                    },
+                                    {
+                                        "key": "Trinidad & Tobago",
+                                        "value": "TT"
+                                    },
+                                    {
+                                        "key": "Tristan da Cunha",
+                                        "value": "TA"
+                                    },
+                                    {
+                                        "key": "Tunisia",
+                                        "value": "TN"
+                                    },
+                                    {
+                                        "key": "Turkey",
+                                        "value": "TR"
+                                    },
+                                    {
+                                        "key": "Turkmenistan",
+                                        "value": "TM"
+                                    },
+                                    {
+                                        "key": "Turks & Caicos Islands",
+                                        "value": "TC"
+                                    },
+                                    {
+                                        "key": "Tuvalu",
+                                        "value": "TV"
+                                    },
+                                    {
+                                        "key": "U.S. Outlying Islands",
+                                        "value": "UM"
+                                    },
+                                    {
+                                        "key": "U.S. Virgin Islands",
+                                        "value": "VI"
+                                    },
+                                    {
+                                        "key": "Uganda",
+                                        "value": "UG"
+                                    },
+                                    {
+                                        "key": "Ukraine",
+                                        "value": "UA"
+                                    },
+                                    {
+                                        "key": "United Arab Emirates",
+                                        "value": "AE"
+                                    },
+                                    {
+                                        "key": "United Kingdom",
+                                        "value": "GB"
+                                    },
+                                    {
+                                        "key": "United States",
+                                        "value": "US"
+                                    },
+                                    {
+                                        "key": "Uruguay",
+                                        "value": "UY"
+                                    },
+                                    {
+                                        "key": "Uzbekistan",
+                                        "value": "UZ"
+                                    },
+                                    {
+                                        "key": "Vanuatu",
+                                        "value": "VU"
+                                    },
+                                    {
+                                        "key": "Vatican City",
+                                        "value": "VA"
+                                    },
+                                    {
+                                        "key": "Venezuela",
+                                        "value": "VE"
+                                    },
+                                    {
+                                        "key": "Vietnam",
+                                        "value": "VN"
+                                    },
+                                    {
+                                        "key": "Wallis & Futuna",
+                                        "value": "WF"
+                                    },
+                                    {
+                                        "key": "Western Sahara",
+                                        "value": "EH"
+                                    },
+                                    {
+                                        "key": "Yemen",
+                                        "value": "YE"
+                                    },
+                                    {
+                                        "key": "Zambia",
+                                        "value": "ZM"
+                                    },
+                                    {
+                                        "key": "Zimbabwe",
+                                        "value": "ZW"
+                                    },
+                                    {
+                                        "key": "\u00c5land Islands",
+                                        "value": "AX"
+                                    }
+                                ],
+                                "width": "",
+                                "defaultValue": null,
+                                "optionsProviderClass": null,
+                                "optionsProviderData": null,
+                                "queryColumnType": "varchar",
+                                "columnType": "varchar",
+                                "columnLength": 190,
+                                "phpdocType": "string",
+                                "dynamicOptions": false,
+                                "name": "made_in",
+                                "title": "Made In",
+                                "tooltip": "",
+                                "mandatory": false,
+                                "noteditable": false,
+                                "index": false,
+                                "locked": false,
+                                "style": "",
+                                "permissions": null,
+                                "datatype": "data",
+                                "relationType": false,
+                                "invisible": false,
+                                "visibleGridView": false,
+                                "visibleSearch": false,
+                                "defaultValueGenerator": ""
+                            },
+                            {
+                                "fieldtype": "manyToOneRelation",
+                                "width": "",
+                                "assetUploadPath": "",
+                                "relationType": true,
+                                "queryColumnType": {
+                                    "id": "int(11)",
+                                    "type": "enum('document','asset','object')"
+                                },
+                                "phpdocType": "\\Pimcore\\Model\\Document\\Page | \\Pimcore\\Model\\Document\\Snippet | \\Pimcore\\Model\\Document | \\Pimcore\\Model\\Asset | \\Pimcore\\Model\\DataObject\\AbstractObject",
+                                "objectsAllowed": true,
+                                "assetsAllowed": false,
+                                "assetTypes": [],
+                                "documentsAllowed": false,
+                                "documentTypes": [],
+                                "classes": [
+                                    {
+                                        "classes": "Category"
+                                    }
+                                ],
+                                "pathFormatterClass": "",
+                                "name": "category",
+                                "title": "Category",
+                                "tooltip": "",
+                                "mandatory": false,
+                                "noteditable": false,
+                                "index": false,
+                                "locked": false,
+                                "style": "",
+                                "permissions": null,
+                                "datatype": "data",
+                                "invisible": false,
+                                "visibleGridView": false,
+                                "visibleSearch": false
+                            }
+                        ],
+                        "locked": false,
+                        "icon": ""
+                    },
+                    {
+                        "fieldtype": "panel",
+                        "labelWidth": 100,
+                        "layout": null,
+                        "border": false,
+                        "name": "Composition",
+                        "type": null,
+                        "region": null,
+                        "title": "Composition",
+                        "width": null,
+                        "height": null,
+                        "collapsible": false,
+                        "collapsed": false,
+                        "bodyStyle": "",
+                        "datatype": "layout",
+                        "permissions": null,
+                        "childs": [
+                            {
+                                "allowedClassId": "Material",
+                                "visibleFields": "key,code,name,typology",
+                                "columns": [
+                                    {
+                                        "type": "text",
+                                        "position": 1,
+                                        "key": "percent",
+                                        "id": "extModel7626-1",
+                                        "label": "Percent"
+                                    }
+                                ],
+                                "columnKeys": [
+                                    "percent"
+                                ],
+                                "fieldtype": "advancedManyToManyObjectRelation",
+                                "phpdocType": "\\Pimcore\\Model\\DataObject\\Data\\ObjectMetadata[]",
+                                "enableBatchEdit": false,
+                                "allowMultipleAssignments": false,
+                                "visibleFieldDefinitions": [],
+                                "width": "",
+                                "height": "",
+                                "maxItems": "",
+                                "queryColumnType": "text",
+                                "relationType": true,
+                                "allowToCreateNewObject": true,
+                                "optimizedAdminLoading": false,
+                                "classes": [],
+                                "pathFormatterClass": "",
+                                "name": "materials",
+                                "title": "Materials",
+                                "tooltip": "",
+                                "mandatory": false,
+                                "noteditable": false,
+                                "index": false,
+                                "locked": false,
+                                "style": "",
+                                "permissions": null,
+                                "datatype": "data",
+                                "invisible": false,
+                                "visibleGridView": false,
+                                "visibleSearch": false
+                            }
+                        ],
+                        "locked": false,
+                        "icon": ""
+                    },
+                    {
+                        "fieldtype": "panel",
+                        "labelWidth": 100,
+                        "layout": null,
+                        "border": false,
+                        "name": "Attributes",
+                        "type": null,
+                        "region": null,
+                        "title": "Attributes",
+                        "width": null,
+                        "height": null,
+                        "collapsible": false,
+                        "collapsed": false,
+                        "bodyStyle": "",
+                        "datatype": "layout",
+                        "permissions": null,
+                        "childs": [
+                            {
+                                "fieldtype": "manyToOneRelation",
+                                "width": "",
+                                "assetUploadPath": "",
+                                "relationType": true,
+                                "queryColumnType": {
+                                    "id": "int(11)",
+                                    "type": "enum('document','asset','object')"
+                                },
+                                "phpdocType": "\\Pimcore\\Model\\Document\\Page | \\Pimcore\\Model\\Document\\Snippet | \\Pimcore\\Model\\Document | \\Pimcore\\Model\\Asset | \\Pimcore\\Model\\DataObject\\AbstractObject",
+                                "objectsAllowed": true,
+                                "assetsAllowed": false,
+                                "assetTypes": [],
+                                "documentsAllowed": false,
+                                "documentTypes": [],
+                                "classes": [
+                                    {
+                                        "classes": "Color"
+                                    }
+                                ],
+                                "pathFormatterClass": "",
+                                "name": "color",
+                                "title": "Color",
+                                "tooltip": "",
+                                "mandatory": false,
+                                "noteditable": false,
+                                "index": false,
+                                "locked": false,
+                                "style": "",
+                                "permissions": null,
+                                "datatype": "data",
+                                "invisible": false,
+                                "visibleGridView": false,
+                                "visibleSearch": false
+                            },
+                            {
+                                "fieldtype": "objectbricks",
+                                "phpdocType": "\\Pimcore\\Model\\DataObject\\Objectbrick",
+                                "allowedTypes": [
+                                    "ShirtsAttributes",
+                                    "ShoesAttributes"
+                                ],
+                                "maxItems": "",
+                                "border": false,
+                                "name": "attributes",
+                                "title": "Attributes",
+                                "tooltip": "",
+                                "mandatory": false,
+                                "noteditable": false,
+                                "index": false,
+                                "locked": false,
+                                "style": "",
+                                "permissions": null,
+                                "datatype": "data",
+                                "relationType": false,
+                                "invisible": false,
+                                "visibleGridView": false,
+                                "visibleSearch": false
+                            }
+                        ],
+                        "locked": false,
+                        "icon": ""
+                    },
+                    {
+                        "fieldtype": "panel",
+                        "labelWidth": 100,
+                        "layout": null,
+                        "border": false,
+                        "name": "Images",
+                        "type": null,
+                        "region": null,
+                        "title": "Images",
+                        "width": null,
+                        "height": null,
+                        "collapsible": false,
+                        "collapsed": false,
+                        "bodyStyle": "",
+                        "datatype": "layout",
+                        "permissions": null,
+                        "childs": [
+                            {
+                                "fieldtype": "fieldcollections",
+                                "phpdocType": "\\Pimcore\\Model\\DataObject\\Fieldcollection",
+                                "allowedTypes": [
+                                    "ImageInfo"
+                                ],
+                                "lazyLoading": true,
+                                "maxItems": "",
+                                "disallowAddRemove": false,
+                                "disallowReorder": false,
+                                "collapsed": false,
+                                "collapsible": false,
+                                "border": false,
+                                "name": "images",
+                                "title": "Images",
+                                "tooltip": "",
+                                "mandatory": false,
+                                "noteditable": false,
+                                "index": false,
+                                "locked": false,
+                                "style": "",
+                                "permissions": null,
+                                "datatype": "data",
+                                "relationType": false,
+                                "invisible": false,
+                                "visibleGridView": false,
+                                "visibleSearch": false
+                            }
+                        ],
+                        "locked": false,
+                        "icon": ""
+                    }
+                ],
+                "locked": false
+            }
+        ],
+        "locked": false,
+        "icon": null
+    },
+    "icon": "",
+    "previewUrl": "",
+    "group": "",
+    "showAppLoggerTab": false,
+    "linkGeneratorReference": "",
+    "compositeIndices": [],
+    "generateTypeDeclarations": false,
+    "showFieldLookup": false,
+    "propertyVisibility": {
+        "grid": {
+            "id": true,
+            "key": false,
+            "path": true,
+            "published": true,
+            "modificationDate": true,
+            "creationDate": true
+        },
+        "search": {
+            "id": true,
+            "key": false,
+            "path": true,
+            "published": true,
+            "modificationDate": true,
+            "creationDate": true
+        }
+    },
+    "enableGridLocking": false
+}

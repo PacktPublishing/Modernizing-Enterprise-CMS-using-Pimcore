@@ -20,7 +20,6 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
    'layoutDefinitions' => 
   Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
      'fieldtype' => 'panel',
-     'labelWidth' => 100,
      'layout' => NULL,
      'border' => false,
      'name' => NULL,
@@ -39,7 +38,6 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
       0 => 
       Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
          'fieldtype' => 'panel',
-         'labelWidth' => 100,
          'layout' => '',
          'border' => false,
          'name' => 'Opening Day',
@@ -59,9 +57,6 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
           Pimcore\Model\DataObject\ClassDefinition\Data\Checkbox::__set_state(array(
              'fieldtype' => 'checkbox',
              'defaultValue' => NULL,
-             'queryColumnType' => 'tinyint(1)',
-             'columnType' => 'tinyint(1)',
-             'phpdocType' => 'bool',
              'name' => 'closed',
              'title' => 'Closed',
              'tooltip' => '',
@@ -76,6 +71,9 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
              'invisible' => false,
              'visibleGridView' => false,
              'visibleSearch' => false,
+             'blockedVarsForExport' => 
+            array (
+            ),
              'defaultValueGenerator' => '',
           )),
           1 => 
@@ -123,10 +121,7 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
              'defaultValue' => '',
              'optionsProviderClass' => '',
              'optionsProviderData' => '',
-             'queryColumnType' => 'varchar',
-             'columnType' => 'varchar',
              'columnLength' => 190,
-             'phpdocType' => 'string',
              'dynamicOptions' => false,
              'name' => 'dayofweek',
              'title' => 'Day of the Week',
@@ -142,6 +137,9 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
              'invisible' => false,
              'visibleGridView' => false,
              'visibleSearch' => false,
+             'blockedVarsForExport' => 
+            array (
+            ),
              'defaultValueGenerator' => '',
           )),
           2 => 
@@ -169,10 +167,7 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
              'defaultValue' => '',
              'optionsProviderClass' => '',
              'optionsProviderData' => '',
-             'queryColumnType' => 'varchar',
-             'columnType' => 'varchar',
              'columnLength' => 190,
-             'phpdocType' => 'string',
              'dynamicOptions' => false,
              'name' => 'partofday',
              'title' => 'Part of the Day',
@@ -188,12 +183,14 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
              'invisible' => false,
              'visibleGridView' => false,
              'visibleSearch' => false,
+             'blockedVarsForExport' => 
+            array (
+            ),
              'defaultValueGenerator' => '',
           )),
           3 => 
           Pimcore\Model\DataObject\ClassDefinition\Layout\Fieldcontainer::__set_state(array(
              'fieldtype' => 'fieldcontainer',
-             'labelWidth' => 100,
              'layout' => 'hbox',
              'fieldLabel' => '',
              'name' => 'Opening Hours',
@@ -218,9 +215,6 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
                  'increment' => 15,
                  'width' => NULL,
                  'defaultValue' => NULL,
-                 'queryColumnType' => 'varchar',
-                 'columnType' => 'varchar',
-                 'phpdocType' => 'string',
                  'regex' => '',
                  'unique' => false,
                  'showCharCount' => NULL,
@@ -238,6 +232,9 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => false,
+                 'blockedVarsForExport' => 
+                array (
+                ),
                  'defaultValueGenerator' => '',
               )),
               1 => 
@@ -249,9 +246,6 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
                  'increment' => 15,
                  'width' => NULL,
                  'defaultValue' => NULL,
-                 'queryColumnType' => 'varchar',
-                 'columnType' => 'varchar',
-                 'phpdocType' => 'string',
                  'regex' => '',
                  'unique' => false,
                  'showCharCount' => NULL,
@@ -269,18 +263,39 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => false,
+                 'blockedVarsForExport' => 
+                array (
+                ),
                  'defaultValueGenerator' => '',
               )),
             ),
              'locked' => false,
+             'blockedVarsForExport' => 
+            array (
+            ),
+             'labelWidth' => 100,
+             'labelAlign' => 'left',
           )),
         ),
          'locked' => false,
+         'blockedVarsForExport' => 
+        array (
+        ),
          'icon' => '',
+         'labelWidth' => 100,
+         'labelAlign' => 'left',
       )),
     ),
      'locked' => false,
+     'blockedVarsForExport' => 
+    array (
+    ),
      'icon' => NULL,
+     'labelWidth' => 100,
+     'labelAlign' => 'left',
   )),
    'generateTypeDeclarations' => false,
+   'blockedVarsForExport' => 
+  array (
+  ),
 ));

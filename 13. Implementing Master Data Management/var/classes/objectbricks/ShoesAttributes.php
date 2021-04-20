@@ -26,7 +26,6 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
    'layoutDefinitions' => 
   Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
      'fieldtype' => 'panel',
-     'labelWidth' => 100,
      'layout' => NULL,
      'border' => false,
      'name' => NULL,
@@ -45,7 +44,6 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
       0 => 
       Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
          'fieldtype' => 'panel',
-         'labelWidth' => 100,
          'layout' => NULL,
          'border' => false,
          'name' => 'Shoes Attributes',
@@ -80,7 +78,6 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
               0 => 
               Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
                  'fieldtype' => 'panel',
-                 'labelWidth' => 100,
                  'layout' => NULL,
                  'border' => false,
                  'name' => 'Size Panel',
@@ -562,10 +559,7 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                      'defaultValue' => '',
                      'optionsProviderClass' => '',
                      'optionsProviderData' => '',
-                     'queryColumnType' => 'varchar',
-                     'columnType' => 'varchar',
                      'columnLength' => 190,
-                     'phpdocType' => 'string',
                      'dynamicOptions' => false,
                      'name' => 'size',
                      'title' => 'Size',
@@ -581,16 +575,23 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                      'invisible' => false,
                      'visibleGridView' => false,
                      'visibleSearch' => false,
+                     'blockedVarsForExport' => 
+                    array (
+                    ),
                      'defaultValueGenerator' => '',
                   )),
                 ),
                  'locked' => false,
+                 'blockedVarsForExport' => 
+                array (
+                ),
                  'icon' => '',
+                 'labelWidth' => 100,
+                 'labelAlign' => 'left',
               )),
               1 => 
               Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
                  'fieldtype' => 'panel',
-                 'labelWidth' => 100,
                  'layout' => NULL,
                  'border' => false,
                  'name' => 'Heel Panel',
@@ -609,7 +610,6 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                   0 => 
                   Pimcore\Model\DataObject\ClassDefinition\Layout\Fieldset::__set_state(array(
                      'fieldtype' => 'fieldset',
-                     'labelWidth' => 100,
                      'name' => 'Heel',
                      'type' => NULL,
                      'region' => NULL,
@@ -627,9 +627,6 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                       Pimcore\Model\DataObject\ClassDefinition\Data\Checkbox::__set_state(array(
                          'fieldtype' => 'checkbox',
                          'defaultValue' => NULL,
-                         'queryColumnType' => 'tinyint(1)',
-                         'columnType' => 'tinyint(1)',
-                         'phpdocType' => 'bool',
                          'name' => 'has_heel',
                          'title' => 'Has Heel',
                          'tooltip' => '',
@@ -644,6 +641,9 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                          'invisible' => false,
                          'visibleGridView' => false,
                          'visibleSearch' => false,
+                         'blockedVarsForExport' => 
+                        array (
+                        ),
                          'defaultValueGenerator' => '',
                       )),
                       1 => 
@@ -659,17 +659,6 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                         ),
                          'decimalPrecision' => NULL,
                          'autoConvert' => false,
-                         'queryColumnType' => 
-                        array (
-                          'value' => 'double',
-                          'unit' => 'bigint(20)',
-                        ),
-                         'columnType' => 
-                        array (
-                          'value' => 'double',
-                          'unit' => 'bigint(20)',
-                        ),
-                         'phpdocType' => '\\Pimcore\\Model\\DataObject\\Data\\QuantityValue',
                          'name' => 'heel_height',
                          'title' => 'Heel Height',
                          'tooltip' => '',
@@ -684,26 +673,55 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                          'invisible' => false,
                          'visibleGridView' => false,
                          'visibleSearch' => false,
+                         'blockedVarsForExport' => 
+                        array (
+                        ),
                          'defaultValueGenerator' => '',
                       )),
                     ),
                      'locked' => false,
+                     'blockedVarsForExport' => 
+                    array (
+                    ),
+                     'labelWidth' => 100,
+                     'labelAlign' => 'left',
                   )),
                 ),
                  'locked' => false,
+                 'blockedVarsForExport' => 
+                array (
+                ),
                  'icon' => '',
+                 'labelWidth' => 100,
+                 'labelAlign' => 'left',
               )),
             ),
              'locked' => false,
+             'blockedVarsForExport' => 
+            array (
+            ),
              'icon' => NULL,
           )),
         ),
          'locked' => false,
+         'blockedVarsForExport' => 
+        array (
+        ),
          'icon' => '',
+         'labelWidth' => 100,
+         'labelAlign' => 'left',
       )),
     ),
      'locked' => false,
+     'blockedVarsForExport' => 
+    array (
+    ),
      'icon' => NULL,
+     'labelWidth' => 100,
+     'labelAlign' => 'left',
   )),
    'generateTypeDeclarations' => false,
+   'blockedVarsForExport' => 
+  array (
+  ),
 ));
