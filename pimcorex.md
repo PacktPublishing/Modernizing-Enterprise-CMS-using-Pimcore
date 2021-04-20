@@ -28,3 +28,6 @@ move Resource/config => config
  composer update -W
 
 composer require symfony/maker-bundle --dev
+
+
+robots.php
