@@ -29,7 +29,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'name' => 'Product',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1615579729,
+   'modificationDate' => 1618934028,
    'userOwner' => 0,
    'userModification' => 2,
    'parentClass' => '',
@@ -47,7 +47,6 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'layoutDefinitions' => 
   Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
      'fieldtype' => 'panel',
-     'labelWidth' => 100,
      'layout' => NULL,
      'border' => false,
      'name' => 'pimcore_root',
@@ -84,7 +83,6 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
           0 => 
           Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
              'fieldtype' => 'panel',
-             'labelWidth' => 100,
              'layout' => NULL,
              'border' => false,
              'name' => 'Product Information',
@@ -105,10 +103,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'fieldtype' => 'input',
                  'width' => NULL,
                  'defaultValue' => NULL,
-                 'queryColumnType' => 'varchar',
-                 'columnType' => 'varchar',
                  'columnLength' => 190,
-                 'phpdocType' => 'string',
                  'regex' => '',
                  'unique' => true,
                  'showCharCount' => false,
@@ -126,6 +121,9 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => false,
+                 'blockedVarsForExport' => 
+                array (
+                ),
                  'defaultValueGenerator' => '',
               )),
               1 => 
@@ -141,17 +139,6 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                 ),
                  'decimalPrecision' => NULL,
                  'autoConvert' => false,
-                 'queryColumnType' => 
-                array (
-                  'value' => 'double',
-                  'unit' => 'bigint(20)',
-                ),
-                 'columnType' => 
-                array (
-                  'value' => 'double',
-                  'unit' => 'bigint(20)',
-                ),
-                 'phpdocType' => '\\Pimcore\\Model\\DataObject\\Data\\QuantityValue',
                  'name' => 'price',
                  'title' => 'Price',
                  'tooltip' => '',
@@ -166,6 +153,9 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => false,
+                 'blockedVarsForExport' => 
+                array (
+                ),
                  'defaultValueGenerator' => '',
               )),
               2 => 
@@ -173,9 +163,6 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'fieldtype' => 'numeric',
                  'width' => '',
                  'defaultValue' => NULL,
-                 'queryColumnType' => 'double',
-                 'columnType' => 'double',
-                 'phpdocType' => 'float',
                  'integer' => false,
                  'unsigned' => false,
                  'minValue' => NULL,
@@ -197,12 +184,14 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => false,
+                 'blockedVarsForExport' => 
+                array (
+                ),
                  'defaultValueGenerator' => '',
               )),
               3 => 
               Pimcore\Model\DataObject\ClassDefinition\Data\Localizedfields::__set_state(array(
                  'fieldtype' => 'localizedfields',
-                 'phpdocType' => '\\Pimcore\\Model\\DataObject\\Localizedfield',
                  'childs' => 
                 array (
                   0 => 
@@ -210,10 +199,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                      'fieldtype' => 'input',
                      'width' => NULL,
                      'defaultValue' => NULL,
-                     'queryColumnType' => 'varchar',
-                     'columnType' => 'varchar',
                      'columnLength' => 190,
-                     'phpdocType' => 'string',
                      'regex' => '',
                      'unique' => false,
                      'showCharCount' => false,
@@ -231,6 +217,9 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                      'invisible' => false,
                      'visibleGridView' => false,
                      'visibleSearch' => false,
+                     'blockedVarsForExport' => 
+                    array (
+                    ),
                      'defaultValueGenerator' => '',
                   )),
                   1 => 
@@ -241,9 +230,6 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                      'maxLength' => NULL,
                      'showCharCount' => false,
                      'excludeFromSearchIndex' => false,
-                     'queryColumnType' => 'longtext',
-                     'columnType' => 'longtext',
-                     'phpdocType' => 'string',
                      'name' => 'short_description',
                      'title' => 'Short Description',
                      'tooltip' => '',
@@ -258,15 +244,15 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                      'invisible' => false,
                      'visibleGridView' => false,
                      'visibleSearch' => false,
+                     'blockedVarsForExport' => 
+                    array (
+                    ),
                   )),
                   2 => 
                   Pimcore\Model\DataObject\ClassDefinition\Data\Wysiwyg::__set_state(array(
                      'fieldtype' => 'wysiwyg',
                      'width' => '',
                      'height' => '',
-                     'queryColumnType' => 'longtext',
-                     'columnType' => 'longtext',
-                     'phpdocType' => 'string',
                      'toolbarConfig' => '',
                      'excludeFromSearchIndex' => false,
                      'name' => 'description',
@@ -283,6 +269,9 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                      'invisible' => false,
                      'visibleGridView' => false,
                      'visibleSearch' => false,
+                     'blockedVarsForExport' => 
+                    array (
+                    ),
                   )),
                 ),
                  'name' => 'localizedfields',
@@ -292,12 +281,18 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'width' => '',
                  'height' => '',
                  'maxTabs' => NULL,
-                 'labelWidth' => NULL,
                  'border' => false,
                  'provideSplitView' => false,
                  'tabPosition' => NULL,
                  'hideLabelsWhenTabsReached' => NULL,
                  'referencedFields' => 
+                array (
+                ),
+                 'fieldDefinitionsCache' => NULL,
+                 'permissionView' => 
+                array (
+                ),
+                 'permissionEdit' => 
                 array (
                 ),
                  'tooltip' => '',
@@ -312,6 +307,11 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => true,
                  'visibleSearch' => true,
+                 'blockedVarsForExport' => 
+                array (
+                ),
+                 'labelWidth' => NULL,
+                 'labelAlign' => 'left',
               )),
               4 => 
               Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyObjectRelation::__set_state(array(
@@ -319,8 +319,6 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'width' => '',
                  'height' => '',
                  'maxItems' => '',
-                 'queryColumnType' => 'text',
-                 'phpdocType' => 'array',
                  'relationType' => true,
                  'visibleFields' => 'id,sku,name',
                  'allowToCreateNewObject' => false,
@@ -349,15 +347,22 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => false,
+                 'blockedVarsForExport' => 
+                array (
+                ),
               )),
             ),
              'locked' => false,
+             'blockedVarsForExport' => 
+            array (
+            ),
              'icon' => '',
+             'labelWidth' => 100,
+             'labelAlign' => 'left',
           )),
           1 => 
           Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
              'fieldtype' => 'panel',
-             'labelWidth' => 100,
              'layout' => NULL,
              'border' => false,
              'name' => 'Categorization',
@@ -883,10 +888,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'defaultValue' => '',
                  'optionsProviderClass' => '',
                  'optionsProviderData' => '',
-                 'queryColumnType' => 'varchar',
-                 'columnType' => 'varchar',
                  'columnLength' => 190,
-                 'phpdocType' => 'string',
                  'dynamicOptions' => false,
                  'name' => 'brand',
                  'title' => 'Brand',
@@ -902,11 +904,15 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => false,
+                 'blockedVarsForExport' => 
+                array (
+                ),
                  'defaultValueGenerator' => '',
               )),
               1 => 
               Pimcore\Model\DataObject\ClassDefinition\Data\Country::__set_state(array(
                  'fieldtype' => 'country',
+                 'width' => '',
                  'restrictTo' => '',
                  'options' => 
                 array (
@@ -2186,14 +2192,10 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                     'value' => 'AX',
                   ),
                 ),
-                 'width' => '',
                  'defaultValue' => NULL,
                  'optionsProviderClass' => NULL,
                  'optionsProviderData' => NULL,
-                 'queryColumnType' => 'varchar',
-                 'columnType' => 'varchar',
                  'columnLength' => 190,
-                 'phpdocType' => 'string',
                  'dynamicOptions' => false,
                  'name' => 'made_in',
                  'title' => 'Made In',
@@ -2209,6 +2211,9 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => false,
+                 'blockedVarsForExport' => 
+                array (
+                ),
                  'defaultValueGenerator' => '',
               )),
               2 => 
@@ -2217,12 +2222,6 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'width' => '',
                  'assetUploadPath' => '',
                  'relationType' => true,
-                 'queryColumnType' => 
-                array (
-                  'id' => 'int(11)',
-                  'type' => 'enum(\'document\',\'asset\',\'object\')',
-                ),
-                 'phpdocType' => '\\Pimcore\\Model\\Document\\Page | \\Pimcore\\Model\\Document\\Snippet | \\Pimcore\\Model\\Document | \\Pimcore\\Model\\Asset | \\Pimcore\\Model\\DataObject\\AbstractObject',
                  'objectsAllowed' => true,
                  'assetsAllowed' => false,
                  'assetTypes' => 
@@ -2253,15 +2252,22 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => false,
+                 'blockedVarsForExport' => 
+                array (
+                ),
               )),
             ),
              'locked' => false,
+             'blockedVarsForExport' => 
+            array (
+            ),
              'icon' => '',
+             'labelWidth' => 100,
+             'labelAlign' => 'left',
           )),
           2 => 
           Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
              'fieldtype' => 'panel',
-             'labelWidth' => 100,
              'layout' => NULL,
              'border' => false,
              'name' => 'Composition',
@@ -2297,7 +2303,6 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                   0 => 'percent',
                 ),
                  'fieldtype' => 'advancedManyToManyObjectRelation',
-                 'phpdocType' => '\\Pimcore\\Model\\DataObject\\Data\\ObjectMetadata[]',
                  'enableBatchEdit' => false,
                  'allowMultipleAssignments' => false,
                  'visibleFieldDefinitions' => 
@@ -2306,7 +2311,6 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'width' => '',
                  'height' => '',
                  'maxItems' => '',
-                 'queryColumnType' => 'text',
                  'relationType' => true,
                  'allowToCreateNewObject' => true,
                  'optimizedAdminLoading' => false,
@@ -2327,15 +2331,22 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => false,
+                 'blockedVarsForExport' => 
+                array (
+                ),
               )),
             ),
              'locked' => false,
+             'blockedVarsForExport' => 
+            array (
+            ),
              'icon' => '',
+             'labelWidth' => 100,
+             'labelAlign' => 'left',
           )),
           3 => 
           Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
              'fieldtype' => 'panel',
-             'labelWidth' => 100,
              'layout' => NULL,
              'border' => false,
              'name' => 'Attributes',
@@ -2357,12 +2368,6 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'width' => '',
                  'assetUploadPath' => '',
                  'relationType' => true,
-                 'queryColumnType' => 
-                array (
-                  'id' => 'int(11)',
-                  'type' => 'enum(\'document\',\'asset\',\'object\')',
-                ),
-                 'phpdocType' => '\\Pimcore\\Model\\Document\\Page | \\Pimcore\\Model\\Document\\Snippet | \\Pimcore\\Model\\Document | \\Pimcore\\Model\\Asset | \\Pimcore\\Model\\DataObject\\AbstractObject',
                  'objectsAllowed' => true,
                  'assetsAllowed' => false,
                  'assetTypes' => 
@@ -2393,11 +2398,13 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => false,
+                 'blockedVarsForExport' => 
+                array (
+                ),
               )),
               1 => 
               Pimcore\Model\DataObject\ClassDefinition\Data\Objectbricks::__set_state(array(
                  'fieldtype' => 'objectbricks',
-                 'phpdocType' => '\\Pimcore\\Model\\DataObject\\Objectbrick',
                  'allowedTypes' => 
                 array (
                   0 => 'ShirtsAttributes',
@@ -2419,15 +2426,22 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => false,
+                 'blockedVarsForExport' => 
+                array (
+                ),
               )),
             ),
              'locked' => false,
+             'blockedVarsForExport' => 
+            array (
+            ),
              'icon' => '',
+             'labelWidth' => 100,
+             'labelAlign' => 'left',
           )),
           4 => 
           Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
              'fieldtype' => 'panel',
-             'labelWidth' => 100,
              'layout' => NULL,
              'border' => false,
              'name' => 'Images',
@@ -2446,7 +2460,6 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
               0 => 
               Pimcore\Model\DataObject\ClassDefinition\Data\Fieldcollections::__set_state(array(
                  'fieldtype' => 'fieldcollections',
-                 'phpdocType' => '\\Pimcore\\Model\\DataObject\\Fieldcollection',
                  'allowedTypes' => 
                 array (
                   0 => 'ImageInfo',
@@ -2472,17 +2485,33 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => false,
+                 'blockedVarsForExport' => 
+                array (
+                ),
               )),
             ),
              'locked' => false,
+             'blockedVarsForExport' => 
+            array (
+            ),
              'icon' => '',
+             'labelWidth' => 100,
+             'labelAlign' => 'left',
           )),
         ),
          'locked' => false,
+         'blockedVarsForExport' => 
+        array (
+        ),
       )),
     ),
      'locked' => false,
+     'blockedVarsForExport' => 
+    array (
+    ),
      'icon' => NULL,
+     'labelWidth' => 100,
+     'labelAlign' => 'left',
   )),
    'icon' => '',
    'previewUrl' => '',
@@ -2517,4 +2546,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
   ),
    'enableGridLocking' => false,
    'dao' => NULL,
+   'blockedVarsForExport' => 
+  array (
+  ),
 ));

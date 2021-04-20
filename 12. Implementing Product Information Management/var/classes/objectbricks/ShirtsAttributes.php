@@ -25,7 +25,6 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
    'layoutDefinitions' => 
   Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
      'fieldtype' => 'panel',
-     'labelWidth' => 100,
      'layout' => NULL,
      'border' => false,
      'name' => NULL,
@@ -44,7 +43,6 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
       0 => 
       Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
          'fieldtype' => 'panel',
-         'labelWidth' => 100,
          'layout' => NULL,
          'border' => false,
          'name' => 'Shirts Attributes',
@@ -85,10 +83,7 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
              'defaultValue' => '',
              'optionsProviderClass' => '',
              'optionsProviderData' => '',
-             'queryColumnType' => 'varchar',
-             'columnType' => 'varchar',
              'columnLength' => 190,
-             'phpdocType' => 'string',
              'dynamicOptions' => false,
              'name' => 'sleeve_lenght',
              'title' => 'Sleeve Length',
@@ -104,6 +99,9 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
              'invisible' => false,
              'visibleGridView' => false,
              'visibleSearch' => false,
+             'blockedVarsForExport' => 
+            array (
+            ),
              'defaultValueGenerator' => '',
           )),
           1 => 
@@ -156,10 +154,7 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
              'defaultValue' => '',
              'optionsProviderClass' => '',
              'optionsProviderData' => '',
-             'queryColumnType' => 'varchar',
-             'columnType' => 'varchar',
              'columnLength' => 190,
-             'phpdocType' => 'string',
              'dynamicOptions' => false,
              'name' => 'size',
              'title' => 'Size',
@@ -175,15 +170,31 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
              'invisible' => false,
              'visibleGridView' => false,
              'visibleSearch' => false,
+             'blockedVarsForExport' => 
+            array (
+            ),
              'defaultValueGenerator' => '',
           )),
         ),
          'locked' => false,
+         'blockedVarsForExport' => 
+        array (
+        ),
          'icon' => '',
+         'labelWidth' => 100,
+         'labelAlign' => 'left',
       )),
     ),
      'locked' => false,
+     'blockedVarsForExport' => 
+    array (
+    ),
      'icon' => NULL,
+     'labelWidth' => 100,
+     'labelAlign' => 'left',
   )),
    'generateTypeDeclarations' => false,
+   'blockedVarsForExport' => 
+  array (
+  ),
 ));
