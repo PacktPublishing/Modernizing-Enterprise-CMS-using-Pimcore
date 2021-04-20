@@ -1,0 +1,82 @@
+[20-Apr-2021 08:52:13 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'pimcore.documents_editables' doesn't exist in /var/www/html/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php:112
+Stack trace:
+#0 /var/www/html/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php(112): PDOStatement->execute(NULL)
+#1 /var/www/html/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(1292): Doctrine\DBAL\Driver\PDOStatement->execute()
+#2 /var/www/html/vendor/pimcore/pimcore/lib/Db/PimcoreExtensionsTrait.php(94): Doctrine\DBAL\Connection->executeQuery('SELECT * FROM d...', Array, Array, NULL)
+#3 /var/www/html/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(988): Pimcore\Db\Connection->executeQuery('SELECT * FROM d...', Array, Array)
+#4 /var/www/html/vendor/pimcore/pimcore/models/Document/PageSnippet/Dao.php(46): Doctrine\DBAL\Connection->fetchAll('SELECT * FROM d...', Array)
+#5 /var/www/html/vendor/pimcore/pimcore/models/Document/PageSnippet.php(467): Pimcore\Model\Document\PageSnippet\Dao->getEditables()
+#6 /var/www/html/vendor/pimcore/pimcore/models/Document/PageSnippet.php(215): Pimcore\Model\Document\PageSnippet->getEditables()
+#7 /var/www/html/vendor/pimcore/pimcore/lib/Cache/Core/CoreCacheHandler.php(489): Pimcore\Model\Document\PageSnippet->getCacheTags(Array)
+#8 /var/www/html/vendor/pimcore/pimcore/lib/Cache/Core/CoreCacheHandler.php(891): Pimcore\Cache\Core\CoreCacheHandler->prepareCacheTags('document_1', Object(Pimcore\Model\Document\Page), Array)
+#9 /var/www/html/vendor/pimcore/pimcore/lib/Cache/Core/CoreCacheHandler.php(942): Pimcore\Cache\Core\CoreCacheHandler->writeSaveQueue()
+#10 /var/www/html/vendor/pimcore/pimcore/lib/Cache.php(199): Pimcore\Cache\Core\CoreCacheHandler->shutdown(false)
+#11 /var/www/html/vendor/pimcore/pimcore/lib/Pimcore.php(236): Pimcore\Cache::shutdown()
+#12 /var/www/html/vendor/pimcore/pimcore/lib/Kernel.php(235): Pimcore::shutdown()
+#13 [internal function]: Pimcore\Kernel->Pimcore\{closure}()
+#14 {main}
+
+Next Doctrine\DBAL\Driver\PDO\Exception: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'pimcore.documents_editables' doesn't exist in /var/www/html/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDO/Exception.php:18
+Stack trace:
+#0 /var/www/html/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php(114): Doctrine\DBAL\Driver\PDO\Exception::new(Object(PDOException))
+#1 /var/www/html/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(1292): Doctrine\DBAL\Driver\PDOStatement->execute()
+#2 /var/www/html/vendor/pimcore/pimcore/lib/Db/PimcoreExtensionsTrait.php(94): Doctrine\DBAL\Connection->executeQuery('SELECT * FROM d...', Array, Array, NULL)
+#3 /var/www/html/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(988): Pimcore\Db\Connection->executeQuery('SELECT * FROM d...', Array, Array)
+#4 /var/www/html/vendor/pimcore/pimcore/models/Document/PageSnippet/Dao.php(46): Doctrine\DBAL\Connection->fetchAll('SELECT * FROM d...', Array)
+#5 /var/www/html/vendor/pimcore/pimcore/models/Document/PageSnippet.php(467): Pimcore\Model\Document\PageSnippet\Dao->getEditables()
+#6 /var/www/html/vendor/pimcore/pimcore/models/Document/PageSnippet.php(215): Pimcore\Model\Document\PageSnippet->getEditables()
+#7 /var/www/html/vendor/pimcore/pimcore/lib/Cache/Core/CoreCacheHandler.php(489): Pimcore\Model\Document\PageSnippet->getCacheTags(Array)
+#8 /var/www/html/vendor/pimcore/pimcore/lib/Cache/Core/CoreCacheHandler.php(891): Pimcore\Cache\Core\CoreCacheHandler->prepareCacheTags('document_1', Object(Pimcore\Model\Document\Page), Array)
+#9 /var/www/html/vendor/pimcore/pimcore/lib/Cache/Core/CoreCacheHandler.php(942): Pimcore\Cache\Core\CoreCacheHandler->writeSaveQueue()
+#10 /var/www/html/vendor/pimcore/pimcore/lib/Cache.php(199): Pimcore\Cache\Core\CoreCacheHandler->shutdown(false)
+#11 /var/www/html/vendor/pimcore/pimcore/lib/Pimcore.php(236): Pimcore\Cache::shutdown()
+#12 /var/www/html/vendor/pimcore/pimcore/lib/Kernel.php(235): Pimcore::shutdown()
+#13 [internal function]: Pimcore\Kernel->Pimcore\{closure}()
+#14 {main}
+
+Next Doctrine\DBAL\Exception\TableNotFoundException: An exception occurred while executing 'SELECT * FROM documents_editables WHERE documentId = ?' with params [1]:
+
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'pimcore.documents_editables' doesn't exist in /var/www/html/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractMySQLDriver.php:61
+Stack trace:
+#0 /var/www/html/vendor/doctrine/dbal/lib/Doctrine/DBAL/DBALException.php(182): Doctrine\DBAL\Driver\AbstractMySQLDriver->convertException('An exception oc...', Object(Doctrine\DBAL\Driver\PDO\Exception))
+#1 /var/www/html/vendor/doctrine/dbal/lib/Doctrine/DBAL/DBALException.php(159): Doctrine\DBAL\DBALException::wrapException(Object(Doctrine\DBAL\Driver\PDO\MySQL\Driver), Object(Doctrine\DBAL\Driver\PDO\Exception), 'An exception oc...')
+#2 /var/www/html/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(2214): Doctrine\DBAL\DBALException::driverExceptionDuringQuery(Object(Doctrine\DBAL\Driver\PDO\MySQL\Driver), Object(Doctrine\DBAL\Driver\PDO\Exception), 'SELECT * FROM d...', Array)
+#3 /var/www/html/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(1301): Doctrine\DBAL\Connection->handleExceptionDuringQuery(Object(Doctrine\DBAL\Driver\PDO\Exception), 'SELECT * FROM d...', Array, Array)
+#4 /var/www/html/vendor/pimcore/pimcore/lib/Db/PimcoreExtensionsTrait.php(94): Doctrine\DBAL\Connection->executeQuery('SELECT * FROM d...', Array, Array, NULL)
+#5 /var/www/html/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php(988): Pimcore\Db\Connection->executeQuery('SELECT * FROM d...', Array, Array)
+#6 /var/www/html/vendor/pimcore/pimcore/models/Document/PageSnippet/Dao.php(46): Doctrine\DBAL\Connection->fetchAll('SELECT * FROM d...', Array)
+#7 /var/www/html/vendor/pimcore/pimcore/models/Document/PageSnippet.php(467): Pimcore\Model\Document\PageSnippet\Dao->getEditables()
+#8 /var/www/html/vendor/pimcore/pimcore/models/Document/PageSnippet.php(215): Pimcore\Model\Document\PageSnippet->getEditables()
+#9 /var/www/html/vendor/pimcore/pimcore/lib/Cache/Core/CoreCacheHandler.php(489): Pimcore\Model\Document\PageSnippet->getCacheTags(Array)
+#10 /var/www/html/vendor/pimcore/pimcore/lib/Cache/Core/CoreCacheHandler.php(891): Pimcore\Cache\Core\CoreCacheHandler->prepareCacheTags('document_1', Object(Pimcore\Model\Document\Page), Array)
+#11 /var/www/html/vendor/pimcore/pimcore/lib/Cache/Core/CoreCacheHandler.php(942): Pimcore\Cache\Core\CoreCacheHandler->writeSaveQueue()
+#12 /var/www/html/vendor/pimcore/pimcore/lib/Cache.php(199): Pimcore\Cache\Core\CoreCacheHandler->shutdown(false)
+#13 /var/www/html/vendor/pimcore/pimcore/lib/Pimcore.php(236): Pimcore\Cache::shutdown()
+#14 /var/www/html/vendor/pimcore/pimcore/lib/Kernel.php(235): Pimcore::shutdown()
+#15 [internal function]: Pimcore\Kernel->Pimcore\{closure}()
+#16 {main}
+  thrown in /var/www/html/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractMySQLDriver.php on line 61
+[20-Apr-2021 11:07:21 UTC] PHP Fatal error:  Uncaught LogicException: Cannot retrieve the container from a non-booted kernel. in /var/www/html/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/Kernel.php:307
+Stack trace:
+#0 /var/www/html/vendor/pimcore/pimcore/lib/Kernel.php(231): Symfony\Component\HttpKernel\Kernel->getContainer()
+#1 [internal function]: Pimcore\Kernel->Pimcore\{closure}()
+#2 {main}
+  thrown in /var/www/html/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/Kernel.php on line 307
+[20-Apr-2021 11:10:42 UTC] PHP Fatal error:  Uncaught LogicException: Cannot retrieve the container from a non-booted kernel. in /var/www/html/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/Kernel.php:307
+Stack trace:
+#0 /var/www/html/vendor/pimcore/pimcore/lib/Kernel.php(231): Symfony\Component\HttpKernel\Kernel->getContainer()
+#1 [internal function]: Pimcore\Kernel->Pimcore\{closure}()
+#2 {main}
+  thrown in /var/www/html/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/Kernel.php on line 307
+[20-Apr-2021 11:11:17 UTC] PHP Fatal error:  Uncaught LogicException: Cannot retrieve the container from a non-booted kernel. in /var/www/html/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/Kernel.php:307
+Stack trace:
+#0 /var/www/html/vendor/pimcore/pimcore/lib/Kernel.php(231): Symfony\Component\HttpKernel\Kernel->getContainer()
+#1 [internal function]: Pimcore\Kernel->Pimcore\{closure}()
+#2 {main}
+  thrown in /var/www/html/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/Kernel.php on line 307
+[20-Apr-2021 11:20:55 UTC] PHP Fatal error:  Uncaught LogicException: Cannot retrieve the container from a non-booted kernel. in /var/www/html/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/Kernel.php:307
+Stack trace:
+#0 /var/www/html/vendor/pimcore/pimcore/lib/Kernel.php(231): Symfony\Component\HttpKernel\Kernel->getContainer()
+#1 [internal function]: Pimcore\Kernel->Pimcore\{closure}()
+#2 {main}
+  thrown in /var/www/html/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/Kernel.php on line 307

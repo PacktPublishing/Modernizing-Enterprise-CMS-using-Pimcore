@@ -1,0 +1,43 @@
+{
+    "name": "scheb/2fa-bundle",
+    "type": "symfony-bundle",
+    "description": "A generic interface to implement two-factor authentication in Symfony applications",
+    "keywords": ["2fa", "two-factor", "two-step", "authentication", "symfony"],
+    "homepage": "https://github.com/scheb/2fa",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Christian Scheb",
+            "email": "me@christianscheb.de"
+        }
+    ],
+    "require": {
+        "php": ">=7.2.5",
+        "ext-json": "*",
+        "symfony/config": "^4.4|^5.0",
+        "symfony/dependency-injection": "^4.4|^5.0",
+        "symfony/event-dispatcher": "^4.4|^5.0",
+        "symfony/framework-bundle": "^4.4|^5.0",
+        "symfony/http-foundation": "^4.4|^5.0",
+        "symfony/http-kernel": "^4.4|^5.0",
+        "symfony/property-access": "^4.4|^5.0",
+        "symfony/security-bundle": "^4.4.1|^5.0",
+        "symfony/twig-bundle": "^4.4|^5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Scheb\\TwoFactorBundle\\": ""
+        }
+    },
+    "suggest": {
+        "scheb/2fa-backup-code": "Emergency codes when you have no access to other methods",
+        "scheb/2fa-email": "Send codes by email",
+        "scheb/2fa-totp": "Temporary one-time password (TOTP) support (Google Authenticator compatible)",
+        "scheb/2fa-google-authenticator": "Google Authenticator support",
+        "scheb/2fa-trusted-device": "Trusted devices support",
+        "scheb/2fa-qr-code": "Generate QR codes for Google Authenticator / TOTP"
+    },
+    "conflict": {
+        "scheb/two-factor-bundle": "*"
+    }
+}
