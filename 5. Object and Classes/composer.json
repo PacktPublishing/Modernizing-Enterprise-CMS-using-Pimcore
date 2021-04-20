@@ -7,23 +7,21 @@
     "sort-packages": true
   },
   "require": {
-    "php": ">=7.2",
-    "pimcore/pimcore": "~6.8.0"
+    "composer-runtime-api": "^2.0",
+    "pimcore/pimcore": "10.0.*@beta"
   },
   "require-dev": {
-    "cache/integration-tests": "^0.16.0",
-    "codeception/codeception": "~2.4.5"
+    "cache/integration-tests": "^0.17.0",
+    "codeception/codeception": "^4.1.12",
+    "codeception/module-symfony": "^1"
   },
   "autoload": {
     "psr-4": {
-      "": ["src/"],
+      "App\\": "src/",
       "Pimcore\\Model\\DataObject\\": "var/classes/DataObject",
       "Pimcore\\Model\\Object\\": "var/classes/Object",
       "Website\\": "legacy/website/lib"
-    },
-    "classmap": [
-      "app/AppKernel.php"
-    ]
+    }
   },
   "scripts": {
     "post-create-project-cmd": "Pimcore\\Composer::postCreateProject",
@@ -43,11 +41,12 @@
     ]
   },
   "extra": {
-    "symfony-app-dir": "app",
     "symfony-bin-dir": "bin",
     "symfony-var-dir": "var",
-    "symfony-web-dir": "web",
     "symfony-tests-dir": "tests",
-    "symfony-assets-install": "relative"
+    "symfony-assets-install": "relative",
+    "branch-alias": {
+      "dev-master": "10.0-dev"
+    }
   }
 }

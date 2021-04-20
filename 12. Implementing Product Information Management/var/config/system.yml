@@ -57,9 +57,9 @@ pimcore:
         proxy_user: ''
         proxy_pass: ''
     email:
-        sender:
-            name: ''
-            email: ''
+        # sender:
+        #     name: ''
+        #     email: ''
         return:
             name: ''
             email: ''
