@@ -64,7 +64,6 @@ class CustomController extends FrontendController
     /**
      * This example uses renderlet input for rendering a gallery
      * 
-     * /custom_data/mypar/
      * 
      * @Template() 
      */    
