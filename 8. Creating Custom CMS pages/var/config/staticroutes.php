@@ -7,7 +7,7 @@ return [
         "pattern" => "/\\/custom_data\\/(.*)?\\//",
         "reverse" => "/custom_data/%data/",
         "module" => NULL,
-        "controller" => "@AppBundle\\Controller\\CustomController",
+        "controller" => "@App\\Controller\\CustomController",
         "action" => "data",
         "variables" => "data,",
         "defaults" => "empty",
