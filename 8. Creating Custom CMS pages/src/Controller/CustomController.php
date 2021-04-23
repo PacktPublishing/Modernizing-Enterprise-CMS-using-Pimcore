@@ -9,7 +9,6 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Response;
 use Pimcore\Controller\Configuration\ResponseHeader;
 use Pimcore\Model\Asset;
-
 class CustomController extends FrontendController
 {
     /**
@@ -31,7 +30,16 @@ class CustomController extends FrontendController
     public function dataAction(Request $request)
     {
         $input=$request->get('data');
-        $this->view->content = "data to show $input";
+        $content = "data to show $input";       
+        return array(
+                 'content' => $content,
+        );
+
+         //specifyng template
+        // return $this->render('Custom/data.html.twig',array(
+        //     'content' =>$input
+        // ));
+        // using @Template()
     }
 
     /**
