@@ -16,10 +16,13 @@ url: {{ myDoc}} <br>
 filename: {{ myDoc.getFilename}}
 <img src="{{ myDoc}}"  height="30"/>
 
-{# <h2> Fetching Action </h2>
-This call the /custom/json action passing items:11 as parameter and print the result here
-{{ pimcore_action('json', 'Custom', null, { items: 11 }) }} #}
+ <h2> Fetching Action </h2>
+This call the /custom/json action passing items:11 as parameter and print the result here. <br>
+{# old pimcore way {{ pimcore_action('json', 'Custom', null, { items: 11 }) }} #}
 
+{{ render(controller('App\\Controller\\CustomController::jsonAction', { items: 11 })) }}
+
+<br>
 </h2> Caching a part of the page </h2>
 {% set cache = pimcore_cache("cache_key", 60, true) %}
 {% if not cache.start() %}
@@ -132,4 +135,4 @@ My content PIMCore loves CMS
 
 <h2> Custom template helper </h2>
 
-{# {{ timestamp("Y-m-d")}} #}
+{{ timestamp("Y-m-d")}} 

@@ -135,3 +135,5 @@ framework:
 #        transports:
 #            main: smtp://user:pass@smtp.example.com:port
 #            pimcore_newsletter: smtp://user:pass@smtp.example.com:port
+
+

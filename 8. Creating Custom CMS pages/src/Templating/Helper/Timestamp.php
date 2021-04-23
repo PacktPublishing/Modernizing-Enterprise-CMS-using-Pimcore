@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace AppBundle\Templating\Helper;
+namespace App\Templating\Helper;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
 

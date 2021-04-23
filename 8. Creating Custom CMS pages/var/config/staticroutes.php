@@ -7,7 +7,7 @@ return [
         "pattern" => "/\\/custom_data\\/(.*)?\\//",
         "reverse" => "/custom_data/%data/",
         "module" => NULL,
-        "controller" => "@App\\Controller\\CustomController",
+        "controller" => "App\\Controller\\CustomController:dataAction",
         "action" => "data",
         "variables" => "data,",
         "defaults" => "empty",
