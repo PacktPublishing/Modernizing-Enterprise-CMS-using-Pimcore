@@ -1,15 +1,11 @@
-
-{% extends '@Blog:Layout:layout.html.twig' %}
-
+{% extends '@Blog/Layout/layout.html.twig' %}
 {% block content %}
-
-{% include '@Blog:Layout:header.html.twig' %}
-
-    <!-- Page Content -->
+  {% include '@Blog/Layout/header.html.twig' %}
+  <!-- Page Content -->
   <div class="container">
     <div class="row">
       <div class="col-md-4">
-       <h3 class="pb-4 mb-4 font-italic border-bottom">About The Author</h3>
+       <h3 class="pb-4 mb-4 border-bottom">About The Author</h3>
         <div class="card" style="width: 18rem;">
           {{author.photo | raw}}
           <div class="card-body">
@@ -22,11 +18,11 @@
           </div>
         </div>
       </div>
-      <div class="col-md-8">
-        <h3 class="pb-4 mb-4 font-italic border-bottom">Article for {{author.getFirstName()}} {{author.getLastName()}}</h3>
+      <div class="col-lg-8">
+        <h3 class="pb-4 mb-4 border-bottom">Article for {{author.getFirstName()}} {{author.getLastName()}}</h3>
         <div class="card-deck">
           {% for article in articles %}
-          {% set content = article.getContent() | length > 200 ? article.getContent() | slice(0, 200) ~ '...' : article.getContent() %}
+          {% set content = article.getContent() | length > 200 ? article.getContent() | slice(0, 200) ~ ' ...' : article.getContent() %}
               <div class="col-md-12">
                   <div class="card"  style="margin:10px;">
                     <a href="/blog/article{{article.getSlug()[0].getSlug()}}">
