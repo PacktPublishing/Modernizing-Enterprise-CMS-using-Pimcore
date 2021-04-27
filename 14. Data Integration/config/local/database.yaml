@@ -1,0 +1,2 @@
+doctrine:
+    dbal: { connections: { default: { host: db, port: 3306, user: pimcore, password: pimcore, dbname: pimcore, mapping_types: { enum: string, bit: boolean }, server_version: '5.5.5-10.4.15-MariaDB-1:10.4.15+maria~focal' } } }

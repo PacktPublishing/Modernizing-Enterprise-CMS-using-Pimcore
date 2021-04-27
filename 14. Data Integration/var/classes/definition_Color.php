@@ -15,9 +15,9 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'id' => 'COL',
    'name' => 'Color',
    'description' => NULL,
-   'creationDate' => NULL,
-   'modificationDate' => 1613838195,
-   'userOwner' => NULL,
+   'creationDate' => 0,
+   'modificationDate' => 1619541740,
+   'userOwner' => 0,
    'userModification' => 2,
    'parentClass' => NULL,
    'implementsInterfaces' => NULL,
@@ -29,12 +29,11 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
   array (
   ),
    'allowInherit' => false,
-   'allowVariants' => NULL,
+   'allowVariants' => false,
    'showVariants' => false,
    'layoutDefinitions' => 
   Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
      'fieldtype' => 'panel',
-     'labelWidth' => 100,
      'layout' => NULL,
      'border' => false,
      'name' => 'pimcore_root',
@@ -71,7 +70,6 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
           0 => 
           Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
              'fieldtype' => 'panel',
-             'labelWidth' => 100,
              'layout' => NULL,
              'border' => false,
              'name' => 'Color Information',
@@ -92,10 +90,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'fieldtype' => 'input',
                  'width' => NULL,
                  'defaultValue' => NULL,
-                 'queryColumnType' => 'varchar',
-                 'columnType' => 'varchar',
                  'columnLength' => 190,
-                 'phpdocType' => 'string',
                  'regex' => '',
                  'unique' => false,
                  'showCharCount' => false,
@@ -113,23 +108,15 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => false,
+                 'blockedVarsForExport' => 
+                array (
+                ),
                  'defaultValueGenerator' => '',
               )),
               1 => 
               Pimcore\Model\DataObject\ClassDefinition\Data\RgbaColor::__set_state(array(
                  'fieldtype' => 'rgbaColor',
                  'width' => NULL,
-                 'queryColumnType' => 
-                array (
-                  'rgb' => 'VARCHAR(6) NULL DEFAULT NULL',
-                  'a' => 'VARCHAR(2) NULL DEFAULT NULL',
-                ),
-                 'columnType' => 
-                array (
-                  'rgb' => 'VARCHAR(6) NULL DEFAULT NULL',
-                  'a' => 'VARCHAR(2) NULL DEFAULT NULL',
-                ),
-                 'phpdocType' => '\\Pimcore\\Model\\DataObject\\Data\\RgbaColor',
                  'name' => 'color',
                  'title' => 'Color',
                  'tooltip' => '',
@@ -144,17 +131,33 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => false,
+                 'blockedVarsForExport' => 
+                array (
+                ),
               )),
             ),
              'locked' => false,
+             'blockedVarsForExport' => 
+            array (
+            ),
              'icon' => '',
+             'labelWidth' => 100,
+             'labelAlign' => 'left',
           )),
         ),
          'locked' => false,
+         'blockedVarsForExport' => 
+        array (
+        ),
       )),
     ),
      'locked' => false,
+     'blockedVarsForExport' => 
+    array (
+    ),
      'icon' => NULL,
+     'labelWidth' => 100,
+     'labelAlign' => 'left',
   )),
    'icon' => NULL,
    'previewUrl' => NULL,
@@ -187,4 +190,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
   ),
    'enableGridLocking' => false,
    'dao' => NULL,
+   'blockedVarsForExport' => 
+  array (
+  ),
 ));
