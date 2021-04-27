@@ -1,11 +1,9 @@
 {% extends '@Blog/Layout/layout.html.twig' %}
+
 {% block content %}
 
-
-
+{% include '@Blog/Layout/header.html.twig' %}
 
  {{ pimcore_areablock("myAreablock", {"allowed": ["row"]}) }}
-
-
 
 {% endblock %}

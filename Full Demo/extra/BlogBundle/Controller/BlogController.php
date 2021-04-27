@@ -18,52 +18,52 @@ class BlogController extends FrontendController
 {
 
     /**
-     *
+     * Get list of categories. route /blog
      * @Template() 
      */   
-    // get list of categories: /blog
     public function blogAction(Request $request) {
-        // get all categories
-        $this->view->categories = $this->getAllCategories();
+
+        return $this->renderTemplate(
+                '@Blog/Blog/blog.html.twig',array(
+               'categories' => $this->getAllCategories() // get all categories for widget
+        ));
+
     }
 
 
     /**
-     *  get detail of article: /blog/article/id|slug
+     *  Get detail of article. route: /blog/article/id|slug
      * @Template() 
      */   
     public function articleAction(Request $request,$page) {
-        // by id
-        if (intval($page)) {
+       
+        if (intval($page)) { // by id
             $article = DataObject\BlogArticle::getById($page);
         }
         else { // by slug
             $slug = UrlSlug::resolveSlug("/$page");
-
             if ($slug instanceof UrlSlug) {
                 $id = $slug->getObjectId();
                 if (intval($id) && $id > 0) {
                     $article =  DataObject\BlogArticle::getById($id);
                 }
-            }
-               
+            }         
         }
       
         if ( !( $article instanceof DataObject\BlogArticle || $article->isPublished() ) ) {
-            // if elemento not found, redirect to blog
+            // article not found, redirect to blog
             return $this->redirect('/blog');
-            // or throw new exception 404
-            throw new NotFoundHttpException('Article not found.');
         }
 
-        // get all categories for widget
-        $this->view->categories = $this->getAllCategories();
-        
-        $this->view->article = $article;
+        return $this->renderTemplate(
+            '@Blog/Blog/article.html.twig',array(
+                    'categories' => $this->getAllCategories(), // get all categories for widget
+                    'article' => $article
+            ));
     }
 
      /**
-     * get list article by category: /blog/category/id|slug
+     * Get list article by category. route: /blog/category/id|slug
      * @Template() 
      */   
     public function categoryAction(Request $request, $page) {
@@ -84,19 +84,18 @@ class BlogController extends FrontendController
       
         if ( !( $category instanceof DataObject\BlogCategory || $category->isPublished() ) ) {
             // if elemento not found, redirect to blog
-            //return $this->redirect('/blog');
-            // or throw new exception 404
-            throw new NotFoundHttpException('category not found.');
+            return $this->redirect('/blog');
         }
         
         $articles = new DataObject\BlogArticle\Listing();
         $articles->setCondition('Category__id = ' . $category->getId()); 
         
-        $this->view->category = $category;
-        $this->view->articles = $articles;
-
-        // get all categories for widget
-        $this->view->categories = $this->getAllCategories();
+        return $this->renderTemplate(
+            '@Blog/Blog/category.html.twig',array(
+                    'categories' => $this->getAllCategories(), // get all categories for widget
+                    'articles'    => $articles,
+                    'category'   => $category
+        ));
 
     }
 
@@ -125,21 +124,23 @@ class BlogController extends FrontendController
       
         if ( !( $author instanceof DataObject\BlogAuthor || $author->isPublished() ) ) {
             // if elemento not found, redirect to blog
-            //return $this->redirect('/blog');
-            // or throw new exception 404
-            throw new NotFoundHttpException('author not found.');
+            return $this->redirect('/blog');
         }
         
         $articles = new DataObject\BlogArticle\Listing();
         $articles->setCondition('Author__id = ' . $author->getId()); 
-        $this->view->articles = $articles;
 
         // set thumbnails
         $photoId = $author->getPhoto()->getId();
         $img = Asset::getById($photoId)->getThumbnail(["width" => 220])->getHtml(["class" => ""]);
         $author->photo = $img;
         
-        $this->view->author = $author;
+
+        return $this->renderTemplate(
+            '@Blog/Blog/author.html.twig',array(
+                    'articles' => $articles,
+                    'author' => $author
+        ));
 
     }
      
@@ -158,23 +159,16 @@ class BlogController extends FrontendController
      * get a complete list of categories for blog
      */
     public  function getAllCategories() {
-
-         // get all categories
          $categories = new DataObject\BlogCategory\Listing();
-
-         foreach ($categories as $category) {
-             $articles = new DataObject\BlogArticle\Listing();
+         foreach ($categories as $category) {   
+            $articles = new DataObject\BlogArticle\Listing();
              $articles->setCondition('Category__id = ' . $category->getId());       
-             $category->ArticleCount = $articles->getTotalCount();
+             $category->ArticleCount = $articles->getTotalCount(); 
              if( !empty( $category->getSlug()[0]->getSlug()) ) {
                  $category->link = $category->getSlug()[0]->getSlug();
              }
-         
          }
-
         return $categories;
-
     }
-
-    
+ 
 }

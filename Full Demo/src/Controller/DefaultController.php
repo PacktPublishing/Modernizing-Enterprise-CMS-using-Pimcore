@@ -10,12 +10,13 @@ use Symfony\Component\Routing\Annotation\Route;
 class DefaultController extends FrontendController
 {
     /**
-     * @Template
+     * @Template()
      * @param Request $request
      * @return array
      */
     public function defaultAction(Request $request)
     {
-        return [];
+        return $this->renderTemplate(
+            '@Blog/Default/default.html.twig');
     }
 }

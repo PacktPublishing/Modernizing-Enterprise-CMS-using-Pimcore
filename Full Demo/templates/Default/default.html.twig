@@ -1,10 +1,10 @@
 
 
-{% extends '@Blog:Layout:layout.html.twig' %}
+{% extends '@Blog/Layout/layout.html.twig' %}
 
 {% block content %}
 
- {% include '@Blog:Layout:header.html.twig' %}
+ {% include '@Blog/Layout/header.html.twig' %}
 
     {{ pimcore_areablock("content", {'allowed':['container']})}}
 
