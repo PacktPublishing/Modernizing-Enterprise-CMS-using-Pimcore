@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Model;
+namespace App\Model;
 
 use Pimcore\Model\DataObject;
 
