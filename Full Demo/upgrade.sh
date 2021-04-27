@@ -38,6 +38,8 @@ echo "namespace changed from AppBundle to App, if you see error like The control
 
 echo "merge manually routes"
 
+
+
 cp -r _src/AppBundle/Controller/* src/Controller
 cp -r _src/AppBundle/Command/* src/Command
 mkdir src/EventListener
