@@ -1,8 +1,6 @@
 {{
         pimcore_renderlet('myGallery', {
-            "controller" : "SlideShow",
-            "bundle":"BlogBundle",
-            "action" : "gallery",
+             "controller" : "BlogBundle\\Controller\\SlideShowController::galleryAction",
             "title" : "Drag an asset folder here to get a gallery",
             "height" : 400
         })

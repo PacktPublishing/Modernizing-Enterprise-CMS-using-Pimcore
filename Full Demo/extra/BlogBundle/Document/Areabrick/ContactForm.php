@@ -4,10 +4,14 @@
 namespace BlogBundle\Document\Areabrick;
 
 use Pimcore\Extension\Document\Areabrick\AbstractTemplateAreabrick;
+use Pimcore\Extension\Document\Areabrick\EditableDialogBoxInterface;
+use Pimcore\Extension\Document\Areabrick\EditableDialogBoxConfiguration;
 use Pimcore\Model\Document\Editable\Area\Info;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use Pimcore\Model\Document;
+use Pimcore\Model\Document\Tag;
 
-class ContactForm extends AbstractTemplateAreabrick
+class ContactForm extends AbstractTemplateAreabrick implements EditableDialogBoxInterface
 {
     public function getName()
     {
@@ -30,24 +34,19 @@ class ContactForm extends AbstractTemplateAreabrick
 
     public function action(Info $info)
     {  
-        // $document = $info->getDocument();
-        //$documentElement=$info->getDocumentElement("name")
         $request=$info->getRequest();
-        $view=$info->getView();
-        //$info->getParam("name")
-        //$params=$info->getParams();
-        //$view->id= $info->getId();
-        $view->id= $info->getEditable()->getName();
+    
+        $id= $info->getEditable()->getName();
+        $info->setParam('id', $id);
 
         $sendEmail=$request->get("sendEmail");
-        if($sendEmail==$view->id)
+        if($sendEmail==$id)
         {
             $name=$request->get("name");
             $email=$request->get("email");
             $subject=$request->get("subject");
             $message=$request->get("message");
-            $recipient=$title = $this->getDocumentEditable($info->getDocument(), 'input', 'recipient')->getData();
-
+           
             //send an email here
             $sent= $this->sendEmail($name,$email,$subject,$message, $recipient);
             if($sent)
@@ -58,15 +57,47 @@ class ContactForm extends AbstractTemplateAreabrick
             {
                 $alert="there was an error, try later";
             }
-            $view->name=$name;
-            $view->email=$email;
-            $view->subject=$subject;
-            $view->message=$message;
-            $view->alert=$alert;
+            $info->setParam('name',$name);
+            $info->setParam('email',$email);
+            $info->setParam('subject',$subject);
+            $info->setParam('message',$message);
+            $info->setParam('alert',$alert);
+           
             
         }
+
+        $recipient=$this->getDocumentEditable($info->getDocument(), 'input', 'recipient')->getData();
+        $info->setParam('recipient',$recipient);        
         
     }
+
+    public function getEditableDialogBoxConfiguration(Document\Editable $area, ?Info $info): EditableDialogBoxConfiguration
+    {
+        $config = new EditableDialogBoxConfiguration();
+        $config->setWidth(600);
+        //$config->setReloadOnClose(true);
+        $config->setItems([
+            'type' => 'tabpanel',
+            'items' => [
+                [
+                    'type' => 'panel',
+                    'title' => 'Contact Form Settings',
+                    'items' => [
+                        [
+                            'type' => 'input',
+                            'label' => 'Email Recipient',
+                            'name' => 'recipient'
+                        ]
+                        
+            ]
+            ]
+        ]]);
+
+
+        return $config;
+    }
+
+
     public function sendEmail($name,$email,$subject,$message)
     {
             //IMPLEMENT SEND HERE

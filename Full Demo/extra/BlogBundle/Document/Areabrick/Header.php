@@ -29,13 +29,8 @@ class Header extends AbstractTemplateAreabrick
     }
 
     public function action(Info $info)
-    {  
-        
+    {          
         $request=$info->getRequest();
-        $view=$info->getView();
-       
-       
-        
     }
    
     public function getTemplateSuffix()

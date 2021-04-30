@@ -87,8 +87,7 @@ The numeric editable is like the input editable but with special options for num
 The renderlet is a special container which is able to handle every object in Pimcore (Documents, Assets, Objects).
 {{
         pimcore_renderlet('myGallery', {
-            "controller" : "Custom",
-            "action" : "gallery",
+            "controller" : "App\\Controller\\SlideShowController::galleryAction",
             "title" : "Drag an asset folder here to get a gallery",
             "height" : 400
         })
