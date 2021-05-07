@@ -1,0 +1,37 @@
+{% if editmode %}
+<style>
+    div.blog-container
+    {
+        border: 1px dotted grey;
+        min-height:100px;
+        padding 2px;
+    }
+
+ div.blog-container-footer
+ {
+     min-height:15px; 
+     text-align:center; 
+     background-color:#eee;     
+     font-size:10px;
+ }
+
+ div.blog-col
+ {
+     border: 1px dotted grey;
+     padding 2px;
+ }
+</style>
+
+{% endif %}
+
+
+<div class="container blog-container">
+
+{% include layout %}
+
+{% if editmode %}
+    <div class="blog-container-footer">
+            CONTAINER
+    <div>
+{% endif %}
+</div>
