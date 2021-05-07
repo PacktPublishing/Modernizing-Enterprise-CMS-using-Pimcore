@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a479c80b61d4472df599fec8dcc47fce",
+    "content-hash": "ec84027d113463f4def2cb5749bcf59d",
     "packages": [
         {
             "name": "amnuts/opcache-gui",
@@ -5076,6 +5076,47 @@
                 }
             ],
             "time": "2021-04-19T03:20:48+00:00"
+        },
+        {
+            "name": "pimcore/bundle-generator",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pimcore/bundle-generator.git",
+                "reference": "fb87dbe14cc9a1018facc2259db72ed93649071c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pimcore/bundle-generator/zipball/fb87dbe14cc9a1018facc2259db72ed93649071c",
+                "reference": "fb87dbe14cc9a1018facc2259db72ed93649071c",
+                "shasum": ""
+            },
+            "require": {
+                "pimcore/pimcore": "^10.0"
+            },
+            "type": "pimcore-bundle",
+            "extra": {
+                "pimcore": {
+                    "bundles": [
+                        "Pimcore\\Bundle\\BundleGeneratorBundle\\PimcoreBundleGeneratorBundle"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Pimcore\\Bundle\\BundleGeneratorBundle\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0+"
+            ],
+            "description": "Pimcore Bundle Generator",
+            "support": {
+                "issues": "https://github.com/pimcore/bundle-generator/issues",
+                "source": "https://github.com/pimcore/bundle-generator/tree/v1.0.1"
+            },
+            "time": "2021-04-27T14:44:30+00:00"
         },
         {
             "name": "pimcore/pimcore",

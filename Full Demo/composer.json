@@ -8,6 +8,7 @@
   },
   "require": {
     "composer-runtime-api": "^2.0",
+    "pimcore/bundle-generator": "^1.0",
     "pimcore/pimcore": "10.0.*@beta"
   },
   "require-dev": {
