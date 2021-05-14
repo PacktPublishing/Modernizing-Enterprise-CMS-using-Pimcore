@@ -145,8 +145,8 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'defaultValueGenerator' => '',
               )),
               2 => 
-              Pimcore\Model\DataObject\ClassDefinition\Data\ReverseManyToManyObjectRelation::__set_state(array(
-                 'fieldtype' => 'reverseManyToManyObjectRelation',
+              Pimcore\Model\DataObject\ClassDefinition\Data\ReverseObjectRelation::__set_state(array(
+                 'fieldtype' => 'reverseObjectRelation',
                  'ownerClassName' => 'Product',
                  'ownerClassId' => NULL,
                  'ownerFieldName' => 'categories',
