@@ -9,6 +9,7 @@
   "require": {
     "composer-runtime-api": "^2.0",
     "pimcore/data-hub": "^0.7.0",
+    "pimcore/data-importer": "v1.1",
     "pimcore/pimcore": "^10.0"
   },
   "require-dev": {
