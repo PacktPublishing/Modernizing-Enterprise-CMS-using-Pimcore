@@ -2556,6 +2556,169 @@ return [
                     ]
                 ]
             ]
+        ],
+        "products-import" => [
+            "general" => [
+                "active" => TRUE,
+                "type" => "dataImporterDataObject",
+                "name" => "products-import",
+                "description" => "",
+                "path" => NULL
+            ],
+            "loaderConfig" => [
+                "type" => "asset",
+                "settings" => [
+                    "assetPath" => "/Import/Products Import.csv"
+                ]
+            ],
+            "interpreterConfig" => [
+                "type" => "csv",
+                "settings" => [
+                    "skipFirstRow" => TRUE,
+                    "delimiter" => ",",
+                    "enclosure" => "\"",
+                    "escape" => "\\"
+                ]
+            ],
+            "resolverConfig" => [
+                "elementType" => "dataObject",
+                "dataObjectClassId" => "PRD",
+                "loadingStrategy" => [
+                    "type" => "path",
+                    "settings" => [
+                        "dataSourceIndex" => "0"
+                    ]
+                ],
+                "createLocationStrategy" => [
+                    "type" => "staticPath",
+                    "settings" => [
+                        "path" => "/"
+                    ]
+                ],
+                "locationUpdateStrategy" => [
+                    "type" => "staticPath",
+                    "settings" => [
+                        "path" => "/"
+                    ]
+                ],
+                "publishingStrategy" => [
+                    "type" => "noChangePublishNew"
+                ]
+            ],
+            "processingConfig" => [
+                "executionType" => "parallel",
+                "idDataIndex" => ""
+            ],
+            "mappingConfig" => [
+                [
+                    "label" => "SKU",
+                    "dataSourceIndex" => [
+                        "1"
+                    ],
+                    "transformationResultType" => "default",
+                    "dataTarget" => [
+                        "type" => "direct",
+                        "settings" => [
+                            "fieldName" => "sku",
+                            "language" => ""
+                        ]
+                    ],
+                    "transformationPipeline" => [
+
+                    ]
+                ],
+                [
+                    "label" => "Name",
+                    "dataSourceIndex" => [
+                        "4"
+                    ],
+                    "transformationResultType" => "default",
+                    "dataTarget" => [
+                        "type" => "direct",
+                        "settings" => [
+                            "fieldName" => "name",
+                            "language" => "it"
+                        ]
+                    ],
+                    "transformationPipeline" => [
+
+                    ]
+                ],
+                [
+                    "label" => "Brand",
+                    "dataSourceIndex" => [
+                        "5"
+                    ],
+                    "transformationResultType" => "default",
+                    "dataTarget" => [
+                        "type" => "direct",
+                        "settings" => [
+                            "fieldName" => "brand",
+                            "language" => ""
+                        ]
+                    ],
+                    "transformationPipeline" => [
+
+                    ]
+                ],
+                [
+                    "label" => "Price",
+                    "dataSourceIndex" => [
+                        "2",
+                        "3"
+                    ],
+                    "transformationResultType" => "quantityValue",
+                    "dataTarget" => [
+                        "type" => "direct",
+                        "settings" => [
+                            "fieldName" => "price",
+                            "language" => ""
+                        ]
+                    ],
+                    "transformationPipeline" => [
+                        [
+                            "type" => "quantityValue"
+                        ]
+                    ]
+                ],
+                [
+                    "label" => "Category",
+                    "dataSourceIndex" => [
+                        "6"
+                    ],
+                    "settings" => [
+                        "loadStrategy" => "path",
+                        "attributeDataObjectClassId" => "",
+                        "attributeName" => "",
+                        "attributeLanguage" => ""
+                    ],
+                    "transformationResultType" => "dataObject",
+                    "dataTarget" => [
+                        "type" => "direct",
+                        "settings" => [
+                            "fieldName" => "category",
+                            "language" => ""
+                        ]
+                    ],
+                    "transformationPipeline" => [
+                        [
+                            "settings" => [
+                                "loadStrategy" => "path",
+                                "attributeDataObjectClassId" => "",
+                                "attributeName" => "",
+                                "attributeLanguage" => ""
+                            ],
+                            "type" => "loadDataObject"
+                        ]
+                    ]
+                ]
+            ],
+            "executionConfig" => [
+                "cronDefinition" => ""
+            ],
+            "workspaces" => [
+
+            ]
         ]
     ]
 ];

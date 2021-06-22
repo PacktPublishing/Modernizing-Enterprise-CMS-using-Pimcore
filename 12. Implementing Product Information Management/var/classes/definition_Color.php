@@ -16,7 +16,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'name' => 'Color',
    'description' => NULL,
    'creationDate' => 0,
-   'modificationDate' => 1618934028,
+   'modificationDate' => 1621021524,
    'userOwner' => 0,
    'userModification' => 2,
    'parentClass' => NULL,
@@ -31,6 +31,9 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'allowInherit' => false,
    'allowVariants' => false,
    'showVariants' => false,
+   'fieldDefinitions' => 
+  array (
+  ),
    'layoutDefinitions' => 
   Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
      'fieldtype' => 'panel',
@@ -164,6 +167,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'group' => NULL,
    'showAppLoggerTab' => false,
    'linkGeneratorReference' => NULL,
+   'previewGeneratorReference' => NULL,
    'compositeIndices' => 
   array (
   ),

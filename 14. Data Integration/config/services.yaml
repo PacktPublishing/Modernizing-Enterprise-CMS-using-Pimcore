@@ -68,3 +68,11 @@ services:
     # App\EventListener\TestListener:
     #     tags:
     #         - { name: kernel.event_listener, event: pimcore.dataobject.preUpdate, method: onObjectPreUpdate }
+
+    App\EventListener\DataHubListener:
+        tags:
+            - { name: kernel.event_listener, event: pimcore.datahub.graphql.mutation.preBuild, method: onMutationEventsPreBuild }
+
+    App\EventListener\DataObjectListener:
+        tags:
+            - { name: kernel.event_listener, event: pimcore.dataobject.postUpdate, method: onObjectPostUpdate }

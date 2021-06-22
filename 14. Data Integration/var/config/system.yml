@@ -1,38 +1,38 @@
 pimcore:
     general:
-        timezone: Europe/Berlin
+        domain: ''
+        redirect_to_maindomain: false
         language: en
-        valid_languages: en
+        valid_languages: 'it,en,es,fr,pt,el_GR,pl'
+        fallback_languages:
+            it: ''
+            en: ''
+            es: ''
+            fr: ''
+            pt: ''
+            el_GR: ''
+            pl: ''
+        default_language: ''
+        debug_admin_translations: false
     documents:
         versions:
-            steps: '10'
+            days: null
+            steps: 10
         error_pages:
             default: /
-        allow_trailing_slash: 'no'
-        generate_preview: false
     objects:
         versions:
-            steps: '10'
+            days: null
+            steps: 10
     assets:
         versions:
-            steps: '10'
-    services: {  }
-    full_page_cache:
-        exclude_cookie: ''
-    httpclient:
-        adapter: Socket
-   
-    newsletter:
-        sender:
-            name: ''
-            email: ''
-        return:
-            name: ''
-            email: ''
-        method: sendmail
-        use_specific: false
+            days: null
+            steps: 10
+        hide_edit_image: false
+        disable_tree_preview: true
 pimcore_admin:
     branding:
+        login_screen_invert_colors: false
         color_login_screen: ''
         color_admin_interface: ''
         login_screen_custom_image: ''

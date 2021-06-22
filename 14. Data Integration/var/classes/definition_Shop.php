@@ -26,7 +26,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'name' => 'Shop',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1619541740,
+   'modificationDate' => 1620752436,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -50,8 +50,8 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
      'type' => NULL,
      'region' => NULL,
      'title' => NULL,
-     'width' => NULL,
-     'height' => NULL,
+     'width' => 0,
+     'height' => 0,
      'collapsible' => false,
      'collapsed' => false,
      'bodyStyle' => NULL,
@@ -218,7 +218,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                      'blockedVarsForExport' => 
                     array (
                     ),
-                     'icon' => '',
+                     'icon' => NULL,
                      'labelWidth' => 100,
                      'labelAlign' => 'left',
                   )),
@@ -269,7 +269,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                      'blockedVarsForExport' => 
                     array (
                     ),
-                     'icon' => '',
+                     'icon' => NULL,
                      'labelWidth' => 100,
                      'labelAlign' => 'left',
                   )),
@@ -278,14 +278,14 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'blockedVarsForExport' => 
                 array (
                 ),
-                 'icon' => '',
+                 'icon' => NULL,
               )),
             ),
              'locked' => false,
              'blockedVarsForExport' => 
             array (
             ),
-             'icon' => '',
+             'icon' => NULL,
              'labelWidth' => 100,
              'labelAlign' => 'left',
           )),
@@ -1763,7 +1763,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                      'blockedVarsForExport' => 
                     array (
                     ),
-                     'icon' => '',
+                     'icon' => NULL,
                      'labelWidth' => 100,
                      'labelAlign' => 'left',
                   )),
@@ -1817,7 +1817,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                      'blockedVarsForExport' => 
                     array (
                     ),
-                     'icon' => '',
+                     'icon' => NULL,
                      'labelWidth' => 100,
                      'labelAlign' => 'left',
                   )),
@@ -1826,14 +1826,14 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'blockedVarsForExport' => 
                 array (
                 ),
-                 'icon' => '',
+                 'icon' => NULL,
               )),
             ),
              'locked' => false,
              'blockedVarsForExport' => 
             array (
             ),
-             'icon' => '',
+             'icon' => NULL,
              'labelWidth' => 100,
              'labelAlign' => 'left',
           )),
@@ -1892,7 +1892,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'blockedVarsForExport' => 
             array (
             ),
-             'icon' => '',
+             'icon' => NULL,
              'labelWidth' => 100,
              'labelAlign' => 'left',
           )),

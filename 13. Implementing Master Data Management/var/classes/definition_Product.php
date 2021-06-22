@@ -33,7 +33,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'modificationDate' => 1618935214,
    'userOwner' => 0,
    'userModification' => 2,
-   'parentClass' => '',
+   'parentClass' => 'App\\Model\\AbstractProduct',
    'implementsInterfaces' => '',
    'listingParentClass' => '',
    'useTraits' => '',
