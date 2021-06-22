@@ -1,0 +1,51 @@
+{% extends '@Blog/Layout/layout.html.twig' %}
+{% block content %}
+  {% include '@Blog/Layout/header.html.twig' %}
+  <!-- Page Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+       <h3 class="pb-4 mb-4 border-bottom">About The Author</h3>
+        <div class="card" style="width: 18rem;">
+          {{author.photo | raw}}
+          <div class="card-body">
+            <h5 class="card-title">{{author.getFirstName()}} {{author.getLastName()}}</h5>
+            <p class="card-text">{{ author.getBio() }}</p>
+          </div>
+          <div class="card-body">
+            {# <a href="#" class="card-link">Card link</a>
+            <a href="#" class="card-link">Another link</a> #}
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <h3 class="pb-4 mb-4 border-bottom">Article for {{author.getFirstName()}} {{author.getLastName()}}</h3>
+        <div class="card-deck">
+          {% for article in articles %}
+          {% set content = article.getContent() | length > 200 ? article.getContent() | slice(0, 200) ~ ' ...' : article.getContent() %}
+              <div class="col-md-12">
+                  <div class="card"  style="margin:10px;">
+                    <a href="/blog/article{{article.getSlug()[0].getSlug()}}">
+                      <img class="card-img-top" src="{{article.getImage()}}" alt="Card image cap">
+                    </a>
+                      <div class="card-body">
+                         <a href="/blog/article{{article.getSlug()[0].getSlug()}}">
+                          <h5 class="card-title">{{article.getTitle()}}</h5>
+                         </a>
+                          <small class="text-muted">by <a href="/blog/author{{article.getAuthor().getSlug()[0].getSlug()}}">{{article.getAuthor().getFirstName()}}</a></small>
+                        <p class="card-text">{{ content | raw }}</p>
+                      </div>
+                      <div class="card-footer">
+                          <small class="text-muted">Posted on {{article.getModificationDate() | date("F jS \\a\\t g:ia") }}</small>
+                      </div>
+                  </div>
+              </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container -->
+
+{%  endblock %}

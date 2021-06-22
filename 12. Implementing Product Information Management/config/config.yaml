@@ -1,0 +1,71 @@
+imports:
+    - { resource: services.yaml }
+    - { resource: 'local/' }
+
+
+pimcore:
+#### WORKFLOWS
+    workflows:
+        product_workflow:
+            label: 'Product Workflow'
+            type: 'state_machine'
+            supports:
+                - 'Pimcore\Model\DataObject\Product'
+            marking_store:
+                type: single_state
+                arguments:
+                    - marking
+            places:
+                base_data:
+                    label: 'Base Data'
+                    color: '#ffd700'
+                    permissions:
+                        - objectLayout: basedata
+                translations:
+                    label: 'Translations'
+                    color: '#377ea9'
+                    permissions:
+                        - objectLayout: translations
+                images:
+                    label: 'Images'
+                    color: '#377ea9'
+                    permissions:
+                        - objectLayout: images
+                enrichment:
+                    label: 'Product Enrichment'
+                    color: '#377ea9'
+                    permissions:
+            transitions:
+                product_translations:
+                    from: [ base_data, enrichment ]
+                    to: translations
+                    guard: subject.checkBaseDataCompleted()
+                    options:
+                        label: 'Edit Translations'
+                        notes:
+                            commentEnabled: true
+                            commentRequired: false
+                        iconClass: 'pimcore_icon_translations'
+                product_images:
+                    from: [ translations, enrichment ]
+                    to: images
+                    guard: subject.checkTranslationsCompleted()
+                    options:
+                        label: 'Edit Images'
+                        notes:
+                            commentEnabled: true
+                            commentRequired: false
+                        iconClass: 'pimcore_icon_image'
+                product_enrichment:
+                    from: [ images ]
+                    to: enrichment
+                    guard: subject.checkImagesInserted()
+                    options:
+                        label: 'Product Enrichment'
+                        notes:
+                            commentEnabled: true
+                            commentRequired: false
+                        iconClass: 'pimcore_icon_welcome'
+
+#### SYMFONY OVERRIDES
+framework:

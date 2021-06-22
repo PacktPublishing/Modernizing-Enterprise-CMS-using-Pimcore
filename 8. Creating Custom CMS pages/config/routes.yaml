@@ -1,0 +1,19 @@
+_pimcore:
+    resource: "@PimcoreCoreBundle/Resources/config/routing.yml"
+
+app:
+    resource: "../src/Controller/"
+    type: annotation
+
+
+custom_header:
+    path:      /custom/header
+    controller: App\Controller\CustomController:headerAction
+
+custom_path:
+    path:      /custom/path
+    controller:  App\Controller\CustomController:differentPathAction 
+
+custom_json:
+    path:      /custom/json
+    controller:  App\Controller\CustomController:jsonAction 

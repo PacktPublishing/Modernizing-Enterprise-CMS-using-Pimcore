@@ -1,0 +1,54 @@
+{
+  "name": "pimcore/skeleton",
+  "type": "project",
+  "license": "GPL-3.0-or-later",
+  "config": {
+    "optimize-autoloader": true,
+    "sort-packages": true
+  },
+  "require": {
+    "composer-runtime-api": "^2.0",
+    "pimcore/data-hub": "^0.7.0",
+    "pimcore/data-importer": "v1.1",
+    "pimcore/pimcore": "^10.0"
+  },
+  "require-dev": {
+    "cache/integration-tests": "^0.17.0",
+    "codeception/codeception": "^4.1.12",
+    "codeception/module-symfony": "^1"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/",
+      "Pimcore\\Model\\DataObject\\": "var/classes/DataObject",
+      "Pimcore\\Model\\Object\\": "var/classes/Object",
+      "Website\\": "legacy/website/lib"
+    }
+  },
+  "scripts": {
+    "post-create-project-cmd": "Pimcore\\Composer::postCreateProject",
+    "post-install-cmd": [
+      "Pimcore\\Composer::postInstall",
+      "@pimcore-scripts"
+    ],
+    "post-update-cmd": [
+      "Pimcore\\Composer::postUpdate",
+      "@pimcore-scripts",
+      "Pimcore\\Composer::executeMigrationsUp",
+      "@pimcore-scripts"
+    ],
+    "pimcore-scripts": [
+      "Pimcore\\Composer::clearCache",
+      "Pimcore\\Composer::installAssets"
+    ]
+  },
+  "extra": {
+    "symfony-bin-dir": "bin",
+    "symfony-var-dir": "var",
+    "symfony-tests-dir": "tests",
+    "symfony-assets-install": "relative",
+    "branch-alias": {
+      "dev-master": "10.0-dev"
+    }
+  }
+}

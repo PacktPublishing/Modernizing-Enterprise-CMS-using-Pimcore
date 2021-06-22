@@ -2509,51 +2509,13 @@ return [
             ],
             "workspaces" => [
                 "asset" => [
-                    [
-                        "read" => TRUE,
-                        "cpath" => "/Products",
-                        "create" => FALSE,
-                        "update" => FALSE,
-                        "delete" => FALSE,
-                        "id" => "extModel725-1"
-                    ]
+
                 ],
                 "document" => [
 
                 ],
                 "object" => [
-                    [
-                        "read" => TRUE,
-                        "cpath" => "/Products",
-                        "create" => TRUE,
-                        "update" => TRUE,
-                        "delete" => TRUE,
-                        "id" => "extModel757-1"
-                    ],
-                    [
-                        "read" => TRUE,
-                        "cpath" => "/Colors",
-                        "create" => FALSE,
-                        "update" => FALSE,
-                        "delete" => FALSE,
-                        "id" => "extModel757-2"
-                    ],
-                    [
-                        "read" => TRUE,
-                        "cpath" => "/Categories",
-                        "create" => FALSE,
-                        "update" => FALSE,
-                        "delete" => FALSE,
-                        "id" => "extModel757-3"
-                    ],
-                    [
-                        "read" => TRUE,
-                        "cpath" => "/Materials",
-                        "create" => FALSE,
-                        "update" => FALSE,
-                        "delete" => FALSE,
-                        "id" => "extModel757-4"
-                    ]
+
                 ]
             ]
         ]

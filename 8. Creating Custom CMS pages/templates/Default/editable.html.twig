@@ -1,0 +1,166 @@
+<h2>Checkbox</h2>
+Checkbox / bool implementation for documents.
+{% if editmode %}
+    {{ pimcore_checkbox('myCheckbox') }}
+{% endif %}
+
+<h2>Date</h2>
+Datepicker, showing the date in a specified format.
+{{ pimcore_date('myDate', {
+    'format': 'd.m.Y',
+    'outputFormat': '%d.%m.%Y'
+    })
+}}
+
+<h2>Relation</h2>
+Provides possibility to create a reference to any other element in Pimcore (document, asset, object). 
+{% if editmode %}
+
+{{ pimcore_relation("myRelation",{
+    "types": ["asset","object"],
+    "subtypes": {
+        "asset": ["video", "image"],
+        "object": ["object"],
+    },
+    "classes": ["MyObject"]
+}) }}
+{% else %}
+    <a href="{{ pimcore_relation("myRelation").getFullPath() }}">{{ "Go to" | trans }}</a>
+{% endif %}
+
+<h2>Relations (Many-To-Many Relation)</h2>
+Provides possibility to edit multiple references to other elements in Pimcore (documents, assets, objects).
+{% if editmode %}
+    {{ pimcore_relations("objectPaths") }}
+{% else %}
+<ul>
+    {% for element in pimcore_relations("objectPaths") %}
+        <li><a href="{{ element.getFullPath }}">{{  element.getTitle  }}</a></li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<h2>Image</h2>
+A place where you can assign an image (from the assets module).
+{{ pimcore_image("myImage", {
+    "title": "Drag your image here",
+    "width": 300,
+    "height": 100,
+    "thumbnail": "myThumbnails"
+}) }}
+
+
+<h2>Input</h2>
+A single-line text-input.
+{{ pimcore_input("myHeadline") }}
+
+
+<h2>Link</h2>
+An editable link component.
+{{ pimcore_link('blogLink') }}
+
+<h2>Multiselect</h2>
+Multiselect implementation for selecting documents.
+{% if editmode %}
+    {{ pimcore_multiselect("categories", {
+            "width" : 200,
+            "height" : 100,
+            "store" : [
+                ["key","value"],
+                ["key2","value2"],
+            ],
+            
+        }) }}
+{% else %}
+  Selected value:  {{ pimcore_multiselect("categories")}}
+{% endif %}
+
+<h2>Numeric</h2>
+The numeric editable is like the input editable but with special options for numbers (like minimum value, decimal precision...).
+{{ pimcore_numeric('myNumber') }}
+
+    
+
+
+
+<h2>Renderlet</h2>
+The renderlet is a special container which is able to handle every object in Pimcore (Documents, Assets, Objects).
+{{
+        pimcore_renderlet('myGallery', {
+            "controller" : "App\\Controller\\SlideShowController::galleryAction",
+            "title" : "Drag an asset folder here to get a gallery",
+            "height" : 400
+        })
+    }}
+
+<h2>Select</h2>
+Select box as an editable.
+{% if editmode %}
+    {{ pimcore_select("myItem", {
+            "store": [
+                ["otion1", "Option One"],
+                ["option2", "Option 2"],
+                ["option3", "Option 3"]
+            ],
+            "defaultValue" : "otion1"
+        }) }}
+{% else %}    
+    Your choice:{{ pimcore_select("myItem").getData() }}    
+{% endif %}
+
+<br><br><br><br><br><br><br>
+
+<h2>Snippet (embed)</h2>
+Use the snippet editable to embed a reusable document, for example to create teasers, boxes, etc.
+
+{{ pimcore_snippet("mySnippet", {"width": 250, "height": 100}) }}
+
+<h2>Table</h2>
+This editable allows you to add a fully editable table.
+{{ pimcore_table("productProperties", {
+    "width": 700,
+    "height": 400,
+    "defaults": {
+        "cols": 2,
+        "rows": 3,
+        "data": [
+            ["Attribute name", "Value"],
+            ["Color", "Black"],
+            ["Size", "Large"],
+            ["Availability", "Out of stock"]
+            ]
+        }
+    })
+}}
+
+<h2>Textarea</h2>
+Textarea implementation for documents.
+  {{ pimcore_textarea("product_description",{
+        "nl2br": true,
+        "height": 300,
+        "placeholder": "Product Description"
+    }) }}
+
+<h2>Video</h2>
+Use the Video editable to insert asset movies in pages content. (from https://www.sample-videos.com/)
+  {{ pimcore_video('campaignVideo2') }}
+
+<h2>WYSIWYG</h2>
+WYSIWYG editor.
+{{  pimcore_wysiwyg("specialContent", {
+            "height": 200
+        }) 
+    }}
+
+<h2>Block</h2>
+The following snipper iterates a block of code. 
+{% for i in pimcore_iterate_block(pimcore_block('contentblock')) %}
+    <h2>{{ pimcore_input('subline') }}</h2>
+    {{ pimcore_wysiwyg('content') }}
+{% endfor %}
+
+<h2>Scheduled Block</h2>
+{% for i in pimcore_iterate_block(pimcore_scheduledblock('block')) %}
+    <h2>{{ pimcore_input('sched_subline') }}</h2>
+    {{ pimcore_wysiwyg('sched_content') }}
+{% endfor %}

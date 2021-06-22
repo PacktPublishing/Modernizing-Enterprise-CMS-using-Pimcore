@@ -8,8 +8,8 @@ services:
     working_dir: /application
     command: [mysqld, --character-set-server=utf8mb4, --collation-server=utf8mb4_unicode_ci, --innodb-file-format=Barracuda, --innodb-large-prefix=1, --innodb-file-per-table=1]
     volumes:
-      - pimcore-database:/var/lib/mysqlvolumes
-      - ./db-dump:/docker-entrypoint-initdb.d
+      - pimcore-database:/var/lib/mysql
+      - ./db-dump/:/docker-entrypoint-initdb.d
     environment:
       - MYSQL_ROOT_PASSWORD=ROOT
       - MYSQL_DATABASE=pimcore
@@ -22,7 +22,7 @@ services:
       - 8080:8080
 
   php:
-    image: pimcore/pimcore:PHP7.4-apache
+    image: pimcore/pimcore:PHP8.0-apache
     volumes:
       - .:/var/www/html:cached
     ports:
@@ -30,15 +30,18 @@ services:
      - 443:443
     depends_on:
      - db
+    environment:
+     - APACHE_DOCUMENT_ROOT=/var/www/html/public
 
   php-debug:
-    image: pimcore/pimcore:PHP7.4-apache-debug
+    image: pimcore/pimcore:PHP8.0-apache
     volumes:
       - .:/var/www/html:cached
     ports:
      - 88:80
     environment:
       - PHP_IDE_CONFIG="serverName=localhost"
+      - APACHE_DOCUMENT_ROOT=/var/www/html/public
 
 volumes:
   pimcore-database:

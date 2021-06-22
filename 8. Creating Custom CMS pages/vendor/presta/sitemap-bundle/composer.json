@@ -1,0 +1,50 @@
+{
+    "name": "presta/sitemap-bundle",
+    "description": "A Symfony bundle that provides tools to build your application sitemap.",
+    "keywords": ["symfony", "bundle", "sitemap", "xml", "prestaconcept"],
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Prestaconcept",
+            "homepage": "http://www.prestaconcept.net/"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/prestaconcept/PrestaSitemapBundle/issues"
+    },
+    "require": {
+        "php": ">=7.1.0",
+        "ext-simplexml": "*",
+        "symfony/console": "^3.4|~4.0|~5.0",
+        "symfony/framework-bundle": "^3.4|~4.0|~5.0"
+    },
+    "require-dev": {
+        "doctrine/annotations": "^1.0",
+        "phpunit/phpunit": "^7.5",
+        "symfony/browser-kit": "^4.4",
+        "symfony/phpunit-bridge": "^4.4",
+        "symfony/yaml": "^4.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Presta\\SitemapBundle\\": ""
+        },
+        "exclude-from-classmap": [
+            "/Tests/"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Presta\\SitemapBundle\\Tests\\Unit\\": "Tests/Unit",
+            "Presta\\SitemapBundle\\Tests\\Integration\\Tests\\": "Tests/Integration/tests",
+            "Presta\\SitemapBundle\\Tests\\Integration\\": "Tests/Integration/src"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.x-dev",
+            "1.x": "1.x-dev"
+        }
+    }
+}

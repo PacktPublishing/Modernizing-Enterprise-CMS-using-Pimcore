@@ -1,0 +1,79 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        php: [7.3, 7.4, 8.0]
+        symfony: [3.4, 4.4, 5]
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: ${{ matrix.php }}
+        tools: composer:v2
+        extensions: ctype, iconv, intl, json, mbstring, pdo, pdo_sqlite
+        coverage: none
+
+    - name: Checkout Symfony 3.4 Sample
+      if: matrix.symfony == 3.4
+      uses: actions/checkout@v2
+      with:
+        repository: Codeception/symfony-module-tests
+        submodules: recursive
+        ref: 3.4
+
+    - name: Checkout Symfony 4.4 Sample
+      if: matrix.symfony == 4.4
+      uses: actions/checkout@v2
+      with:
+        repository: Codeception/symfony-module-tests
+        submodules: recursive
+        ref: 4.4
+
+    - name: Checkout Symfony 5 Sample
+      if: matrix.symfony == 5
+      uses: actions/checkout@v2
+      with:
+        repository: Codeception/symfony-module-tests
+        submodules: recursive
+        ref: main
+
+    - name: Validate composer.json and composer.lock
+      run: composer validate
+
+    - name: Get composer cache directory
+      id: composer-cache
+      run: echo "::set-output name=dir::$(composer config cache-files-dir)"
+
+    - name: Cache composer dependencies
+      uses: actions/cache@v2.1.3
+      with:
+        path: ${{ steps.composer-cache.outputs.dir }}
+        key: ${{ runner.os }}-${{ matrix.php }}-composer-${{ hashFiles('composer.json') }}
+        restore-keys: ${{ runner.os }}-${{ matrix.php }}-composer-
+
+    - name: Install Symfony Sample on PHP7
+      if: matrix.php < 8
+      run: composer update --no-progress
+
+    - name: Install Symfony Sample on PHP8
+      if: matrix.php == 8.0
+      run: composer update --no-progress --ignore-platform-req=php
+
+    - name: Update database schema
+      run: php bin/console d:s:u -f
+
+    - name: Load Doctrine fixtures
+      run: php bin/console d:f:l -q
+
+    - name: Run test suite Symfony
+      run: php vendor/bin/codecept run Functional

@@ -1,0 +1,47 @@
+blog_homepage:
+    path:     /blog
+    controller: BlogBundle\Controller\BlogController:blogAction
+
+blog_categories_homepage:
+    path:     /blog/categories
+    controller: BlogBundle\Controller\BlogController:blogAction
+
+blog_article_by_id:
+    path:      /blog/article/{page}
+    controller: BlogBundle\Controller\BlogController:articleAction
+    requirements: 
+      path: '.*?'
+      page: '\d+' 
+
+blog_article_by_slug:
+    path:      /blog/article/{page}
+    controller: BlogBundle\Controller\BlogController:articleAction
+    requirements: 
+      path: '.*?'
+      page: '[\w-]+'
+
+
+blog_article_category_by_id:
+    path:      /blog/{page}
+    controller: BlogBundle\Controller\BlogController:categoryAction
+    requirements:
+      page: '\d+'
+
+blog_article_category_by_slug:
+    path:      /blog/{page}
+    controller: BlogBundle\Controller\BlogController:categoryAction
+    requirements:
+      page: '[\w-]+'
+
+blog_author_by_id:
+    path:      /blog/author/{page}
+    controller: BlogBundle\Controller\BlogController:authorAction
+    requirements:
+      page: '\d+'
+
+blog_author_by_slug:
+    path:      /blog/author/{page}
+    controller: BlogBundle\Controller\BlogController:authorAction
+    requirements:
+      page: '[\w-]+'
+

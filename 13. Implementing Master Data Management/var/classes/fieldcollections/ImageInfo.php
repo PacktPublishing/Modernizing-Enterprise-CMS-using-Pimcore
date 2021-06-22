@@ -16,7 +16,6 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
    'layoutDefinitions' => 
   Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
      'fieldtype' => 'panel',
-     'labelWidth' => 100,
      'layout' => NULL,
      'border' => false,
      'name' => NULL,
@@ -35,7 +34,6 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
       0 => 
       Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
          'fieldtype' => 'panel',
-         'labelWidth' => 100,
          'layout' => NULL,
          'border' => false,
          'name' => 'Image',
@@ -54,12 +52,6 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
           0 => 
           Pimcore\Model\DataObject\ClassDefinition\Data\Image::__set_state(array(
              'fieldtype' => 'image',
-             'width' => '',
-             'height' => '',
-             'uploadPath' => '',
-             'queryColumnType' => 'int(11)',
-             'columnType' => 'int(11)',
-             'phpdocType' => '\\Pimcore\\Model\\Asset\\Image',
              'name' => 'image',
              'title' => 'image',
              'tooltip' => '',
@@ -74,14 +66,33 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
              'invisible' => false,
              'visibleGridView' => false,
              'visibleSearch' => false,
+             'blockedVarsForExport' => 
+            array (
+            ),
+             'width' => '',
+             'height' => '',
+             'uploadPath' => '',
           )),
         ),
          'locked' => false,
+         'blockedVarsForExport' => 
+        array (
+        ),
          'icon' => '',
+         'labelWidth' => 100,
+         'labelAlign' => 'left',
       )),
     ),
      'locked' => false,
+     'blockedVarsForExport' => 
+    array (
+    ),
      'icon' => NULL,
+     'labelWidth' => 100,
+     'labelAlign' => 'left',
   )),
    'generateTypeDeclarations' => false,
+   'blockedVarsForExport' => 
+  array (
+  ),
 ));
