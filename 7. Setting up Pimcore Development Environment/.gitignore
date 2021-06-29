@@ -1,0 +1,59 @@
+# remove the following ignores for your project
+/config/pimcore/constants.php
+
+# symfony default
+/.web-server-pid
+/config/pimcore/parameters.yml
+/build/
+/phpunit.xml
+/public/bundles/
+
+# local config
+/.env.local
+/.env.local.php
+/.env.*.local
+!/config/local
+/config/local/*
+!config/local/.gitkeep
+
+# pimcore legacy (remove this for your own development)
+!/legacy
+/legacy/*
+!legacy/.gitkeep
+!legacy/bundle
+
+/var/*
+!/var/.gitkeep
+!/var/classes/
+/var/classes/DataObject
+
+!/var/config
+/var/config/system.yml
+/var/config/debug-mode.php
+/var/config/maintenance.php
+
+# project specific recommendations
+/var/config/tag-manager.php
+/var/config/reports.php
+
+
+/public/var/
+/public/sitemap*.xml
+
+# PHP-CS-Fixer
+/.php_cs
+/.php_cs.cache
+
+# composer
+/vendor/
+
+# PhpStorm / IDEA
+.idea
+# NetBeans
+nbproject
+
+# keep legacy paths ignored for easier migration
+/plugins/
+/tools/
+/website/
+.temp
