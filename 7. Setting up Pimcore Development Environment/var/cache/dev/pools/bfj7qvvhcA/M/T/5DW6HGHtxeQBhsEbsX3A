@@ -1,0 +1,27 @@
+<?php //Pimcore%255CBundle%255CAdminBundle%255CController%255CAdmin%255CDocument%255CPageController%2523displayPreviewImageAction
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+    ],
+    null,
+    [
+        'Symfony\\Component\\Routing\\Annotation\\Route' => [
+            'path' => [
+                '/display-preview-image',
+            ],
+            'name' => [
+                'pimcore_admin_page_display_preview_image',
+            ],
+            'methods' => [
+                [
+                    'GET',
+                ],
+            ],
+        ],
+    ],
+    [
+        $o[0],
+    ],
+    []
+); }];

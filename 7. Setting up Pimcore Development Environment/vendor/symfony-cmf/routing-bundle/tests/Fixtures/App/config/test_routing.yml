@@ -1,0 +1,3 @@
+symfony_route:
+    path:     /symfony_route_test
+    defaults: { _controller: Test:controller }

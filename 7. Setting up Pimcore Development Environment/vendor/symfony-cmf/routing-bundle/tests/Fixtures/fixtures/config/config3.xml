@@ -1,0 +1,12 @@
+<config xmlns="http://cmf.symfony.com/schema/dic/routing">
+    <dynamic>
+        <persistence>
+            <phpcr
+                manager-name="default"
+                enable-initializer="true"
+            >
+                <route-basepath>/cms/routes</route-basepath>
+            </phpcr>
+        </persistence>
+    </dynamic>
+</config>

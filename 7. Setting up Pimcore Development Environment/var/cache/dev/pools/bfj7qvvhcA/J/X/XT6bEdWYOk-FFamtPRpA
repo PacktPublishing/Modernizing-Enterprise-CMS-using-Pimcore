@@ -1,0 +1,3 @@
+<?php //Pimcore%255CController%255CFrontendController%2523addResponseHeader
+
+return [PHP_INT_MAX, []];

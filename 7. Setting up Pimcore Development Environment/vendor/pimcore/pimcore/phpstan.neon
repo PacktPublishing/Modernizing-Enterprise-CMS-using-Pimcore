@@ -1,0 +1,4 @@
+includes:
+    - vendor/phpstan/phpstan-symfony/extension.neon
+    - phpstan-parameters.neon
+    - phpstan-baseline.neon

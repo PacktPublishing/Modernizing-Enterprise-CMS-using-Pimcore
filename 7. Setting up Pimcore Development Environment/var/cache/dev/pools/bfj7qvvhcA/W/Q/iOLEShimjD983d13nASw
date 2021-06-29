@@ -1,0 +1,33 @@
+<?php //Pimcore%255CBundle%255CAdminBundle%255CController%255CAdmin%255CDocument%255CDocumentController%2523diffVersionsAction
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+    ],
+    null,
+    [
+        'Symfony\\Component\\Routing\\Annotation\\Route' => [
+            'path' => [
+                '/diff-versions/from/{from}/to/{to}',
+            ],
+            'name' => [
+                'pimcore_admin_document_document_diffversions',
+            ],
+            'requirements' => [
+                [
+                    'from' => '\\d+',
+                    'to' => '\\d+',
+                ],
+            ],
+            'methods' => [
+                [
+                    'GET',
+                ],
+            ],
+        ],
+    ],
+    [
+        $o[0],
+    ],
+    []
+); }];

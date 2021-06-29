@@ -1,0 +1,51 @@
+{
+    "name": "knplabs/knp-paginator-bundle",
+    "type": "symfony-bundle",
+    "description": "Paginator bundle for Symfony to automate pagination and simplify sorting and other features",
+    "keywords": ["pager", "paginator", "pagination", "symfony", "bundle", "knp", "knplabs"],
+    "homepage": "http://github.com/KnpLabs/KnpPaginatorBundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "KnpLabs Team",
+            "homepage": "http://knplabs.com"
+        },
+        {
+            "name": "Symfony Community",
+            "homepage": "http://github.com/KnpLabs/KnpPaginatorBundle/contributors"
+        }
+    ],
+    "require": {
+        "php": "^7.3 || ^8.0",
+        "knplabs/knp-components": "^2.4 || ^3.0",
+        "symfony/config": "^4.4 || ^5.0",
+        "symfony/dependency-injection": "^4.4 || ^5.0",
+        "symfony/event-dispatcher": "^4.4 || ^5.0",
+        "symfony/http-foundation": "^4.4 || ^5.0",
+        "symfony/http-kernel": "^4.4 || ^5.0",
+        "symfony/routing": "^4.4 || ^5.0",
+        "symfony/translation": "^4.4 || ^5.0",
+        "twig/twig": "^2.0 || ^3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.5 || ^9.4",
+        "symfony/expression-language": "^4.4 || ^5.0",
+        "symfony/templating": "^4.4 || ^5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Knp\\Bundle\\PaginatorBundle\\": "src"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "5.x-dev"
+        }
+    }
+}
