@@ -1,34 +1,6 @@
 <?php 
 
 return [
-    "MyThubnails" => [
-        "items" => [
-            [
-                "method" => "scaleByHeight",
-                "arguments" => [
-                    "height" => 200,
-                    "forceResize" => TRUE
-                ]
-            ]
-        ],
-        "medias" => [
-
-        ],
-        "name" => "MyThubnails",
-        "description" => "My thumbnails",
-        "group" => "",
-        "format" => "PNG",
-        "quality" => 85,
-        "highResolution" => 0.0,
-        "preserveColor" => FALSE,
-        "preserveMetaData" => FALSE,
-        "rasterizeSVG" => FALSE,
-        "downloadable" => FALSE,
-        "modificationDate" => 1614798089,
-        "creationDate" => 1612707204,
-        "forcePictureTag" => FALSE,
-        "id" => "MyThubnails"
-    ],
     "MiniIcons" => [
         "items" => [
             [
@@ -56,5 +28,33 @@ return [
         "creationDate" => 1612713004,
         "forcePictureTag" => FALSE,
         "id" => "MiniIcons"
+    ],
+    "MyThumbnails" => [
+        "items" => [
+            [
+                "method" => "scaleByHeight",
+                "arguments" => [
+                    "height" => 200,
+                    "forceResize" => TRUE
+                ]
+            ]
+        ],
+        "medias" => [
+
+        ],
+        "name" => "MyThumbnails",
+        "description" => "",
+        "group" => "",
+        "format" => "PNG",
+        "quality" => 85,
+        "highResolution" => 0.0,
+        "preserveColor" => FALSE,
+        "preserveMetaData" => FALSE,
+        "rasterizeSVG" => FALSE,
+        "downloadable" => FALSE,
+        "modificationDate" => 1624894559,
+        "creationDate" => 1624894448,
+        "preserveAnimation" => FALSE,
+        "id" => "MyThumbnails"
     ]
 ];

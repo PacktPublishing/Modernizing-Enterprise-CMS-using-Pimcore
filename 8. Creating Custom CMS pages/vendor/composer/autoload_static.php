@@ -989,6 +989,7 @@ class ComposerStaticInit16eeeb6ed4e7e6335656f9ff2484bf96
         'App\\Controller\\CustomController' => __DIR__ . '/../..' . '/src/Controller/CustomController.php',
         'App\\Controller\\DefaultController' => __DIR__ . '/../..' . '/src/Controller/DefaultController.php',
         'App\\Kernel' => __DIR__ . '/../..' . '/src/Kernel.php',
+        'App\\Templating\\Helper\\Timestamp' => __DIR__ . '/../..' . '/src/Templating/Helper/Timestamp.php',
         'Assert\\Assert' => __DIR__ . '/..' . '/beberlei/assert/lib/Assert/Assert.php',
         'Assert\\Assertion' => __DIR__ . '/..' . '/beberlei/assert/lib/Assert/Assertion.php',
         'Assert\\AssertionChain' => __DIR__ . '/..' . '/beberlei/assert/lib/Assert/AssertionChain.php',

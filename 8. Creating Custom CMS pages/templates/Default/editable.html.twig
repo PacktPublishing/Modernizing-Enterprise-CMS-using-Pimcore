@@ -46,7 +46,7 @@ A place where you can assign an image (from the assets module).
     "title": "Drag your image here",
     "width": 300,
     "height": 100,
-    "thumbnail": "myThumbnails"
+    "thumbnail": "MyThumbnails"
 }) }}
 
 
@@ -87,7 +87,7 @@ The numeric editable is like the input editable but with special options for num
 The renderlet is a special container which is able to handle every object in Pimcore (Documents, Assets, Objects).
 {{
         pimcore_renderlet('myGallery', {
-            "controller" : "App\\Controller\\SlideShowController::galleryAction",
+            "controller" : "App\\Controller\\CustomController::galleryAction",
             "title" : "Drag an asset folder here to get a gallery",
             "height" : 400
         })

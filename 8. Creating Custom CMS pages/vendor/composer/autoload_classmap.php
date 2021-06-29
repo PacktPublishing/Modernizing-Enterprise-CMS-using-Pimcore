@@ -48,6 +48,7 @@ return array(
     'App\\Controller\\CustomController' => $baseDir . '/src/Controller/CustomController.php',
     'App\\Controller\\DefaultController' => $baseDir . '/src/Controller/DefaultController.php',
     'App\\Kernel' => $baseDir . '/src/Kernel.php',
+    'App\\Templating\\Helper\\Timestamp' => $baseDir . '/src/Templating/Helper/Timestamp.php',
     'Assert\\Assert' => $vendorDir . '/beberlei/assert/lib/Assert/Assert.php',
     'Assert\\Assertion' => $vendorDir . '/beberlei/assert/lib/Assert/Assertion.php',
     'Assert\\AssertionChain' => $vendorDir . '/beberlei/assert/lib/Assert/AssertionChain.php',

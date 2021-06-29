@@ -77,12 +77,14 @@ class CustomController extends FrontendController
      */    
     public function galleryAction(Request $request)
     {
+        $result=array();
         if ('asset' === $request->get('type')) {
             $asset = Asset::getById($request->get('id'));
             if ('folder' === $asset->getType()) {
-                $this->view->assets = $asset->getChildren();
+                $result["assets"] = $asset->getChildren();
             }
         }
+        return $result;
     }
 
 }
