@@ -1,8 +1,0 @@
-includes:
-    - vendor/phpstan/phpstan-symfony/extension.neon
-    - vendor/pimcore/pimcore/phpstan-parameters.neon
-    - vendor/pimcore/pimcore/phpstan-baseline.neon
-
-parameters:
-    symfony:
-        container_xml_path: var/cache/dev/App_KernelDevDebugContainer.xml

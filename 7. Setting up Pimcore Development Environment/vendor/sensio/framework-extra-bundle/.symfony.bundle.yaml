@@ -1,6 +1,0 @@
-branches: ["master"]
-maintained_branches: ["master"]
-current_branch: "master"
-dev_branch: "master"
-dev_branch_alias: "5.0"
-doc_dir: "src/Resources/doc/"

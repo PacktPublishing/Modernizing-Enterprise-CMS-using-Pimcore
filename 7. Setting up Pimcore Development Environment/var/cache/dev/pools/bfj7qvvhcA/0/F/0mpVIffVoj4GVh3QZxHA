@@ -1,3 +1,0 @@
-<?php //Pimcore%255CBundle%255CAdminBundle%255CController%255CAdmin%255CDataObject%255CDataObjectHelperController%2523getDefaultGridFields
-
-return [PHP_INT_MAX, []];
