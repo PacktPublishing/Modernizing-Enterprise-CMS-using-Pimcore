@@ -12,7 +12,6 @@
     "group": "",
     "layoutDefinitions": {
         "fieldtype": "panel",
-        "labelWidth": 100,
         "layout": null,
         "border": false,
         "name": null,
@@ -29,7 +28,6 @@
         "childs": [
             {
                 "fieldtype": "panel",
-                "labelWidth": 100,
                 "layout": null,
                 "border": false,
                 "name": "Shoes Attributes",
@@ -60,7 +58,6 @@
                         "childs": [
                             {
                                 "fieldtype": "panel",
-                                "labelWidth": 100,
                                 "layout": null,
                                 "border": false,
                                 "name": "Size Panel",
@@ -466,7 +463,6 @@
                                         "queryColumnType": "varchar",
                                         "columnType": "varchar",
                                         "columnLength": 190,
-                                        "phpdocType": "string",
                                         "dynamicOptions": false,
                                         "name": "size",
                                         "title": "Size",
@@ -481,16 +477,15 @@
                                         "relationType": false,
                                         "invisible": false,
                                         "visibleGridView": false,
-                                        "visibleSearch": false,
-                                        "defaultValueGenerator": ""
+                                        "visibleSearch": false
                                     }
                                 ],
                                 "locked": false,
-                                "icon": ""
+                                "labelWidth": 100,
+                                "labelAlign": "left"
                             },
                             {
                                 "fieldtype": "panel",
-                                "labelWidth": 100,
                                 "layout": null,
                                 "border": false,
                                 "name": "Heel Panel",
@@ -507,7 +502,6 @@
                                 "childs": [
                                     {
                                         "fieldtype": "fieldset",
-                                        "labelWidth": 100,
                                         "name": "Heel",
                                         "type": null,
                                         "region": null,
@@ -525,7 +519,6 @@
                                                 "defaultValue": null,
                                                 "queryColumnType": "tinyint(1)",
                                                 "columnType": "tinyint(1)",
-                                                "phpdocType": "bool",
                                                 "name": "has_heel",
                                                 "title": "Has Heel",
                                                 "tooltip": "",
@@ -539,8 +532,7 @@
                                                 "relationType": false,
                                                 "invisible": false,
                                                 "visibleGridView": false,
-                                                "visibleSearch": false,
-                                                "defaultValueGenerator": ""
+                                                "visibleSearch": false
                                             },
                                             {
                                                 "fieldtype": "quantityValue",
@@ -555,13 +547,12 @@
                                                 "autoConvert": false,
                                                 "queryColumnType": {
                                                     "value": "double",
-                                                    "unit": "bigint(20)"
+                                                    "unit": "varchar(50)"
                                                 },
                                                 "columnType": {
                                                     "value": "double",
-                                                    "unit": "bigint(20)"
+                                                    "unit": "varchar(50)"
                                                 },
-                                                "phpdocType": "\\Pimcore\\Model\\DataObject\\Data\\QuantityValue",
                                                 "name": "heel_height",
                                                 "title": "Heel Height",
                                                 "tooltip": "",
@@ -575,27 +566,30 @@
                                                 "relationType": false,
                                                 "invisible": false,
                                                 "visibleGridView": false,
-                                                "visibleSearch": false,
-                                                "defaultValueGenerator": ""
+                                                "visibleSearch": false
                                             }
                                         ],
-                                        "locked": false
+                                        "locked": false,
+                                        "labelWidth": 100,
+                                        "labelAlign": "left"
                                     }
                                 ],
                                 "locked": false,
-                                "icon": ""
+                                "labelWidth": 100,
+                                "labelAlign": "left"
                             }
                         ],
-                        "locked": false,
-                        "icon": null
+                        "locked": false
                     }
                 ],
                 "locked": false,
-                "icon": ""
+                "labelWidth": 100,
+                "labelAlign": "left"
             }
         ],
         "locked": false,
-        "icon": null
+        "labelWidth": 100,
+        "labelAlign": "left"
     },
     "generateTypeDeclarations": false
 }

@@ -14,13 +14,13 @@ Fields Summary:
 return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'id' => 'COL',
    'name' => 'Color',
-   'description' => NULL,
+   'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1621021524,
+   'modificationDate' => 1625244131,
    'userOwner' => 0,
    'userModification' => 2,
-   'parentClass' => NULL,
-   'implementsInterfaces' => NULL,
+   'parentClass' => '',
+   'implementsInterfaces' => '',
    'listingParentClass' => '',
    'useTraits' => '',
    'listingUseTraits' => '',
@@ -143,7 +143,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'blockedVarsForExport' => 
             array (
             ),
-             'icon' => '',
+             'icon' => NULL,
              'labelWidth' => 100,
              'labelAlign' => 'left',
           )),
@@ -162,11 +162,11 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
      'labelWidth' => 100,
      'labelAlign' => 'left',
   )),
-   'icon' => NULL,
-   'previewUrl' => NULL,
-   'group' => NULL,
+   'icon' => '',
+   'previewUrl' => '',
+   'group' => '',
    'showAppLoggerTab' => false,
-   'linkGeneratorReference' => NULL,
+   'linkGeneratorReference' => '',
    'previewGeneratorReference' => NULL,
    'compositeIndices' => 
   array (

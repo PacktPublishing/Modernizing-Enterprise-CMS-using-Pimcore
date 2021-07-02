@@ -78,7 +78,7 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
          'blockedVarsForExport' => 
         array (
         ),
-         'icon' => '',
+         'icon' => NULL,
          'labelWidth' => 100,
          'labelAlign' => 'left',
       )),

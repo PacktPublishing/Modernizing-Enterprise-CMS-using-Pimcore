@@ -16,13 +16,13 @@ Fields Summary:
 return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'id' => 'CAT',
    'name' => 'Category',
-   'description' => NULL,
+   'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1621021523,
+   'modificationDate' => 1625244129,
    'userOwner' => 0,
    'userModification' => 2,
-   'parentClass' => NULL,
-   'implementsInterfaces' => NULL,
+   'parentClass' => '',
+   'implementsInterfaces' => '',
    'listingParentClass' => '',
    'useTraits' => '',
    'listingUseTraits' => '',
@@ -192,12 +192,8 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                 array (
                 ),
                  'fieldDefinitionsCache' => NULL,
-                 'permissionView' => 
-                array (
-                ),
-                 'permissionEdit' => 
-                array (
-                ),
+                 'permissionView' => NULL,
+                 'permissionEdit' => NULL,
                  'tooltip' => '',
                  'mandatory' => false,
                  'noteditable' => false,
@@ -221,7 +217,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'blockedVarsForExport' => 
             array (
             ),
-             'icon' => '',
+             'icon' => NULL,
              'labelWidth' => 100,
              'labelAlign' => 'left',
           )),
@@ -240,11 +236,11 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
      'labelWidth' => 100,
      'labelAlign' => 'left',
   )),
-   'icon' => NULL,
-   'previewUrl' => NULL,
-   'group' => NULL,
+   'icon' => '',
+   'previewUrl' => '',
+   'group' => '',
    'showAppLoggerTab' => false,
-   'linkGeneratorReference' => NULL,
+   'linkGeneratorReference' => '',
    'previewGeneratorReference' => NULL,
    'compositeIndices' => 
   array (
