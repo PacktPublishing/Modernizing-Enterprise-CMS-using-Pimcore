@@ -91,6 +91,7 @@ Maarten van den Heuvel</a> on <a href="https://unsplash.com/?utm_source=unsplash
 
 <span>Photo by <a href="https://unsplash.com/@ellaolsson?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Ella Olsson</a> on <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
 
+## Color Images
 We also provide a PDF file that has color images of the screenshots/diagrams used in this book. [Click here to download it](https://static.packt-cdn.com/downloads/9781801075404_ColorImages.pdf).
 
 
