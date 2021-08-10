@@ -25,6 +25,7 @@
 /var/*
 !/var/.gitkeep
 !/var/classes/
+!/var/config/
 /var/classes/DataObject
 
 !/var/config
